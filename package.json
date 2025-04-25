@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "highlight.js": "^11.11.1",
+    "reveal.js": "^5.2.1"
+  },
+  "name": "angular19prez",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "npx serve .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pierre FERVEL",
+  "license": "WTFPL",
+  "description": ""
+}

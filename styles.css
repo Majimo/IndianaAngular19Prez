@@ -1,0 +1,37 @@
+:root {
+    --r-heading1-size: 1.7em;
+    --r-heading2-size: 1.3em;
+    --r-heading3-size: 1.1em;
+    --r-heading4-size: 1em;
+    --r-main-font-size: 38px;
+}
+
+.reveal pre code {
+    max-height: 780px;
+}
+
+.title-background {
+    background: url("assets/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -50px;
+}
+
+.ch {
+    display: flex;
+    flex-direction: row;
+}
+
+.cv {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    flex: 1;
+}
+
+.three-quarter {
+    height: 75%;
+    width: auto;
+}

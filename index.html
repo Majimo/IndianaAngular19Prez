@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/ico" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/node_modules/reveal.js/dist/reveal.css" />
+    <link rel="stylesheet" href="/node_modules/reveal.js/dist/theme/black.css" />
+    <link rel="stylesheet" href="/node_modules/reveal.js/plugin/highlight/monokai.css" />
+    <link rel="stylesheet" href="styles.css"></link>
+    <title>Indiana Jones et le Temple Maudit d’Angular</title>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section class="title-background">
+            </section>
+            <!-- Title Slide -->
+            <section>
+                <div class="cv">
+                    <div class="item">
+                        <h1>Indiana Jones et le Temple Maudit d’Angular</h1>
+                        <h2>10 ans d'Aventures et les Bonnes Pratiques en v19</h2>
+                    </div>
+                    <div class="item">
+                        <div class="ch">
+                            <div class="item">
+                                <img class="three-quarter" src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg">
+                            </div>
+                            <div class="item">
+                                <p>Par <strong>Pierre FERVEL</strong></p>
+                                <p>Le 27 juin 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Introduction -->
+            <section>
+                <h3>Angular, un framework front-end majeur depuis près de 10 ans</h3>
+                <h4>Obectifs de cette présentation</h4>
+                <ul>
+                    <li>Les grandes étapes de l'évolution d'Angular</li>
+                    <li>Les nouveautés clés et leur impact sur les applications modernes</li>
+                    <li>Pleins de bonnes pratiques pour écrire du code Angular performant et maintenable</li>
+                </ul>
+            </section>
+
+            <!-- Angular Evolution -->
+            <section>
+                <section>
+                    <h3>Les débuts des frameworks front-end</h3>
+                    <div class="cv">
+                        <div class="item">
+                            <h4>jQuery et la jungle du web</h4>
+                            <!-- Un peu de code jQuery là -->
+                            <pre><code>
+$(document).ready(function() {
+    $('#myButton').click(function() {
+        alert('Button clicked!');
+    });
+});
+                            </code></pre>
+                        </div>
+                        <div class="item">
+                            <h4>AngularJS, un framework révolutionnaire qui aura marqué une génération de développeurs</h4>
+                            <!-- du code avec un hook angularjs -->
+                            <pre><code>
+angular.module('myApp', [])
+    .controller('MyController', function($scope) {
+        $scope.greeting = 'Hello, World!';
+        $scope.updateGreeting = function(newGreeting) {
+            $scope.greeting = newGreeting;
+        };
+    });
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Le passage difficile d'AngularJS à Angular 2</h3>
+                    <div class="cv">
+                        <div class="item">
+                            <h4>Angular 2 : Un reboot complet, plus brutal que le Crâne de Cristal pour plus de performance et de modularité</h4>
+                            <p>Plus de $scope, désormais on utilise Typescript</p>
+                            <pre><code>
+import { Component } from '@angular/core';
+
+@Component({
+    selector: 'app-root',
+    template: ``&lt;h1&gt;{{ greeting }}&lt;/h1&gt;``,
+    styles: [`h1 { font-family: Lato; }`]
+})
+export class AppComponent {
+    greeting = 'Hello, Angular 2!';
+}
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Angular 4 à 8 : L'âge d'or</h3>
+                    <div class="cv">
+                        <div class="item">
+                            <h4>Une stabilité maîtrisée qui entraîne des évolutions</h4>
+                            <p>Améliorations des performances, meilleure gestion des dépendances</p>
+                            <ul>
+                                <li>Nouvelles fonctionnalités</li>
+                                <ul>
+                                    <li>Lazy loading</li>
+                                    <li>Modules</li>
+                                    <li>Observables</li>
+                                </ul>
+                                <li>Angular CLI</li>
+                                <li>Angular Material</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Angular 9 à 12 : L'ère Ivy</h3>
+                    <div class="cv">
+                        <div class="item">
+                            <h4>Ivy, un moteur de rendu révolutionnaire</h4>
+                            <p>Optimisation des performances et de la taille des bundles</p>
+                            <h4>Mais aussi des améliorations</h4>
+                            <ul>
+                                <li>Meilleure gestion du code</li>
+                                <li>Simplification de la configuration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Angular 13 à 18 : Retour vers le futur des frameworks front-end</h3>
+                    <div class="cv">
+                        <div class="item">
+                            <ul>
+                                <li>NgModules en voie d'extinction (Standalone Components)</li>
+                                <li>Amélioration de la gestion des formulaires (TypedForms)</li>
+                                <li>Sécurisation des requêtes</li>
+                                <li>Signals</li>
+                                <li>Dependency Injections</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Bonnes pratiques -->
+            <section>
+                <section>
+                    <h3>Angular 19 : Le coup de fouet qui claque !</h3>
+                </section>
+                <!-- Structural Control Flow (Angular 14) -->
+                <section>
+                    <div class="cv">
+                        <div class="item">
+                            <h3>Structural Control Flow Syntax</h3>
+                            <pre><code class="language-typescript">
+@if (user.isLoggedIn) {
+    &lt;p&gt;Bienvenue, {{ user.name }} !&lt;/p&gt;
+} @else {
+    &lt;p&gt;Veuillez vous connecter.&lt;/p&gt;
+}
+
+@for (let item of items; track item.id) {
+    &lt;li&gt;{{ item.name }}&lt;/li&gt;
+}
+
+@let currentDate = today() {
+    &lt;p&gt;Nous sommes le {{ currentDate }}&lt;/p&gt;
+}
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+                <!-- Standalone Components (Angular 14) -->
+                <section>
+                    <div class="cv">
+                        <div class="item">
+                            <h3>Standalone Components</h3>
+                            <pre><code class="language-typescript">
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
+@Component({
+    selector: 'app-standalone',
+    standalone: true,
+    template: '&lt;h1&gt;Standalone Component&lt;/h1&gt;'
+    imports: [CommonModule, RouterModule]
+})
+export class StandaloneComponent {
+    constructor() {
+        console.log('Standalone Component Initialized');
+    }
+}
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+                <!-- Typed Forms (Angular 14) -->
+                <section>
+                    <div class="cv">
+                        <div class="item">
+                            <h3>Typed Forms</h3>
+                            <pre><code class="language-typescript">
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+interface User {
+    name: string;
+    email: string;
+    age: number;
+}
+
+@Component({
+    selector: 'app-user-form',
+})
+export class UserFormComponent {
+    userForm: FormGroup;
+
+    constructor(private fb: FormBuilder) {
+        this.userForm = this.fb.group({
+            name: ['', Validators.required],
+            email: ['', [Validators.required, Validators.email]],
+            age: [null, [Validators.required, Validators.min(0)]],
+        }) as FormGroup&lt;User&gt;;
+    }
+
+    onSubmit() {
+        if (this.userForm.valid) {
+            const userData: User = this.userForm.value;
+            console.log(userData);
+        }
+    }
+}                                
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+                <!-- Dependency Injection -->
+                <section>
+                    <div class="cv">
+                        <div class="item">
+                            <h3>Dependency Injection</h3>
+                            <pre><code class="language-typescript">
+import { Injectable } from '@angular/core';
+
+@Injectable({
+    providedIn: 'root'
+})
+export class MyService {
+    getData() {
+        return 'Hello from MyService';
+    }
+}
+
+
+import { Component } from '@angular/core';
+
+@Component({
+    selector: 'app-dependency-injection',
+    template: '&lt;p&gt;{{ data }}&lt;/p&gt;'
+})
+export class DependencyInjectionComponent {
+    @Inject(MyService) myService: MyService;
+
+    data = this.myService.getData();
+}
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+                <!-- Signals (Angular 16) -->
+                <section>
+                    <div class="cv">
+                        <div class="item">
+                            <h3>Signals</h3>
+                            <pre><code class="language-typescript">
+import { Component, signal } from '@angular/core';
+
+@Component({
+    selector: 'app-signals',
+    template: `
+        &lt;p&gt;Count: {{ count() }}&lt;/p&gt;
+        &lt;button (click)="increment()"&gt;Increment&lt;/button&gt;
+    `
+})
+export class SignalsComponent {
+    count = signal(0);
+    increment() {
+        this.count.update(value => value + 1);
+    }
+}
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+                <!-- Signals with linkedSignal (l'effet est répercuté directement depuis le signal) -->
+                <section>
+                    <div class="cv">
+                        <div class="item">
+                            <h3>Shared Linked Signals</h3>
+                            <div class="ch">
+                                <div class="item">
+                                    <pre><code class="language-typescript">
+// user.state.ts
+import { signal } from '@angular/core';
+
+export const userAuthSignal = signal({ isAuthenticated: false, user: null });
+
+export function login(user: any) {
+    userAuthSignal.set({ isAuthenticated: true, user });
+}
+
+export function logout() {
+    userAuthSignal.set({ isAuthenticated: false, user: null });
+}
+                                    </code></pre>
+                                </div>
+                                <div class="item">
+                                    <pre><code class="language-typescript">
+// app.component.ts
+import { userAuthSignal, logout } from '@state/user.state';
+
+@Component({
+    selector: 'app-linked-signals',
+    template: `
+    <nav>
+        @if (userAuthSignal().isAuthenticated) {
+            <span>Welcome, {{ userAuthSignal().user.name }}!</span>
+            <button (click)="handleLogout()">Logout</button>
+        }
+    </nav>
+    `,
+})
+export class LinkedSignalsComponent {
+    userAuthSignal = userAuthSignal;
+
+    handleLogout() {
+        logout();
+    }
+}
+                                    </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- defer() (Angular 16) -->
+                <section>
+                    <div class="cv">
+                        <div class="item">
+                            <h3>defer()</h3>
+                            <div class="ch">
+                                <div class="item">
+                                    <pre><code class="language-typescript">
+// data.service.ts
+import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
+import { delay } from 'rxjs/operators';
+
+@Injectable({
+    providedIn: 'root',
+})
+export class DataService {
+    fetchData() {
+        return of('Données récupérées !').pipe(delay(2000));
+    }
+}
+                                        
+                                    </code></pre>
+                                </div>
+                                <div class="item">
+                                    <pre><code class="language-typescript">
+// data-fetcher.component.ts
+import { Component } from '@angular/core';
+import { defer } from 'rxjs';
+import { DataService } from './data.service';
+
+@Component({
+    selector: 'app-data-fetcher',
+    template: `
+    <button (click)="loadData()">Charger les données</button>
+    @if (data) {
+        <p>Données : {{ data }}</p>
+    }
+    `,
+})
+export class DataFetcherComponent {
+    data: string | null = null;
+
+    constructor(private dataService: DataService) {}
+
+    loadData() {
+        defer(() => this.dataService.fetchData()).subscribe((result) => {
+            this.data = result;
+        });
+    }
+}
+                                    </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Conclusion -->
+            <section>
+                <h3>Conclusion</h3>
+                <p>Angular a parcouru un long chemin depuis ses débuts, et il continue d'évoluer pour répondre aux besoins des développeurs modernes.</p>
+                <p>Une écoute concrète et permanente de la communauté</p>
+                <p>Quel avenir pour le framework ?</p> 
+                    <!-- zone.js bientôt abandonné -->
+                    <!-- des structures plus légères et plus réactives avec les signaux et les standalones components -->
+                    <!-- un rapprochement toujours plus concret de ReactJs -->
+                <p>Merci de votre attention !</p>
+            </section>
+        </div><!-- slides -->
+    </div><!-- reveal -->
+
+    <!-- Scripts -->
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>
