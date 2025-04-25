@@ -1,3 +1,5 @@
+@font-face { font-family: Indiana; src: url('assets/fonts/indiana_jonas/Indiana-Jonas-48ip.otf'); } 
+
 :root {
     --r-heading1-size: 1.7em;
     --r-heading2-size: 1.3em;
@@ -5,6 +7,11 @@
     --r-heading4-size: 1em;
     --r-main-font-size: 38px;
 }
+
+h1, h2 {
+    font-family: Indiana, sans-serif !important;
+}
+
 
 .reveal pre code {
     max-height: 780px;
