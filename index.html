@@ -15,60 +15,55 @@
 <body>
     <div class="reveal">
         <div class="slides">
-            <section class="title-background">
-            </section>
             <!-- Title Slide -->
             <section>
-                <div class="cv">
+                <div class="cv titre">
                     <div class="item">
                         <h1>Indiana Jones et le Temple Maudit d’Angular</h1>
                         <h2>1O ans d'Aventures et les Bonnes Pratiques en v19</h2>
                     </div>
                     <div class="item">
-                        <div class="ch">
-                            <div class="item">
-                                <img class="three-quarter" src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg">
-                            </div>
-                            <div class="item">
-                                <p>Par <strong>Pierre FERVEL</strong></p>
-                                <p>Le 27 juin 2025</p>
-                            </div>
-                        </div>
+                        <p class="p-titre">Par <strong>Pierre FERVEL</strong></p>
+                        <p class="p-titre">Le 27 juin 2025</p>
                     </div>
                 </div>
             </section>
             
             <!-- Introduction -->
             <section>
-                <h3>Angular, un framework front-end majeur depuis près de 10 ans</h3>
-                <h4>Obectifs de cette présentation</h4>
-                <ul>
-                    <li>Les grandes étapes de l'évolution d'Angular</li>
-                    <li>Les nouveautés clés et leur impact sur les applications modernes</li>
-                    <li>Pleins de bonnes pratiques pour écrire du code Angular performant et maintenable</li>
-                </ul>
+                <section class="inner-section">
+                    <h3>Angular, un framework front-end majeur depuis près de 10 ans</h3>
+                </section>
+                <section class="inner-section">
+                    <h3>Obectifs de cette présentation</h3>
+                    <ul>
+                        <li>Les grandes étapes de l'évolution d'Angular</li>
+                        <li>Les nouveautés clés et leur impact sur les applications modernes</li>
+                        <li>Pleins de bonnes pratiques pour écrire du code Angular performant et maintenable</li>
+                    </ul>
+                </section>
             </section>
 
             <!-- Angular Evolution -->
             <section>
-                <section>
+                <section class="inner-section">
                     <h3>Les débuts des frameworks front-end</h3>
-                    <div class="cv">
-                        <div class="item">
-                            <h4>jQuery et la jungle du web</h4>
-                            <!-- Un peu de code jQuery là -->
-                            <pre><code>
+                </section>
+                <section class="inner-section">
+                    <h3>jQuery et la jungle du web</h3>
+                    <!-- Un peu de code jQuery là -->
+                    <pre><code>
 $(document).ready(function() {
     $('#myButton').click(function() {
         alert('Button clicked!');
     });
 });
-                            </code></pre>
-                        </div>
-                        <div class="item">
-                            <h4>AngularJS, un framework révolutionnaire qui aura marqué une génération de développeurs</h4>
-                            <!-- du code avec un hook angularjs -->
-                            <pre><code>
+                    </code></pre>
+                </section>
+                <section class="inner-section">
+                    <h4>AngularJS, un framework révolutionnaire qui aura marqué une génération de développeurs</h4>
+                    <!-- du code avec un hook angularjs -->
+                    <pre><code>
 angular.module('myApp', [])
     .controller('MyController', function($scope) {
         $scope.greeting = 'Hello, World!';
@@ -76,15 +71,14 @@ angular.module('myApp', [])
             $scope.greeting = newGreeting;
         };
     });
-                            </code></pre>
-                        </div>
-                    </div>
+                    </code></pre>
                 </section>
-                <section>
+                <section class="inner-section">
                     <h3>Le passage difficile d'AngularJS à Angular 2</h3>
                     <div class="cv">
                         <div class="item">
-                            <h4>Angular 2 : Un reboot complet, plus brutal que le Crâne de Cristal pour plus de performance et de modularité</h4>
+                            <h4>Un reboot complet, plus brutal que le Crâne de Cristal pour plus de performance et de modularité</h4>
+                            </br>
                             <p>Plus de $scope, désormais on utilise Typescript</p>
                             <pre><code>
 import { Component } from '@angular/core';
@@ -101,7 +95,7 @@ export class AppComponent {
                         </div>
                     </div>
                 </section>
-                <section>
+                <section class="inner-section">
                     <h3>Angular 4 à 8 : L'âge d'or</h3>
                     <div class="cv">
                         <div class="item">
@@ -120,7 +114,7 @@ export class AppComponent {
                         </div>
                     </div>
                 </section>
-                <section>
+                <section class="inner-section">
                     <h3>Angular 9 à 12 : L'ère Ivy</h3>
                     <div class="cv">
                         <div class="item">
@@ -134,7 +128,7 @@ export class AppComponent {
                         </div>
                     </div>
                 </section>
-                <section>
+                <section class="inner-section">
                     <h3>Angular 13 à 18 : Retour vers le futur des frameworks front-end</h3>
                     <div class="cv">
                         <div class="item">
@@ -143,7 +137,7 @@ export class AppComponent {
                                 <li>Amélioration de la gestion des formulaires (TypedForms)</li>
                                 <li>Sécurisation des requêtes</li>
                                 <li>Signals</li>
-                                <li>Dependency Injections</li>
+                                <!-- <li>Dependency Injections</li> -->
                             </ul>
                         </div>
                     </div>
@@ -152,11 +146,11 @@ export class AppComponent {
 
             <!-- Bonnes pratiques -->
             <section>
-                <section>
+                <section class="inner-section">
                     <h3>Angular 19 : Le coup de fouet qui claque</h3>
                 </section>
                 <!-- Structural Control Flow (Angular 14) -->
-                <section>
+                <section class="inner-section">
                     <div class="cv">
                         <div class="item">
                             <h3>Structural Control Flow Syntax</h3>
@@ -179,7 +173,7 @@ export class AppComponent {
                     </div>
                 </section>
                 <!-- Standalone Components (Angular 14) -->
-                <section>
+                <section class="inner-section">
                     <div class="cv">
                         <div class="item">
                             <h3>Standalone Components</h3>
@@ -204,7 +198,7 @@ export class StandaloneComponent {
                     </div>
                 </section>
                 <!-- Typed Forms (Angular 14) -->
-                <section>
+                <section class="inner-section">
                     <div class="cv">
                         <div class="item">
                             <h3>Typed Forms</h3>
@@ -244,7 +238,7 @@ export class UserFormComponent {
                     </div>
                 </section>
                 <!-- Dependency Injection -->
-                <section>
+                <section class="inner-section">
                     <div class="cv">
                         <div class="item">
                             <h3>Dependency Injection</h3>
@@ -277,7 +271,7 @@ export class DependencyInjectionComponent {
                     </div>
                 </section>
                 <!-- Signals (Angular 16) -->
-                <section>
+                <section class="inner-section">
                     <div class="cv">
                         <div class="item">
                             <h3>Signals</h3>
@@ -302,7 +296,7 @@ export class SignalsComponent {
                     </div>
                 </section>
                 <!-- Signals with linkedSignal (l'effet est répercuté directement depuis le signal) -->
-                <section>
+                <section class="inner-section">
                     <div class="cv">
                         <div class="item">
                             <h3>Shared Linked Signals</h3>
@@ -353,7 +347,7 @@ export class LinkedSignalsComponent {
                     </div>
                 </section>
                 <!-- defer() (Angular 16) -->
-                <section>
+                <section class="inner-section">
                     <div class="cv">
                         <div class="item">
                             <h3>defer()</h3>
@@ -413,14 +407,16 @@ export class DataFetcherComponent {
 
             <!-- Conclusion -->
             <section>
-                <h3>Conclusion</h3>
-                <p>Angular a parcouru un long chemin depuis ses débuts, et il continue d'évoluer pour répondre aux besoins des développeurs modernes.</p>
-                <p>Une écoute concrète et permanente de la communauté</p>
-                <p>Quel avenir pour le framework ?</p> 
-                    <!-- zone.js bientôt abandonné -->
-                    <!-- des structures plus légères et plus réactives avec les signaux et les standalones components -->
-                    <!-- un rapprochement toujours plus concret de ReactJs -->
-                <p>Merci de votre attention !</p>
+                <section class="inner-section">
+                    <h3>Conclusion</h3>
+                    <p>Angular a parcouru un long chemin depuis ses débuts, et il continue d'évoluer pour répondre aux besoins des développeurs modernes.</p>
+                    <p>Une écoute concrète et permanente de la communauté</p>
+                    <p>Quel avenir pour le framework ?</p> 
+                        <!-- zone.js bientôt abandonné -->
+                        <!-- des structures plus légères et plus réactives avec les signaux et les standalones components -->
+                        <!-- un rapprochement toujours plus concret de ReactJs -->
+                    <p>Merci de votre attention !</p>
+                </section>
             </section>
         </div><!-- slides -->
     </div><!-- reveal -->

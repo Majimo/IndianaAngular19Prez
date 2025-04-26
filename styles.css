@@ -1,27 +1,50 @@
-@font-face { font-family: Indiana; src: url('assets/fonts/indiana_jonas/Indiana-Jonas-48ip.otf'); } 
+@font-face { font-family: Indiana; src: url('assets/fonts/indiana_jonas/Indiana-Jonas-48ip.otf'); }
+@font-face { font-family: FedoraShadow; src: url('assets/fonts/sf_fedora/SF\ Fedora\ Shadow.ttf'); }
+@font-face { font-family: Fedora; src: url('assets/fonts/sf_fedora/SF\ Fedora.ttf'); }
+@font-face { font-family: FedoraTiles; src: url('assets/fonts/sf_fedora/SF\ Fedora\ Titles.ttf'); }
+@font-face { font-family: FedoraTilesShadow; src: url('assets/fonts/sf_fedora/SF\ Fedora\ Titles\ Shadow.ttf'); }
 
 :root {
-    --r-heading1-size: 1.7em;
-    --r-heading2-size: 1.3em;
-    --r-heading3-size: 1.1em;
-    --r-heading4-size: 1em;
-    --r-main-font-size: 38px;
+    --r-heading1-size: 1.75em;
+    --r-heading2-size: 1.4em;
+    --r-heading3-size: 1.2em;
+    --r-heading4-size: 1.1em;
+    --r-main-font-size: 36px;
+    --r-heading-text-transform: none;
+}
+
+.reveal {
+    background: url("assets/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -50px;
 }
 
 h1, h2 {
-    font-family: Indiana, sans-serif !important;
+    font-family: Fedora, sans-serif !important;
 }
 
+.p-titre {
+    font-family: FedoraTiles, sans-serif !important;
+}
 
 .reveal pre code {
     max-height: 780px;
 }
 
-.title-background {
-    background: url("assets/background.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-y: -50px;
+.titre {
+    display: flex !important;
+    background: none !important;
+    align-items: flex-end;
+    position: absolute;
+    top: -6em;
+    right: 0;
+    width: 25em;
+}
+
+.inner-section {
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 20px 0 !important;
 }
 
 .ch {
