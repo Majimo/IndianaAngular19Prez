@@ -95,25 +95,145 @@ export class AppComponent {
                         </div>
                     </div>
                 </section>
+            </section>
+            <section>
                 <section class="inner-section">
                     <h3>Angular 4 à 8 : L'âge d'or</h3>
                     <div class="cv">
                         <div class="item">
                             <h4>Une stabilité maîtrisée qui entraîne des évolutions</h4>
                             <p>Améliorations des performances, meilleure gestion des dépendances</p>
-                            <ul>
-                                <li>Nouvelles fonctionnalités</li>
-                                <ul>
-                                    <li>Lazy loading</li>
-                                    <li>Modules</li>
-                                    <li>Observables</li>
-                                </ul>
-                                <li>Angular CLI</li>
-                                <li>Angular Material</li>
-                            </ul>
                         </div>
                     </div>
                 </section>
+                <section class="inner-section">
+                    <h3>Les modules avec la directive @NgModule</h3>
+                    <p>La directive permet d'importer les modules de manière plus ciblée, uniquement dans les modules qui en ont besoin.</p>
+                    <pre><code>
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { LazyLoadedComponent } from './lazy-loaded.component';
+
+@NgModule({
+  imports: [
+    CommonModule
+  ],
+  declarations: [LazyLoadedComponent]
+})
+export class LazyLoadedModule { }
+                    </code></pre>
+                </section>
+                <section class="inner-section">
+                    <h3>Le lazy loading</h3>
+                    <div class="ch">
+                        <div class="item">
+                            <pre><code>
+// app-routing.module.ts
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { LazyLoadedModule } from './lazy-loaded/lazy-loaded.module';
+const routes: Routes = [
+    {
+        path: 'lazy',
+        loadChildren: () => import('./lazy-loaded/lazy-loaded.module').then(m => m.LazyLoadedModule)
+    }
+];
+@NgModule({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+})
+export class AppRoutingModule { }
+                            </code></pre>
+                        </div>
+                        <div class="item">
+                            <pre><code>
+// app.module.ts
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { AppRoutingModule } from './app-routing.module';
+@NgModule({
+    imports: [
+        CommonModule,
+        AppRoutingModule
+    ]
+})
+export class AppModule { }
+                    </code></pre>
+                </section>
+                <section class="inner-section">
+                    <h3>Les Observables</h3>
+                    <pre><code>
+import { Component } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { map } from 'rxjs/operators';
+@Component({
+    selector: 'app-observable-example',
+    template: `
+        &lt;div&gt;
+            &lt;p&gt;Valeur : {{ value }}&lt;/p&gt;
+            &lt;button (click)="fetchData()"&gt;Charger les données&lt;/button&gt;
+        &lt;/div&gt;
+    `
+})
+export class ObservableExampleComponent {
+    value: string = 'Aucune donnée';
+    fetchData() {
+        this.getData().pipe(
+            map(data => `Données récupérées : ${data}`)
+        ).subscribe(result => {
+            this.value = result;
+        });
+    }
+    getData(): Observable&lt;string&gt; {
+        return of('Données de l\'API');
+    }
+}
+                   </code></pre>
+                </section>
+                <section class="inner-section">
+                    <h3>De grandes évolutions dans la CLI d'Angular</h3>
+                    <p>Angular 4</p>
+                    <ul>
+                        <li>Possibilité de créer des guards, des resolvers, des composants plus spécifiques</li>
+                    </ul>
+                    <p>Angular 5</p>
+                    <ul>
+                        <li>Introduction du support des PWA (Progressive Web App)</li>
+                    </ul>
+                    <p>Angular 6</p>
+                    <ul>
+                        <li>Gestion de l'ajout de dépendances npm</li>
+                        <li>Possibilité de réaliser des tests unitaires</li>
+                    </ul>
+                    <p>Angular 7</p>
+                    <ul>
+                        <li>Mise à jour globale des dépendances (`ng update`)</li>
+                    </ul>
+<!-- Une PWA (Progressive Web App) est un type d'application web qui combine les avantages des applications web traditionnelles et des applications mobiles natives.
+
+Voici les principales caractéristiques d'une PWA :
+
+Accessibilité : Une PWA est accessible via un simple lien web, sans avoir besoin d'être installée sur l'appareil de l'utilisateur.
+Expérience utilisateur améliorée : Une PWA offre une expérience utilisateur fluide et rapide, similaire à celle d'une application mobile native.
+Hors-ligne : Une PWA peut fonctionner hors-ligne, grâce à l'utilisation de "service workers" qui mettent en cache les ressources nécessaires.
+Notifications push : Une PWA peut envoyer des notifications push à l'utilisateur, comme une application mobile.
+Ajout à l'écran d'accueil : L'utilisateur peut ajouter une PWA à l'écran d'accueil de son appareil, comme une application mobile.
+Mise à jour automatique : Une PWA se met à jour automatiquement, sans nécessiter d'intervention de l'utilisateur.
+Sécurité : Une PWA est servie en HTTPS, ce qui assure la sécurité des données.
+L'introduction du support des PWA dans Angular 5 a permis aux développeurs de créer facilement des applications web progressives, en bénéficiant de toutes ces fonctionnalités. -->
+                </section>
+                <section class="inner-section">
+                    <h3>Angular Material</h3>
+                    <p>Officialisation d'Angular Material basé sur les versions d'Angular</p>
+                    <img src="./assets/material_v5.png" alt="Angular Material" style="height:700px;width:auto" />
+<!-- En réalité, il existait déjà dans la version 2, en développement, mais la version 4 a marqué une étape importante dans son évolution et son adoption par la communauté Angular.
+
+Depuis la version 4, Angular Material est devenu une bibliothèque mature et largement utilisée par les développeurs Angular pour construire des interfaces utilisateur conformes au Material Design.
+
+Donc pour résumer, Angular Material a bien été introduit dès la version 2 d'Angular, mais la version 4 a représenté une étape clé dans son développement et son adoption. -->
+                </section>
+            </section>
+            <section>
                 <section class="inner-section">
                     <h3>Angular 9 à 12 : L'ère Ivy</h3>
                     <div class="cv">
@@ -147,7 +267,7 @@ export class AppComponent {
             <!-- Bonnes pratiques -->
             <section>
                 <section class="inner-section">
-                    <h3>Angular 19 : Le coup de fouet qui claque</h3>
+                    <h3>Les bonnes pratiques actuelles pour donner un bon coup de fouet à vos applications</h3>
                 </section>
                 <!-- Structural Control Flow (Angular 14) -->
                 <section class="inner-section">
