@@ -253,21 +253,68 @@ Amélioration de la gestion des erreurs => messages d'erreur plus clairs et plus
                             <h3>Suivi des évolutions de TypeScript (3.7 -> 4.2)</h3>
                 </section>
             </section>
-            <!-- Angular 13 à 18 -->
+            <!-- Angular 13 à 19 -->
             <section>
                 <section class="inner-section">
-                    <h3>Angular 13 à 18 : Retour vers le futur des frameworks front-end</h3>
+                    <h3>Angular 13 à 19 : Retour vers le futur des frameworks front-end</h3>
                 </section>
                 <section class="inner-section">
-                    <div class="cv">
-                        <div class="item">
-                            <ul>
-                                <li>NgModules en voie d'extinction (Standalone Components)</li>
-                                <li>Amélioration de la gestion des formulaires (TypedForms)</li>
-                                <li>Sécurisation des requêtes</li>
-                                <li>Signals</li>
-                            </ul>
-                        </div>
+                    <h3>Flexibilité, modularité et performance</h3>
+                    <p>Standalone Components, Federated Modules et Standalone Directives</p>
+                </section>
+                <section class="inner-section">
+                    <pre><code>
+my-app/
+├── src/
+│   ├── app/
+│   │   ├── app.component.ts
+│   │   ├── app.module.ts
+│   │   └── app-routing.module.ts
+│   ├── products/
+│   │   ├── pipes/
+│   │   │   ├── cart-product.pipe.ts
+│   │   ├── components/
+│   │   │   ├── product.component.ts
+│   │   │   └── cart.component.ts
+│   │   ├── services/
+│   │   │   └── product.service.ts
+│   │   ├── products.module.ts
+│   │   └── products-routing.module.ts
+│   ├── orders/
+│   │   ├── components/
+│   │   │   ├── order-form.component.ts
+│   │   │   └── order-confirmation.component.ts
+│   │   ├── services/
+│   │   │   └── order.service.ts
+│   │   ├── orders.module.ts
+│   │   └── orders-routing.module.ts
+│   └── main.ts
+├── webpack.config.js
+└── package.json
+                    </code></pre>
+<!-- 
+1 - Application principale (app/) :
+Contient le composant racine, le module principal et le routage de l'application.
+Utilise le "Module Federation Plugin" pour charger dynamiquement les modules fédérés.
+2 - Module de Produits (products/) :
+Contient les composants et services liés à la gestion des produits.
+Les composants sont définis comme des Standalone Components.
+Le module et le routage sont encapsulés dans ce dossier.
+3 - Module de Commandes (orders/) :
+Contient les composants et services liés à la gestion des commandes.
+Les composants sont également définis comme des Standalone Components.
+Le module et le routage sont encapsulés dans ce dossier.
+4 - Configuration Webpack (webpack.config.js) :
+Contient la configuration du "Module Federation Plugin" pour permettre le chargement dynamique des modules fédérés.                    
+-->
+                </section>
+                <section class="inner-section">
+                    <div class="item">
+                        <ul>
+                            <li>Amélioration de la gestion des formulaires (TypedForms) v13</li>
+                            <li>Signals v16</li>
+                            <li>defer() v16</li>
+                        </ul>
                     </div>
                 </section>
             </section>

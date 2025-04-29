@@ -11,6 +11,8 @@
     --r-heading4-size: 1.1em;
     --r-main-font-size: 36px;
     --r-heading-text-transform: none;
+    --r-heading-color: #000;
+    --r-main-color: #000;
 }
 
 .reveal {
@@ -22,6 +24,7 @@
 
 h1, h2 {
     font-family: Fedora, sans-serif !important;
+    color: #fff !important;
 }
 
 .p-titre {
@@ -40,10 +43,11 @@ h1, h2 {
     top: -6em;
     right: 0;
     width: 25em;
+    color: #fff !important;
 }
 
 .inner-section {
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(255, 255, 255, 0.85);
     padding: 20px 0 !important;
 }
 
