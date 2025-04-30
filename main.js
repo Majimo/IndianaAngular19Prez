@@ -10,4 +10,6 @@ deck.initialize({
   height: 974,
   minScale: 0.5,
   maxScale: 0.9,
+  slideNumber: true,
+  slideNumber: 'c',
 });

@@ -15,6 +15,10 @@
     --r-main-color: #000;
 }
 
+#speaker-controls {
+    font-size: 14px !important;
+}
+
 .reveal {
     background: url("assets/background.png");
     background-repeat: no-repeat;
