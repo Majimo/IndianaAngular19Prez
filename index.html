@@ -111,8 +111,7 @@ angular.module('myApp', [])
                             <h4>Un reboot complet, plus brutal que le Crâne de Cristal pour plus de performance et de modularité</h4>
                             </br>
                             <p>Plus de $scope, désormais on utilise Typescript</p>
-                            <pre><code>
-import { Component } from '@angular/core';
+                            <pre><code data-line-numbers="1-3|4|8-10">import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-root',
@@ -158,8 +157,7 @@ export class AppComponent {
                 <section class="inner-section">
                     <h3>Les modules avec la directive @NgModule</h3>
                     <p>La directive permet d'importer les modules de manière plus ciblée, uniquement dans les modules qui en ont besoin.</p>
-                    <pre><code>
-import { NgModule } from '@angular/core';
+                    <pre><code data-line-numbers="1,5-10">import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LazyLoadedComponent } from './lazy-loaded.component';
 
@@ -174,10 +172,9 @@ export class LazyLoadedModule { }
                 </section>
                 <section class="inner-section">
                     <h3>Le lazy loading</h3>
-                    <div class="ch">
+                    <div class="cv">
                         <div class="item">
-                            <pre><code>
-// app-routing.module.ts
+                            <pre><code data-line-numbers="3,5-10">// app-routing.module.ts
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LazyLoadedModule } from './lazy-loaded/lazy-loaded.module';
@@ -195,8 +192,7 @@ export class AppRoutingModule { }
                             </code></pre>
                         </div>
                         <div class="item">
-                            <pre><code>
-// app.module.ts
+                            <pre><code data-line-numbers="3,7">// app.module.ts
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
@@ -211,8 +207,7 @@ export class AppModule { }
                 </section>
                 <section class="inner-section">
                     <h3>Les Observables</h3>
-                    <pre><code>
-import { Component } from '@angular/core';
+                    <pre><code data-line-numbers="2-3,15-24">import { Component } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 @Component({
@@ -258,34 +253,44 @@ export class ObservableExampleComponent {
                     <ul>
                         <li>Mise à jour globale des dépendances (`ng update`)</li>
                     </ul>
-<!-- Une PWA (Progressive Web App) est un type d'application web qui combine les avantages des applications web traditionnelles et des applications mobiles natives.
+                    <aside class="notes">
+                        Une PWA (Progressive Web App) est un type d'application web qui combine les avantages des applications web traditionnelles et des applications mobiles natives.
 
-Voici les principales caractéristiques d'une PWA :
-
-Accessibilité : Une PWA est accessible via un simple lien web, sans avoir besoin d'être installée sur l'appareil de l'utilisateur.
-Expérience utilisateur améliorée : Une PWA offre une expérience utilisateur fluide et rapide, similaire à celle d'une application mobile native.
-Hors-ligne : Une PWA peut fonctionner hors-ligne, grâce à l'utilisation de "service workers" qui mettent en cache les ressources nécessaires.
-Notifications push : Une PWA peut envoyer des notifications push à l'utilisateur, comme une application mobile.
-Ajout à l'écran d'accueil : L'utilisateur peut ajouter une PWA à l'écran d'accueil de son appareil, comme une application mobile.
-Mise à jour automatique : Une PWA se met à jour automatiquement, sans nécessiter d'intervention de l'utilisateur.
-Sécurité : Une PWA est servie en HTTPS, ce qui assure la sécurité des données.
-L'introduction du support des PWA dans Angular 5 a permis aux développeurs de créer facilement des applications web progressives, en bénéficiant de toutes ces fonctionnalités. -->
+                        Voici les principales caractéristiques d'une PWA :
+                        
+                        Accessibilité : Une PWA est accessible via un simple lien web, sans avoir besoin d'être installée sur l'appareil de l'utilisateur.
+                        Expérience utilisateur améliorée : Une PWA offre une expérience utilisateur fluide et rapide, similaire à celle d'une application mobile native.
+                        Hors-ligne : Une PWA peut fonctionner hors-ligne, grâce à l'utilisation de "service workers" qui mettent en cache les ressources nécessaires.
+                        Notifications push : Une PWA peut envoyer des notifications push à l'utilisateur, comme une application mobile.
+                        Ajout à l'écran d'accueil : L'utilisateur peut ajouter une PWA à l'écran d'accueil de son appareil, comme une application mobile.
+                        Mise à jour automatique : Une PWA se met à jour automatiquement, sans nécessiter d'intervention de l'utilisateur.
+                        Sécurité : Une PWA est servie en HTTPS, ce qui assure la sécurité des données.
+                        L'introduction du support des PWA dans Angular 5 a permis aux développeurs de créer facilement des applications web progressives, en bénéficiant de toutes ces fonctionnalités. -->                        
+                    </aside>
                 </section>
                 <section class="inner-section">
                     <h3>Angular Material</h3>
                     <p>Officialisation d'Angular Material basé sur les versions d'Angular</p>
                     <img src="./assets/material_v5.png" alt="Angular Material" style="height:700px;width:auto" />
-<!-- En réalité, il existait déjà dans la version 2, en développement, mais la version 4 a marqué une étape importante dans son évolution et son adoption par la communauté Angular.
+                    <aside class="notes">
+                        "Et puis, y’a Angular Material. Un peu comme le petit frère de Bootstrap, mais pour Angular."
+                        "C’est beau, c’est propre, et ça te fait gagner un temps fou."
+                        "Mais attention, c’est pas juste du CSS. C’est une vraie bibliothèque de composants qui respecte les principes du Material Design."
+                        "Et ça, c’est pas rien !"
 
+                        En réalité, il existait déjà dans la version 2, en développement, mais la version 4 a marqué une étape importante dans son évolution et son adoption par la communauté Angular.
 Depuis la version 4, Angular Material est devenu une bibliothèque mature et largement utilisée par les développeurs Angular pour construire des interfaces utilisateur conformes au Material Design.
-
-Donc pour résumer, Angular Material a bien été introduit dès la version 2 d'Angular, mais la version 4 a représenté une étape clé dans son développement et son adoption. -->
+Donc pour résumer, Angular Material a bien été introduit dès la version 2 d'Angular, mais la version 4 a représenté une étape clé dans son développement et son adoption.
+                    </aside>
                 </section>
             </section>
             <!-- Angular 9 à 12 -->
             <section>
                 <section class="inner-section">
                     <h3>Angular 9 à 12 : L'ère Ivy</h3>
+                    <aside class="notes">
+                        "Et là, on se dit : 'OK, on a un framework qui commence à sacrément ressembler à qqchose.'"
+                    </aside>
                 </section>
                 <section class="inner-section">
                     <h3>Ivy, un moteur de rendu révolutionnaire</h3>
@@ -331,7 +336,7 @@ Amélioration de la gestion des erreurs => messages d'erreur plus clairs et plus
                    </aside>
                 </section>
                 <section class="inner-section">
-                    <pre><code>
+                    <pre><code data-line-numbers="4-7|8-17|18-25|27">
 my-app/
 ├── src/
 │   ├── app/
@@ -544,7 +549,7 @@ export class SignalsComponent {
                         </div>
                     </div>
                 </section>
-                <!-- Signals with linkedSignal (l'effet est répercuté directement depuis le signal) -->
+                <!-- Signals with linkedSignal (l'effet est répercuté directement depuis le signal Angular v20) -->
                 <section class="inner-section">
                     <div class="cv">
                         <div class="item">
