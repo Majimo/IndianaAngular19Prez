@@ -145,6 +145,15 @@ export class AppComponent {
                             <p>Améliorations des performances, meilleure gestion des dépendances</p>
                         </div>
                     </div>
+                    <aside class="notes">
+"Après ce reboot un peu violent, Angular trouve enfin son rythme."
+"Entre les versions 4 et 8, on a de la stabilité, des évolutions maîtrisées. On améliore le CLI, on simplifie la gestion des dépendances, on booste les perfs."
+"C’est l’époque où on commence à faire confiance au framework. On se dit : 'OK, c’est pas React, mais au moins ça bouge pas toutes les deux semaines.'"
+
+(rire complice)
+
+"Et en vrai, ça fait du bien."
+                    </aside>
                 </section>
                 <section class="inner-section">
                     <h3>Les modules avec la directive @NgModule</h3>
@@ -279,16 +288,28 @@ Donc pour résumer, Angular Material a bien été introduit dès la version 2 d'
                     <h3>Angular 9 à 12 : L'ère Ivy</h3>
                 </section>
                 <section class="inner-section">
-                            <h3>Ivy, un moteur de rendu révolutionnaire</h3>
-                            <p>Optimisation des performances et de la taille des bundles</p>
+                    <h3>Ivy, un moteur de rendu révolutionnaire</h3>
+                    <p>Optimisation des performances et de la taille des bundles</p>
+                    <aside class="notes">
+                        "Et là, bam, Angular 9. Ivy arrive."
+
+"C’est un nouveau moteur de rendu. Mais attention, ça change tout… sans rien casser."
+"Concrètement, Ivy rend le framework plus rapide, plus léger, plus flexible. Tu peux compiler juste ce dont t’as besoin. Et ça ouvre la porte à des features plus modernes derrière."
+"Sur certains projets, on a vu des bundles réduire de 30 à 40%, juste avec Ivy."
+
+(blague)
+
+"C’est un peu comme si t’installais un nouveau moteur dans ta voiture, sans avoir besoin de racheter les roues."
+
 <!-- Remplace AOT (Ahead Of Time)
 Réduction de la taille des bundles => build seulement les parties nécessaires
 Amélioration de la vitesse de compilation => arbres de rendu plus légers (tree-shaking)
 Amélioration de la gestion des erreurs => messages d'erreur plus clairs et plus précis notamment lorss du préchargement
 -->
+                    </aside>
                 </section>
                 <section class="inner-section">
-                            <h3>Suivi des évolutions de TypeScript (3.7 -> 4.2)</h3>
+                    <h3>Suivi des évolutions de TypeScript (3.7 -> 4.2)</h3>
                 </section>
             </section>
             <!-- Angular 13 à 19 -->
@@ -299,6 +320,15 @@ Amélioration de la gestion des erreurs => messages d'erreur plus clairs et plus
                 <section class="inner-section">
                     <h3>Flexibilité, modularité et performance</h3>
                     <p>Standalone Components, Federated Modules et Standalone Directives</p>
+                    <aside class="notes">
+"Angular continue à évoluer. Et là, on entre dans une nouvelle ère."
+
+"Fini les NgModules ? Presque."
+
+(montre un exemple simple de standalone component)
+
+"Aujourd’hui, tu peux créer un composant Angular sans avoir à déclarer un module. C’est plus simple, plus clair, plus rapide."
+                   </aside>
                 </section>
                 <section class="inner-section">
                     <pre><code>
@@ -330,7 +360,7 @@ my-app/
 ├── webpack.config.js
 └── package.json
                     </code></pre>
-<!-- 
+                    <aside class="notes">
 1 - Application principale (app/) :
 Contient le composant racine, le module principal et le routage de l'application.
 Utilise le "Module Federation Plugin" pour charger dynamiquement les modules fédérés.
@@ -343,8 +373,8 @@ Contient les composants et services liés à la gestion des commandes.
 Les composants sont également définis comme des Standalone Components.
 Le module et le routage sont encapsulés dans ce dossier.
 4 - Configuration Webpack (webpack.config.js) :
-Contient la configuration du "Module Federation Plugin" pour permettre le chargement dynamique des modules fédérés.                    
--->
+Contient la configuration du "Module Federation Plugin" pour permettre le chargement dynamique des modules fédérés.  
+                    </aside>
                 </section>
                 <section class="inner-section">
                     <div class="item">
@@ -354,6 +384,12 @@ Contient la configuration du "Module Federation Plugin" pour permettre le charge
                             <li>defer() v16</li>
                         </ul>
                     </div>
+                    <aside class="notes">
+"Et puis y’a Signals. Une nouvelle manière de gérer la réactivité, inspirée du monde de la programmation réactive… mais plus lisible, plus intuitive."
+"Et pour ceux qui ont déjà utilisé React, vous allez adorer. C’est un peu comme si Angular avait décidé de prendre un café avec React.""
+"Et puis, y’a defer(). C’est un peu comme un 'setTimeout' pour tes appels API. Tu peux dire à Angular : 'Hé, attends un peu avant de charger ça.'"
+"Et Angular te dit : 'Pas de souci, je vais te le faire.'"
+                    </aside>
                 </section>
             </section>
 
