@@ -28,10 +28,11 @@
                     </div>
                 </div>
                 <aside class="notes">
-"Alors... est-ce qu’il y a des gens ici qui ont déjà mis les mains dans du AngularJS ?"
-(Pause dramatique, regarder les réactions)
-"Ok… j’espère que vous avez quitter ces projets depuis."
+"Alors... est-ce qu’il y a des gens ici qui ont déjà mis les mains dans du AngularJS ?" </br>
+(Pause dramatique, regarder les réactions) </br>
+"Ok… j’espère que vous avez quitter ces projets depuis." </br>
 "Aujourd’hui, on va retracer l’histoire d’Angular. Un framework qui a connu des hauts, des bas, des refontes, des révolutions... et qui est toujours là, solide comme un rocher qui déboule dans un tunnel — ou comme une dépendance dans ton package.json."
+<p>Alors, enfilons notre chapeau d'archéologue du code, et partons à la découverte des trésors cachés d'Angular !</p>
                 </aside>
             </section>
             
@@ -40,8 +41,8 @@
                 <section class="inner-section">
                     <h3>Angular, un framework front-end majeur depuis près de 10 ans</h3>
                     <aside class="notes">
-"Angular, c’est plus qu’un simple framework. C’est une saga. 10 ans d’évolution, de paris techniques, de frustrations parfois… mais aussi de très belles idées."
-(regarde la salle)
+"Angular, c’est plus qu’un simple framework. C’est une saga. 10 ans d’évolution, de paris techniques, de frustrations parfois… mais aussi de très belles idées." </br>
+(regarde la salle) </br>
 "Et si vous êtes ici, c’est peut-être parce que vous avez une app Angular en prod… que vous aimez ça… ou que vous êtes coincés avec."
                     </aside>
                 </section>
@@ -54,12 +55,12 @@
                     </ul>
                     <aside class="notes">
 "Mais ne vous inquiétez pas, je suis là pour vous aider à sortir de cette jungle !"
-
-"L’objectif de ce talk ? Vous raconter cette histoire, mais surtout :
+</br>
+"L’objectif de ce talk ? Vous raconter cette histoire, mais surtout : </br>
 Comprendre les grandes étapes,
 Découvrir les nouveautés clés,
-Et surtout, apprendre à écrire du code Angular qui soit à la fois performant et agréable à maintenir."
-
+Et bien sûr, apprendre à écrire du code Angular qui soit à la fois performant et agréable à maintenir."
+</br>
 "Et je vous le dis tout de suite : ce sera une aventure nostalgique, technique mais passionnante, comme un bon vieux film d’Indiana Jones !"
                     </aside>
                 </section>
@@ -101,7 +102,7 @@ angular.module('myApp', [])
     });
                     </code></pre>
                     <aside class="notes">
-"Et là arrive AngularJS. C’est magique. Du double binding, des directives, une architecture MVC… c’est le feu !"
+"C'est à ce moment qu'arrive AngularJS. C’est magique. Du double binding, des directives, une architecture MVC… c’est le feu !"
                     </aside>
                 </section>
                 <section class="inner-section">
@@ -125,11 +126,11 @@ export class AppComponent {
                         </div>
                     </div>
                     <aside class="notes">
-"Mais au bout de quelques années, c’est aussi un peu... la galère. Des scopes partout, du code spaghetti, difficile à maintenir. Le rêve tourne au cauchemar."
+"Mais au bout de quelques années, c’est aussi un peu... la galère. Des scopes partout, du code spaghetti, difficile à maintenir. Le rêve tourne au cauchemar." </br>
 "Et alors là, Google fait un truc radical : ils disent… ‘allez, on s'en fiche de tout ce qu'on a capitalisé, on recommence tout’."
-(pause)
+(pause) </br>
 "Angular 2, c’est pas une mise à jour. C’est un nouveau monde. Fini $scope, bonjour TypeScript. C’est plus rapide, plus propre, mais aussi… plus complexe."
-(clin d’œil)
+</br>
 "Un peu comme passer de Mario Kart à Dark Souls."
                     </aside>
                 </section>
@@ -145,12 +146,9 @@ export class AppComponent {
                         </div>
                     </div>
                     <aside class="notes">
-"Après ce reboot un peu violent, Angular trouve enfin son rythme."
-"Entre les versions 4 et 8, on a de la stabilité, des évolutions maîtrisées. On améliore le CLI, on simplifie la gestion des dépendances, on booste les perfs."
-"C’est l’époque où on commence à faire confiance au framework. On se dit : 'OK, c’est pas React, mais au moins ça bouge pas toutes les deux semaines.'"
-
-(rire complice)
-
+"Après ce reboot un peu violent, Angular trouve enfin son rythme." </br>
+"Entre les versions 4 et 8, on a de la stabilité, des évolutions maîtrisées. On améliore le CLI, on simplifie la gestion des dépendances, on booste les perfs.
+C’est l’époque où on commence à faire confiance au framework. On se dit : 'OK, c’est pas React, mais au moins ça bouge pas toutes les deux semaines.'" </br>
 "Et en vrai, ça fait du bien."
                     </aside>
                 </section>
@@ -254,18 +252,18 @@ export class ObservableExampleComponent {
                         <li>Mise à jour globale des dépendances (`ng update`)</li>
                     </ul>
                     <aside class="notes">
-                        Une PWA (Progressive Web App) est un type d'application web qui combine les avantages des applications web traditionnelles et des applications mobiles natives.
-
-                        Voici les principales caractéristiques d'une PWA :
-                        
-                        Accessibilité : Une PWA est accessible via un simple lien web, sans avoir besoin d'être installée sur l'appareil de l'utilisateur.
-                        Expérience utilisateur améliorée : Une PWA offre une expérience utilisateur fluide et rapide, similaire à celle d'une application mobile native.
-                        Hors-ligne : Une PWA peut fonctionner hors-ligne, grâce à l'utilisation de "service workers" qui mettent en cache les ressources nécessaires.
-                        Notifications push : Une PWA peut envoyer des notifications push à l'utilisateur, comme une application mobile.
-                        Ajout à l'écran d'accueil : L'utilisateur peut ajouter une PWA à l'écran d'accueil de son appareil, comme une application mobile.
-                        Mise à jour automatique : Une PWA se met à jour automatiquement, sans nécessiter d'intervention de l'utilisateur.
-                        Sécurité : Une PWA est servie en HTTPS, ce qui assure la sécurité des données.
-                        L'introduction du support des PWA dans Angular 5 a permis aux développeurs de créer facilement des applications web progressives, en bénéficiant de toutes ces fonctionnalités. -->                        
+Une PWA (Progressive Web App) est un type d'application web qui combine les avantages des applications web traditionnelles et des applications mobiles natives.
+</br>
+Voici les principales caractéristiques d'une PWA :
+</br>
+Accessibilité : Une PWA est accessible via un simple lien web, sans avoir besoin d'être installée sur l'appareil de l'utilisateur. </br>
+Expérience utilisateur améliorée : Une PWA offre une expérience utilisateur fluide et rapide, similaire à celle d'une application mobile native. </br>
+Hors-ligne : Une PWA peut fonctionner hors-ligne, grâce à l'utilisation de "service workers" qui mettent en cache les ressources nécessaires. </br>
+Notifications push : Une PWA peut envoyer des notifications push à l'utilisateur, comme une application mobile. </br>
+Ajout à l'écran d'accueil : L'utilisateur peut ajouter une PWA à l'écran d'accueil de son appareil, comme une application mobile. </br>
+Mise à jour automatique : Une PWA se met à jour automatiquement, sans nécessiter d'intervention de l'utilisateur. </br>
+Sécurité : Une PWA est servie en HTTPS, ce qui assure la sécurité des données. </br>
+L'introduction du support des PWA dans Angular 5 a permis aux développeurs de créer facilement des applications web progressives, en bénéficiant de toutes ces fonctionnalités. -->                        
                     </aside>
                 </section>
                 <section class="inner-section">
@@ -273,14 +271,13 @@ export class ObservableExampleComponent {
                     <p>Officialisation d'Angular Material basé sur les versions d'Angular</p>
                     <img src="./assets/material_v5.png" alt="Angular Material" style="height:700px;width:auto" />
                     <aside class="notes">
-                        "Et puis, y’a Angular Material. Un peu comme le petit frère de Bootstrap, mais pour Angular."
-                        "C’est beau, c’est propre, et ça te fait gagner un temps fou."
-                        "Mais attention, c’est pas juste du CSS. C’est une vraie bibliothèque de composants qui respecte les principes du Material Design."
-                        "Et ça, c’est pas rien !"
-
-                        En réalité, il existait déjà dans la version 2, en développement, mais la version 4 a marqué une étape importante dans son évolution et son adoption par la communauté Angular.
-Depuis la version 4, Angular Material est devenu une bibliothèque mature et largement utilisée par les développeurs Angular pour construire des interfaces utilisateur conformes au Material Design.
-Donc pour résumer, Angular Material a bien été introduit dès la version 2 d'Angular, mais la version 4 a représenté une étape clé dans son développement et son adoption.
+"Et bien sûr, y’a Angular Material. Pour vulgariser, c'est un peu comme le petit frère de Bootstrap, mais pour Angular.
+C’est beau, c’est propre, et ça te fait gagner un temps fou." </br>
+"Mais attention, c’est pas juste du CSS. C’est une vraie bibliothèque de composants qui respecte les principes du Material Design." </br>
+"Et ça, c’est pas rien !"
+</br>
+Bon, en réalité, il existait déjà en développement dans la version 2, mais la version 4 a marqué une étape importante dans son évolution et son adoption par la communauté Angular.
+// Donc pour résumer, Angular Material a bien été introduit dès la version 2 d'Angular, mais la version 4 a représenté une étape clé dans son développement et son adoption.
                     </aside>
                 </section>
             </section>
@@ -289,27 +286,20 @@ Donc pour résumer, Angular Material a bien été introduit dès la version 2 d'
                 <section class="inner-section">
                     <h3>Angular 9 à 12 : L'ère Ivy</h3>
                     <aside class="notes">
-                        "Et là, on se dit : 'OK, on a un framework qui commence à sacrément ressembler à qqchose.'"
+                        "C'est à partir de là qu'on se dit : 'OK, on a un framework qui commence à sacrément ressembler à qqchose.'"
                     </aside>
                 </section>
                 <section class="inner-section">
                     <h3>Ivy, un moteur de rendu révolutionnaire</h3>
                     <p>Optimisation des performances et de la taille des bundles</p>
                     <aside class="notes">
-                        "Et là, bam, Angular 9. Ivy arrive."
-
-"C’est un nouveau moteur de rendu. Mais attention, ça change tout… sans rien casser."
-"Concrètement, Ivy rend le framework plus rapide, plus léger, plus flexible. Tu peux compiler juste ce dont t’as besoin. Et ça ouvre la porte à des features plus modernes derrière."
+"Et bam avec Angular 9, Ivy arrive pour remplacer l'AOT (Ahead of Time)."
+</br>
+"C’est un nouveau moteur de rendu. Mais attention, ça change tout… sans rien casser.
+Concrètement, Ivy rend le framework plus rapide (tree-shaking), plus léger, plus flexible. Tu peux compiler juste ce dont t’as besoin. Et ça ouvre la porte à des features plus modernes derrière." </br>
 "Sur certains projets, on a vu des bundles réduire de 30 à 40%, juste avec Ivy."
-
-(blague)
-
-"C’est un peu comme si t’installais un nouveau moteur dans ta voiture, sans avoir besoin de racheter les roues."
-
-<!-- Remplace AOT (Ahead Of Time)
-Réduction de la taille des bundles => build seulement les parties nécessaires
-Amélioration de la vitesse de compilation => arbres de rendu plus légers (tree-shaking)
-Amélioration de la gestion des erreurs => messages d'erreur plus clairs et plus précis notamment lorss du préchargement
+<!--
+Amélioration de la gestion des erreurs => messages d'erreur plus clairs et plus précis notamment lors du préchargement
 -->
                     </aside>
                 </section>
@@ -326,13 +316,9 @@ Amélioration de la gestion des erreurs => messages d'erreur plus clairs et plus
                     <h3>Flexibilité, modularité et performance</h3>
                     <p>Standalone Components, Federated Modules et Standalone Directives</p>
                     <aside class="notes">
-"Angular continue à évoluer. Et là, on entre dans une nouvelle ère."
-
-"Fini les NgModules ? Presque."
-
-(montre un exemple simple de standalone component)
-
-"Aujourd’hui, tu peux créer un composant Angular sans avoir à déclarer un module. C’est plus simple, plus clair, plus rapide."
+"Angular continue d'évoluer. On entre dans une nouvelle ère, l'ère moderne." </br>
+"Fini les NgModules ? Presque." </br>
+"Aujourd’hui, on peut créer un composant Angular sans avoir à déclarer un module. C’est plus simple, plus clair, plus rapide. Bon, dans la pratique; comme on va le voir, ça permet surtout d'alléger l'architecture de l'application et de la rendre plus maintenable." </br>
                    </aside>
                 </section>
                 <section class="inner-section">
@@ -366,18 +352,18 @@ my-app/
 └── package.json
                     </code></pre>
                     <aside class="notes">
-1 - Application principale (app/) :
-Contient le composant racine, le module principal et le routage de l'application.
-Utilise le "Module Federation Plugin" pour charger dynamiquement les modules fédérés.
-2 - Module de Produits (products/) :
-Contient les composants et services liés à la gestion des produits.
-Les composants sont définis comme des Standalone Components.
-Le module et le routage sont encapsulés dans ce dossier.
-3 - Module de Commandes (orders/) :
-Contient les composants et services liés à la gestion des commandes.
-Les composants sont également définis comme des Standalone Components.
-Le module et le routage sont encapsulés dans ce dossier.
-4 - Configuration Webpack (webpack.config.js) :
+1 - Application principale (app/) : </br>
+Contient le composant racine, le module principal et le routage de l'application. </br>
+Utilise le "Module Federation Plugin" pour charger dynamiquement les modules fédérés. </br>
+2 - Module de Produits (products/) : </br>
+Contient les composants et services liés à la gestion des produits. </br>
+Les composants sont définis comme des Standalone Components. </br>
+Le module et le routage sont encapsulés dans ce dossier. </br>
+3 - Module de Commandes (orders/) : </br>
+Contient les composants et services liés à la gestion des commandes. </br>
+Les composants sont également définis comme des Standalone Components. </br>
+Le module et le routage sont encapsulés dans ce dossier. </br>
+4 - Configuration Webpack (webpack.config.js) : </br>
 Contient la configuration du "Module Federation Plugin" pour permettre le chargement dynamique des modules fédérés.  
                     </aside>
                 </section>
@@ -390,10 +376,11 @@ Contient la configuration du "Module Federation Plugin" pour permettre le charge
                         </ul>
                     </div>
                     <aside class="notes">
-"Et puis y’a Signals. Une nouvelle manière de gérer la réactivité, inspirée du monde de la programmation réactive… mais plus lisible, plus intuitive."
-"Et pour ceux qui ont déjà utilisé React, vous allez adorer. C’est un peu comme si Angular avait décidé de prendre un café avec React.""
-"Et puis, y’a defer(). C’est un peu comme un 'setTimeout' pour tes appels API. Tu peux dire à Angular : 'Hé, attends un peu avant de charger ça.'"
-"Et Angular te dit : 'Pas de souci, je vais te le faire.'"
+"Et puis débarque le principe des Signals. Une nouvelle manière de gérer la réactivité, inspirée du monde de la programmation réactive… mais plus lisible, plus intuitive.
+Pour les quelques fans de React qui ont eu le courage de venir à cette conf, vous n'êtes pas perdu avec ces principes (en même temps, on vient de parler de meilleure réactivité). C’est un peu comme si Angular avait décidé de prendre un café avec React." </br>
+"Il y’a ayssi defer(). C’est un peu comme un 'setTimeout' pour tes appels API mais toujours pareil, dans un principe de meilleure gestion de la réactivité. 
+Tu peux dire à Angular : 'Hé, attends un peu avant de charger ça.' Et Angular te dit : 'Pas de souci, je vais attendre, tu m'préviens et je lance ton appel quand t'es ok.'" </br>
+"Vous allez me dire, 'Ben ils sont où les exemples ?!' Pas d'inquiétudes, je vous détaille tout ça dans qq minutes dans les bonnes pratiques"
                     </aside>
                 </section>
             </section>
@@ -408,8 +395,7 @@ Contient la configuration du "Module Federation Plugin" pour permettre le charge
                     <div class="cv">
                         <div class="item">
                             <h3>Structural Control Flow Syntax</h3>
-                            <pre><code class="language-typescript">
-@if (user.isLoggedIn) {
+                            <pre><code class="language-typescript" data-line-numbers="1-5|7-9|11-13">@if (user.isLoggedIn) {
     &lt;p&gt;Bienvenue, {{ user.name }} !&lt;/p&gt;
 } @else {
     &lt;p&gt;Veuillez vous connecter.&lt;/p&gt;
@@ -431,15 +417,14 @@ Contient la configuration du "Module Federation Plugin" pour permettre le charge
                     <div class="cv">
                         <div class="item">
                             <h3>Standalone Components</h3>
-                            <pre><code class="language-typescript">
-import { Component } from '@angular/core';
+                            <pre><code class="language-typescript" data-line-numbers="5-10">import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-standalone',
-    standalone: true,
     template: '&lt;h1&gt;Standalone Component&lt;/h1&gt;'
+    standalone: true,
     imports: [CommonModule, RouterModule]
 })
 export class StandaloneComponent {
@@ -456,8 +441,7 @@ export class StandaloneComponent {
                     <div class="cv">
                         <div class="item">
                             <h3>Typed Forms</h3>
-                            <pre><code class="language-typescript">
-import { Component } from '@angular/core';
+                            <pre><code class="language-typescript" data-line-numbers="4-8|14|17-21,26-27">import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 interface User {
@@ -496,8 +480,7 @@ export class UserFormComponent {
                     <div class="cv">
                         <div class="item">
                             <h3>Dependency Injection</h3>
-                            <pre><code class="language-typescript">
-import { Injectable } from '@angular/core';
+                            <pre><code class="language-typescript">import { Injectable } from '@angular/core';
 
 @Injectable({
     providedIn: 'root'
@@ -583,6 +566,9 @@ import { userAuthSignal, logout } from '@state/user.state';
         @if (userAuthSignal().isAuthenticated) {
             <span>Welcome, {{ userAuthSignal().user.name }}!</span>
             <button (click)="handleLogout()">Logout</button>
+        } @else {
+            <span>Please log in.</span>
+            <button (click)="handleLogin({ name: 'John Doe' })">Login</button>
         }
     </nav>
     `,
@@ -592,6 +578,10 @@ export class LinkedSignalsComponent {
 
     handleLogout() {
         logout();
+    }
+
+    handleLogin(user: any) {
+        login(user);
     }
 }
                                     </code></pre>
@@ -656,6 +646,20 @@ export class DataFetcherComponent {
                             </div>
                         </div>
                     </div>
+                    <aside class="notes">
+L'avantage de defer() est qu'il permet de retarder l'exécution d'une opération jusqu'à ce qu'elle soit réellement nécessaire. Cela peut être utile pour optimiser les performances de votre application Angular, en évitant d'exécuter des opérations inutiles.
+Il est important de noter que defer() ne remplace pas setTimeout(), mais il offre une alternative plus puissante et flexible pour gérer l'asynchronisme dans Angular.
+La principale différence réside dans la façon dont ils gèrent l'exécution asynchrone. </br>
+- Différence de comportement:
+setTimeout() planifie l'exécution d'une fonction après un délai spécifié, mais cette fonction est exécutée dans le contexte de l'événement principal (le thread principal).
+defer() crée une nouvelle Observable qui sera exécutée de manière différée, c'est-à-dire que l'exécution sera retardée jusqu'à ce que la Observable soit souscrite. </br>
+- Différence de gestion des erreurs:
+Avec setTimeout(), les erreurs éventuelles sont propagées dans le flux d'exécution principal, ce qui peut entraîner des problèmes dans votre application.
+Avec defer(), les erreurs sont gérées dans le contexte de l'Observable, ce qui permet une meilleure gestion des erreurs et une séparation des préoccupations. </br>
+- Différence de composition:
+setTimeout() est une fonction native de JavaScript, tandis que defer() fait partie de la bibliothèque RxJS, ce qui permet une meilleure intégration avec les opérateurs RxJS et une meilleure composabilité. </br>
+En résumé, defer() offre une meilleure gestion de l'asynchronisme, une meilleure gestion des erreurs et une meilleure intégration avec les concepts réactifs d'Angular, par rapport à l'utilisation de setTimeout() seul.
+                    </aside>
                 </section>
             </section>
 
@@ -663,13 +667,19 @@ export class DataFetcherComponent {
             <section>
                 <section class="inner-section">
                     <h3>Conclusion</h3>
-                    <p>Angular a parcouru un long chemin depuis ses débuts, et il continue d'évoluer pour répondre aux besoins des développeurs modernes.</p>
-                    <p>Une écoute concrète et permanente de la communauté</p>
                     <p>Quel avenir pour le framework ?</p> 
-                        <!-- zone.js bientôt abandonné -->
-                        <!-- des structures plus légères et plus réactives avec les signaux et les standalones components -->
-                        <!-- un rapprochement toujours plus concret de ReactJs -->
-                    <p>Merci de votre attention !</p>
+                    
+                    <aside class="notes">
+                        <p>Angular a parcouru un long chemin depuis ses débuts, et il continue d'évoluer pour répondre aux besoins des développeurs modernes.</p>
+                        <p>Une écoute concrète et permanente de la communauté</p>
+                        <p>zone.js bientôt abandonné</p>
+                        <p>des structures plus légères et plus réactives avec les signaux et les standalones components</p>
+                        <p>un rapprochement toujours plus concret de ReactJs</p>
+                        <br />
+                        <p>Et pour ceux qui se le demandent Angular est toujours là, solide comme un rocher, prêt à dévaler de nouveaux tunnels.</p>
+                        <p>Alors, que vous soyez un développeur Angular chevronné ou un novice curieux et même si le chemin peut être semé d'embûches, chaque ligne de code que vous écrivez est une étape de plus dans cette aventure passionnante qu'est Angular.</p>
+                        <p>Merci de votre attention !</p>
+                    </aside>
                 </section>
             </section>
         </div><!-- slides -->
