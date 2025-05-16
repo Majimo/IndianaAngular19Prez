@@ -480,7 +480,8 @@ export class UserFormComponent {
                     <div class="cv">
                         <div class="item">
                             <h3>Dependency Injection</h3>
-                            <pre><code class="language-typescript">import { Injectable } from '@angular/core';
+                            <pre><code class="language-typescript" data-line-numbers="1,4-6,13,15,22">//monservice.service.ts
+import { Injectable } from '@angular/core';
 
 @Injectable({
     providedIn: 'root'
@@ -491,8 +492,9 @@ export class MyService {
     }
 }
 
-
+// moncomposant.component.ts
 import { Component } from '@angular/core';
+import { MyService } from './monservice.service';
 
 @Component({
     selector: 'app-dependency-injection',
@@ -512,8 +514,7 @@ export class DependencyInjectionComponent {
                     <div class="cv">
                         <div class="item">
                             <h3>Signals</h3>
-                            <pre><code class="language-typescript">
-import { Component, signal } from '@angular/core';
+                            <pre><code class="language-typescript" data-line-numbers="6-7,11-14">import { Component, signal } from '@angular/core';
 
 @Component({
     selector: 'app-signals',
@@ -539,8 +540,7 @@ export class SignalsComponent {
                             <h3>Shared Linked Signals</h3>
                             <div class="ch">
                                 <div class="item">
-                                    <pre><code class="language-typescript">
-// user.state.ts
+                                    <pre><code class="language-typescript">// user.state.ts
 import { signal } from '@angular/core';
 
 export const userAuthSignal = signal({ isAuthenticated: false, user: null });
@@ -555,8 +555,7 @@ export function logout() {
                                     </code></pre>
                                 </div>
                                 <div class="item">
-                                    <pre><code class="language-typescript">
-// app.component.ts
+                                    <pre><code class="language-typescript" data-line-numbers="2,13,19,22,26">// app.component.ts
 import { userAuthSignal, logout } from '@state/user.state';
 
 @Component({
@@ -597,8 +596,7 @@ export class LinkedSignalsComponent {
                             <h3>defer()</h3>
                             <div class="ch">
                                 <div class="item">
-                                    <pre><code class="language-typescript">
-// data.service.ts
+                                    <pre><code class="language-typescript" data-line-numbers="10-12">// data.service.ts
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 import { delay } from 'rxjs/operators';
@@ -610,13 +608,11 @@ export class DataService {
     fetchData() {
         return of('Données récupérées !').pipe(delay(2000));
     }
-}
-                                        
+}       
                                     </code></pre>
                                 </div>
                                 <div class="item">
-                                    <pre><code class="language-typescript">
-// data-fetcher.component.ts
+                                    <pre><code class="language-typescript" data-line-numbers="3,9-12,21-23">// data-fetcher.component.ts
 import { Component } from '@angular/core';
 import { defer } from 'rxjs';
 import { DataService } from './data.service';
