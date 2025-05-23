@@ -44,7 +44,7 @@ h1, h2 {
     background: none !important;
     align-items: flex-end;
     position: absolute;
-    top: -6em;
+    top: -10em;
     right: 0;
     width: 25em;
     color: #fff !important;
@@ -72,4 +72,10 @@ h1, h2 {
 .three-quarter {
     height: 75%;
     width: auto;
+}
+
+.var-highlight {
+    padding: 1px 3px;
+    background: #444;
+    color: #fff;
 }

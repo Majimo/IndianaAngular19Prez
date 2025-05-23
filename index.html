@@ -150,11 +150,11 @@ export class AppComponent {
 "Entre les versions 4 et 8, on a de la stabilité, des évolutions maîtrisées. On améliore le CLI, on simplifie la gestion des dépendances, on booste les perfs.
 C’est l’époque où on commence à faire confiance au framework. On se dit : 'OK, c’est pas React, mais au moins ça bouge pas toutes les deux semaines.'" </br>
 "Et en vrai, ça fait du bien."
+"Je vous propose de faire un petit tour d'horizon des évolutions majeures de cette période."
                     </aside>
                 </section>
                 <section class="inner-section">
                     <h3>Les modules avec la directive @NgModule</h3>
-                    <p>La directive permet d'importer les modules de manière plus ciblée, uniquement dans les modules qui en ont besoin.</p>
                     <pre><code data-line-numbers="1,5-10">import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LazyLoadedComponent } from './lazy-loaded.component';
@@ -167,6 +167,11 @@ import { LazyLoadedComponent } from './lazy-loaded.component';
 })
 export class LazyLoadedModule { }
                     </code></pre>
+                    <aside class="notes">
+<p>"Commençons par la directive @NgModule(), une révolution dans l'architecture. On importe des modules de manière plus ciblée, et en prime, ça permet également de délimiter les composants."</p>
+<p>"On peut ranger nos composants, les organiser, et surtout, on peut les partager. Plus besoin d'écrire 10 fois les mêmes choses." </p>
+"Et ça, c’est pas juste pour faire joli. Ça améliore les perfs, ça réduit le temps de chargement initial." </br>
+                    </aside>
                 </section>
                 <section class="inner-section">
                     <h3>Le lazy loading</h3>
@@ -202,6 +207,10 @@ import { AppRoutingModule } from './app-routing.module';
 })
 export class AppModule { }
                     </code></pre>
+                    <aside class="notes">
+"Arrive aussi le lazy loading. Pour faire simple, c’est un peu comme si on avait une grande armoire dans notre app. On met tout ce qu'on a dedans, mais rangé par rayon, et dans chaque rayon on prend que ce qu’on veut, quand on en a besoin." </br>
+"Et vous avez compris une fois de plus, c’est pas juste pour faire joli. Ça améliore les perfs, ça réduit le temps de chargement initial." </br>
+                    </aside>
                 </section>
                 <section class="inner-section">
                     <h3>Les Observables</h3>
@@ -231,9 +240,17 @@ export class ObservableExampleComponent {
     }
 }
                    </code></pre>
+                   <aside class="notes">
+<p>"C'est avec ces versions que débarquent également les Observables. Clairmeent, c’est le Saint Graal du typescript. (Oui, je vous vois dans l'fond là, me jugez pas, je vous explique pourquoi).</p>
+<p>Tu peux écouter des événements, gérer des flux de données, tout ça sans te prendre la tête." </p>
+<p>"En plus, c’est super simple à utiliser. Tu crées un Observable, tu t’abonnes, et hop, tu reçois les données." </p>
+<p>"Et pour ceux qui se disent 'Mais pourquoi pas des Promises ?' Eh bien, les Observables sont plus puissants. Tu peux annuler, combiner, transformer les flux de données. C’est comme si tu avais un super pouvoir." </p>
+<p>"Et ça, vous commencez à avoir l'habitude... c’est pas juste pour faire joli. Ça améliore les perfs... et... ça réduit le temps de chargement initial." </p>
+                    </aside>
+                   </aside>
                 </section>
                 <section class="inner-section">
-                    <h3>De grandes évolutions dans la CLI d'Angular</h3>
+                    <h3>Quelques autres grandes évolutions de 4 à 7:</h3>
                     <p>Angular 4</p>
                     <ul>
                         <li>Possibilité de créer des guards, des resolvers, des composants plus spécifiques</li>
@@ -274,10 +291,9 @@ L'introduction du support des PWA dans Angular 5 a permis aux développeurs de c
 "Et bien sûr, y’a Angular Material. Pour vulgariser, c'est un peu comme le petit frère de Bootstrap, mais pour Angular.
 C’est beau, c’est propre, et ça te fait gagner un temps fou." </br>
 "Mais attention, c’est pas juste du CSS. C’est une vraie bibliothèque de composants qui respecte les principes du Material Design." </br>
-"Et ça, c’est pas rien !"
+"Vous l'avez donc compris, Material Design pour de l'Angular... Fuuuuusssssiiioooonnnnn ! Angular Material !"
 </br>
-Bon, en réalité, il existait déjà en développement dans la version 2, mais la version 4 a marqué une étape importante dans son évolution et son adoption par la communauté Angular.
-// Donc pour résumer, Angular Material a bien été introduit dès la version 2 d'Angular, mais la version 4 a représenté une étape clé dans son développement et son adoption.
+Bon, en réalité, je vous voir venir les initiés, je vous ai un peu menti. Il existait déjà une version de Material en développement dans la version 2, mais la version 4 a marqué une étape importante dans son évolution et son adoption par la communauté Angular. C'est pour ça qu'on parle souvent de la version 4 comme étant le début de l'ère d'Angular Material.
                     </aside>
                 </section>
             </section>
@@ -295,12 +311,11 @@ Bon, en réalité, il existait déjà en développement dans la version 2, mais 
                     <aside class="notes">
 "Et bam avec Angular 9, Ivy arrive pour remplacer l'AOT (Ahead of Time)."
 </br>
-"C’est un nouveau moteur de rendu. Mais attention, ça change tout… sans rien casser.
+<p>"C’est un nouveau moteur de rendu. Mais attention, ça change tout… sans rien casser.
 Concrètement, Ivy rend le framework plus rapide (tree-shaking), plus léger, plus flexible. Tu peux compiler juste ce dont t’as besoin. Et ça ouvre la porte à des features plus modernes derrière." </br>
-"Sur certains projets, on a vu des bundles réduire de 30 à 40%, juste avec Ivy."
-<!--
-Amélioration de la gestion des erreurs => messages d'erreur plus clairs et plus précis notamment lors du préchargement
--->
+"Sur certains projets, on a vu des bundles réduire de 30 à 40%, juste avec Ivy."</p>
+<p>"La gestion des erreurs est également améliorée avec des messages plus clairs et plus précis."</p>
+<p>"Et, cerise sur le gâteau, Ivy est compatible avec les anciennes versions d'Angular. Donc pas de panique, y'a moyen d'adopter ce p'tit Gremlin sans tout casser. <br> (Gremin, moteur... vous l'avez ?!)"</p>
                     </aside>
                 </section>
                 <section class="inner-section">
@@ -390,11 +405,11 @@ Tu peux dire à Angular : 'Hé, attends un peu avant de charger ça.' Et Angular
                 <section class="inner-section">
                     <h3>Les bonnes pratiques actuelles pour donner un bon coup de fouet à vos applications</h3>
                 </section>
-                <!-- Structural Control Flow (Angular 14) -->
                 <section class="inner-section">
                     <div class="cv">
                         <div class="item">
                             <h3>Structural Control Flow Syntax</h3>
+                            <p>Fini les directives <span class="var-highlight">*ngIf</span>, <span class="var-highlight">*ngFor</span>, <span class="var-highlight">*ngSwitch</span></p>
                             <pre><code class="language-typescript" data-line-numbers="1-5|7-9|11-13">@if (user.isLoggedIn) {
     &lt;p&gt;Bienvenue, {{ user.name }} !&lt;/p&gt;
 } @else {
@@ -411,8 +426,8 @@ Tu peux dire à Angular : 'Hé, attends un peu avant de charger ça.' Et Angular
                             </code></pre>
                         </div>
                     </div>
+                    <aside class="notes">Structural Control Flow (Angular 14)</aside>
                 </section>
-                <!-- Standalone Components (Angular 14) -->
                 <section class="inner-section">
                     <div class="cv">
                         <div class="item">
@@ -435,8 +450,8 @@ export class StandaloneComponent {
                             </code></pre>
                         </div>
                     </div>
+                    <aside class="notes">Standalone Components (Angular 14)</aside>
                 </section>
-                <!-- Typed Forms (Angular 14) -->
                 <section class="inner-section">
                     <div class="cv">
                         <div class="item">
@@ -474,8 +489,8 @@ export class UserFormComponent {
                             </code></pre>
                         </div>
                     </div>
+                    <aside class="notes">Typed Forms (Angular 14)</aside>
                 </section>
-                <!-- Dependency Injection -->
                 <section class="inner-section">
                     <div class="cv">
                         <div class="item">
@@ -509,7 +524,6 @@ export class DependencyInjectionComponent {
                         </div>
                     </div>
                 </section>
-                <!-- Signals (Angular 16) -->
                 <section class="inner-section">
                     <div class="cv">
                         <div class="item">
@@ -532,8 +546,8 @@ export class SignalsComponent {
                             </code></pre>
                         </div>
                     </div>
+                    <aside class="notes">Signals (Angular 16)</aside>
                 </section>
-                <!-- Signals with linkedSignal (l'effet est répercuté directement depuis le signal Angular v20) -->
                 <section class="inner-section">
                     <div class="cv">
                         <div class="item">
@@ -588,8 +602,8 @@ export class LinkedSignalsComponent {
                             </div>
                         </div>
                     </div>
+                    <aside class="notes">Signals with linkedSignal (l'effet est répercuté directement depuis le signal Angular v20)</aside>
                 </section>
-                <!-- defer() (Angular 16) -->
                 <section class="inner-section">
                     <div class="cv">
                         <div class="item">
@@ -643,6 +657,7 @@ export class DataFetcherComponent {
                         </div>
                     </div>
                     <aside class="notes">
+defer() (Angular 16)
 L'avantage de defer() est qu'il permet de retarder l'exécution d'une opération jusqu'à ce qu'elle soit réellement nécessaire. Cela peut être utile pour optimiser les performances de votre application Angular, en évitant d'exécuter des opérations inutiles.
 Il est important de noter que defer() ne remplace pas setTimeout(), mais il offre une alternative plus puissante et flexible pour gérer l'asynchronisme dans Angular.
 La principale différence réside dans la façon dont ils gèrent l'exécution asynchrone. </br>
