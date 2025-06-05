@@ -79,3 +79,35 @@ h1, h2 {
     background: #444;
     color: #fff;
 }
+
+.mes-infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mon-nom {
+    font-family: Fedora, sans-serif;
+    font-size: 2.5em;
+    color: #ef1757;
+    margin-bottom: 0.5em;
+}
+
+.twitter {
+    text-decoration: line-through;
+}
+
+.max {
+    color: #000;
+    font-weight: bold;
+}
+
+.digital {
+    color: #ee2f33;
+    font-weight: bold;
+}
+
+.serv {
+    color: rgb(240, 101, 41);
+    font-weight: bold;
+}
