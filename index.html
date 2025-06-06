@@ -29,7 +29,7 @@
                 </div>
                 <aside class="notes">
 "Alors... est-ce qu’il y a des gens ici qui ont déjà mis les mains dans du AngularJS ?" </br>
-(Pause dramatique, regarder les réactions) </br>
+<i>(Pause dramatique, regarder les réactions)</i> </br>
 "Ok… j’espère que vous avez quitter ces projets depuis." </br>
 "Aujourd’hui, on va retracer l’histoire d’Angular. Un framework qui a connu des hauts, des bas, des refontes, des révolutions... et qui est toujours là, solide comme un rocher qui déboule dans un tunnel — ou comme une dépendance dans ton package.json."
 <p>Alors, enfilons notre chapeau d'archéologue du code, et partons à la découverte des trésors cachés d'Angular !</p>
@@ -42,7 +42,7 @@
                     <h3>Angular, un framework front-end majeur depuis près de 10 ans</h3>
                     <aside class="notes">
 "Angular, c’est plus qu’un simple framework. C’est une saga. 10 ans d’évolution, de paris techniques, de frustrations parfois… mais aussi de très belles idées." </br>
-(regarde la salle) </br>
+<i>(regarde la salle)</i> </br>
 "Et si vous êtes ici, c’est peut-être parce que vous avez une app Angular en prod… que vous aimez ça… ou que vous êtes coincés avec."
                     </aside>
                 </section>
@@ -57,10 +57,9 @@
 "Mais ne vous inquiétez pas, je suis là pour vous aider à sortir de cette jungle !"
 </br>
 "L’objectif de ce talk ? Vous raconter cette histoire, mais surtout : </br>
-Comprendre les grandes étapes,
-Découvrir les nouveautés clés,
-Et bien sûr, apprendre à écrire du code Angular qui soit à la fois performant et agréable à maintenir."
-</br>
+Comprendre les grandes étapes, </br>
+Découvrir les nouveautés clés, </br>
+Et bien sûr, apprendre à écrire du code Angular qui soit à la fois performant et agréable à maintenir." </br>
 "Et je vous le dis tout de suite : ce sera une aventure nostalgique, technique mais passionnante, comme un bon vieux film d’Indiana Jones !"
                     </aside>
                 </section>
@@ -73,8 +72,9 @@ Et bien sûr, apprendre à écrire du code Angular qui soit à la fois performan
                     <h3>Les débuts des frameworks front-end</h3>
                     <img src="./assets/apes_2001.gif" alt="2001 l'odyssée de l'espace" style="height:550px;width:auto" />
                     <aside class="notes">
-                        "On va commencer par le début. Vous savez, à l’époque où on faisait du JavaScript pur, sans framework, sans bibliothèque, juste avec des alertes et des console.log." </br>
-                        "C’était l’âge d’or du JavaScript, mais aussi l’âge de pierre du développement web. On empilait les scripts, on bricolait des trucs, et on espérait que ça marche."
+"On va commencer par le début du début. Vous savez, à la bonne vieille époque où on faisait du JavaScript pur, sans framework, sans bibliothèque, juste avec des alertes et des console.log." </br>
+"Hein ? On continue à faire ça ?! Oui, ben comme quoi, on a gardé des choses de cette époque..." </br>
+"C’était l’âge d’or du JavaScript, mais aussi l’âge de pierre du développement web. On empilait les scripts, on bricolait des trucs, et on espérait que ça marche."
                     </aside>
                 </section>
                 <section class="inner-section">
@@ -91,7 +91,7 @@ $(document).ready(function() {
 "Flashback. On est en 2010. Le front, c’est la jungle. 
 Et là, arrive un super outil pour manipuler notre DOM : jQuery !
 Alors bon... Très vite on bricole, on empile les scripts, on prie pour que le DOM nous obéisse.
-Et ça se passe pas toujours comme on veut..."
+Et... pafois ça passe, souvent, ça se passe pas toujours comme on veut..."
                     </aside>
                 </section>
                 <section class="inner-section">
@@ -133,7 +133,7 @@ export class AppComponent {
                     <aside class="notes">
 "Mais au bout de quelques années, c’est aussi un peu... la galère. Des scopes partout, du code spaghetti, difficile à maintenir. Le rêve tourne au cauchemar." </br>
 "Et alors là, Google fait un truc radical : ils disent… ‘allez, on s'en fiche de tout ce qu'on a capitalisé, on recommence tout’."
-(pause) </br>
+<i>(pause)</i> </br>
 "Angular 2, c’est pas une mise à jour. C’est un nouveau monde. Fini $scope, bonjour TypeScript. C’est plus rapide, plus propre, mais aussi… plus complexe."
 </br>
 "Un peu comme passer de Mario Kart à Dark Souls."
@@ -153,7 +153,7 @@ export class AppComponent {
                     <img src="./assets/picsou_gold.gif" alt="Picsou dans sa piscine de pièces d'or" style="height:500px;width:auto" />
                     <aside class="notes">
 "Après ce reboot un peu violent, Angular trouve enfin son rythme." </br>
-"Entre les versions 4 et 8, on a de la stabilité, des évolutions maîtrisées. On améliore le CLI, on simplifie la gestion des dépendances, on booste les perfs.
+"Entre les versions 4 et 8, on a de la stabilité, des évolutions maîtrisées. On améliore le CLI, on simplifie la gestion des dépendances, on booste les perfs. </br>
 C’est l’époque où on commence à faire confiance au framework. On se dit : 'OK, c’est pas React, mais au moins ça bouge pas toutes les deux semaines.'" </br>
 "Et en vrai, ça fait du bien."
 "Je vous propose de faire un petit tour d'horizon des évolutions majeures de cette période."
@@ -247,11 +247,11 @@ export class ObservableExampleComponent {
 }
                    </code></pre>
                    <aside class="notes">
-<p>"C'est avec ces versions que débarquent également les Observables. Clairmeent, c’est le Saint Graal du typescript. (Oui, je vous vois dans l'fond là, me jugez pas, je vous explique pourquoi).</p>
+<p>"C'est avec ces versions que débarquent également les Observables. Clairement, c’est le Saint Graal du typescript. <i>(Oui, je vous vois dans l'fond là, me jugez pas, je vous explique pourquoi)</i>.</p>
 <p>Tu peux écouter des événements, gérer des flux de données, tout ça sans te prendre la tête." </p>
 <p>"En plus, c’est super simple à utiliser. Tu crées un Observable, tu t’abonnes, et hop, tu reçois les données." </p>
 <p>"Et pour ceux qui se disent 'Mais pourquoi pas des Promises ?' Eh bien, les Observables sont plus puissants. Tu peux annuler, combiner, transformer les flux de données. C’est comme si tu avais un super pouvoir." </p>
-<p>"Et ça, vous commencez à avoir l'habitude... c’est pas juste pour faire joli. Ça améliore les perfs... et... ça réduit le temps de chargement initial." </p>
+<p>"Et comme un grand pouvoir implique de grandes responsabilités... c’est pas juste pour faire joli. Ça améliore les perfs... et... ça réduit le temps de chargement initial." </p>
                     </aside>
                    </aside>
                 </section>
@@ -275,8 +275,7 @@ export class ObservableExampleComponent {
                         <li>Mise à jour globale des dépendances (`ng update`)</li>
                     </ul>
                     <aside class="notes">
-Une PWA (Progressive Web App) est un type d'application web qui combine les avantages des applications web traditionnelles et des applications mobiles natives.
-</br>
+<p style="color: red">Une PWA (Progressive Web App) est un type d'application web qui combine les avantages des applications web traditionnelles et des applications mobiles natives.</p>
 Voici les principales caractéristiques d'une PWA :
 </br>
 Accessibilité : Une PWA est accessible via un simple lien web, sans avoir besoin d'être installée sur l'appareil de l'utilisateur. </br>
@@ -297,9 +296,9 @@ L'introduction du support des PWA dans Angular 5 a permis aux développeurs de c
 "Et bien sûr, y’a Angular Material. Pour vulgariser, c'est un peu comme le petit frère de Bootstrap, mais pour Angular.
 C’est beau, c’est propre, et ça te fait gagner un temps fou." </br>
 "Mais attention, c’est pas juste du CSS. C’est une vraie bibliothèque de composants qui respecte les principes du Material Design." </br>
-"Vous l'avez donc compris, Material Design pour de l'Angular... Fuuuuusssssiiioooonnnnn ! Angular Material !"
+"Bon, donc pour ceux qui l'auraient toujours pas: Material Design + De l'Angular... <i>Fuuuuusssssiiioooonnnnn !</i> Angular Material !"
 </br>
-Bon, en réalité, je vous voir venir les initiés, je vous ai un peu menti. Il existait déjà une version de Material en développement dans la version 2, mais la version 4 a marqué une étape importante dans son évolution et son adoption par la communauté Angular. C'est pour ça qu'on parle souvent de la version 4 comme étant le début de l'ère d'Angular Material.
+Alors oui, en réalité, je vous voir venir les initiés, je vous ai un peu menti. Il existait déjà une version de Material en développement dans la version 2, mais la version 4 a marqué une étape importante dans son évolution et son adoption par la communauté Angular. C'est pour ça qu'on parle souvent de la version 4 comme étant le début de l'ère d'Angular Material.
                     </aside>
                 </section>
             </section>
@@ -318,8 +317,8 @@ Bon, en réalité, je vous voir venir les initiés, je vous ai un peu menti. Il 
                     <aside class="notes">
 "Et bam avec Angular 9, Ivy arrive pour remplacer l'AOT (Ahead of Time)."
 </br>
-<p>"C’est un nouveau moteur de rendu. Mais attention, ça change tout… sans rien casser.
-Concrètement, Ivy rend le framework plus rapide (tree-shaking), plus léger, plus flexible. Tu peux compiler juste ce dont t’as besoin. Et ça ouvre la porte à des features plus modernes derrière." </br>
+<p>"Rien à voir avec le personnage de Batman, Ivy, c’est un nouveau moteur de rendu. Mais attention, ça change tout… sans rien casser. </br>
+Concrètement, Ivy rend le framework plus rapide, plus léger, plus flexible. Tu peux compiler juste ce dont t’as besoin. Tout ça grâce au <span style="color:red">TREE-SHAKING</span>, une technologie qui s'occupe de trier pour vous le code mort, les if/else inutilisés, etc..." </br>
 "Sur certains projets, on a vu des bundles réduire de 30 à 40%, juste avec Ivy."</p>
 <p>"La gestion des erreurs est également améliorée avec des messages plus clairs et plus précis."</p>
 <p>"Et, cerise sur le gâteau, Ivy est compatible avec les anciennes versions d'Angular. Donc pas de panique, y'a moyen d'adopter ce p'tit Gremlin sans tout casser. <br> (Gremin, moteur... vous l'avez ?!)"</p>
@@ -337,9 +336,7 @@ Concrètement, Ivy rend le framework plus rapide (tree-shaking), plus léger, pl
                     <aside class="notes">
 "Dans cette dernière partie, on va voir comment Angular s'est modernisé pour répondre aux nouveaux enjeux du développement front-end : plus de flexibilité, une architecture modulaire, et des performances accrues. On va parler des Standalone Components, des modules fédérés et des nouvelles directives qui rendent Angular plus simple et plus puissant que jamais."
 "Angular continue d'évoluer. On entre dans une nouvelle ère, l'ère moderne." </br>
-"Fini les NgModules ? Presque." </br>
-"Aujourd’hui, on peut créer un composant Angular sans avoir à déclarer un module. C’est plus simple, plus clair, plus rapide. Bon, dans la pratique; comme on va le voir, ça permet surtout d'alléger l'architecture de l'application et de la rendre plus maintenable." </br>
-                   </aside>
+                    </aside>
                 </section>
                 <section class="inner-section">
                     <pre><code data-line-numbers="4-7|8-17|18-25|27">
@@ -372,6 +369,9 @@ my-app/
 └── package.json
                     </code></pre>
                     <aside class="notes">
+"Fini les NgModules ? Presque." </br>
+"Aujourd’hui, on peut créer un composant Angular sans avoir à déclarer un module. C’est plus simple, plus clair, plus rapide. Bon, dans la pratique; comme on va le voir, ça permet surtout d'alléger l'architecture de l'application et de la rendre plus maintenable." </br>
+ 
 1 - Application principale (app/) : </br>
 Contient le composant racine, le module principal et le routage de l'application. </br>
 Utilise le "Module Federation Plugin" pour charger dynamiquement les modules fédérés. </br>
@@ -384,7 +384,12 @@ Contient les composants et services liés à la gestion des commandes. </br>
 Les composants sont également définis comme des Standalone Components. </br>
 Le module et le routage sont encapsulés dans ce dossier. </br>
 4 - Configuration Webpack (webpack.config.js) : </br>
-Contient la configuration du "Module Federation Plugin" pour permettre le chargement dynamique des modules fédérés.  
+Contient la configuration du "Module Federation Plugin" pour permettre le chargement dynamique des modules fédérés. </br>
+
+5 - Fichier principal (main.ts) : </br>
+Point d'entrée de l'application, où le module principal est bootstrapé. </br>
+
+<p>Le Module Federation est une fonctionnalité de Webpack (introduite avec Webpack 5) qui permet de partager dynamiquement du code entre plusieurs applications à l’exécution, sans avoir besoin de tout recompiler ensemble. Dans le contexte Angular, cela permet de construire des applications micro-frontend où plusieurs équipes peuvent travailler sur des modules indépendants, déployés séparément.</p>
                     </aside>
                 </section>
                 <section class="inner-section">
@@ -396,7 +401,7 @@ Contient la configuration du "Module Federation Plugin" pour permettre le charge
                         </ul>
                     </div>
                     <aside class="notes">
-"Et puis débarque le principe des Signals. Une nouvelle manière de gérer la réactivité, inspirée du monde de la programmation réactive… mais plus lisible, plus intuitive.
+"Avec la version 16, on sent l'écoute de la communauté, c'est le débarquement du principe des Signals. Une nouvelle manière de gérer la réactivité, inspirée du monde de la programmation réactive… mais plus lisible, plus intuitive. </br>
 Pour les quelques fans de React qui ont eu le courage de venir à cette conf, vous n'êtes pas perdu avec ces principes (en même temps, on vient de parler de meilleure réactivité). C’est un peu comme si Angular avait décidé de prendre un café avec React." </br>
 "Il y’a ayssi defer(). C’est un peu comme un 'setTimeout' pour tes appels API mais toujours pareil, dans un principe de meilleure gestion de la réactivité. 
 Tu peux dire à Angular : 'Hé, attends un peu avant de charger ça.' Et Angular te dit : 'Pas de souci, je vais attendre, tu m'préviens et je lance ton appel quand t'es ok.'" </br>
@@ -691,12 +696,12 @@ En résumé, defer() offre une meilleure gestion de l'asynchronisme, une meilleu
                     <p>Quel avenir pour le framework ?</p> 
                     <img src="./assets/let_it_go.gif" alt="Let it go" style="height:500px;width:auto" />
                     <aside class="notes">
-                        <p>Angular a parcouru un long chemin depuis ses débuts, et il continue d'évoluer pour répondre aux besoins des développeurs modernes.</p>
-                        <p>Une écoute concrète et permanente de la communauté</p>
-                        <p>zone.js bientôt abandonné</p>
-                        <p>des structures plus légères et plus réactives avec les signaux et les standalones components</p>
-                        <p>un rapprochement toujours plus concret de ReactJs</p>
-                        <p>Un avenir prometteur pour Angular, avec des évolutions qui continueront à améliorer la productivité des développeurs et la performance des applications.</p>
+<p>Angular a parcouru un long chemin depuis ses débuts, et il continue d'évoluer pour répondre aux besoins des développeurs modernes.</p>
+<p>Avec l'introduction de nouvelles fonctionnalités comme les Standalone Components, les Signals et le lazy loading, Angular devient de plus en plus flexible et performant et surtout plus réactif.</p>
+<p>Google ne laisse pas son projet en plan et il y a une écoute concrète et permanente de la communauté. Ce qui permet au framework de continuer à rester présent dans le monde du développement.</p>
+<p>On note clairement un rapprochement toujours plus concret de React</p>
+<p>Un avenir prometteur pour Angular, avec des évolutions qui continueront à améliorer la productivité des développeurs et la performance des applications.</p>
+<p>Est-ce que l'on verra un abandon total de zone.js comme on le pressent depuis quelques temps ? Là, seul l'avenir nous le dira !</p>
                     </aside>
                 </section>
             </section>

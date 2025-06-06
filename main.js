@@ -13,3 +13,24 @@ deck.initialize({
   slideNumber: true,
   slideNumber: 'c',
 });
+
+// Attente que le plugin Notes soit bien prêt
+deck.on('ready', () => {
+  const originalOpen = window.open;
+
+  window.open = function (...args) {
+    const newWindow = originalOpen.apply(window, args);
+
+    const interval = setInterval(() => {
+      if (newWindow.document && newWindow.document.head) {
+        const link = newWindow.document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'notes.css'; // Chemin vers ton fichier CSS
+        newWindow.document.head.appendChild(link);
+        clearInterval(interval);
+      }
+    }, 100);
+
+    return newWindow;
+  };
+});
