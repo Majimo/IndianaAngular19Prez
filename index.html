@@ -79,8 +79,7 @@ Et bien sûr, apprendre à écrire du code Angular qui soit à la fois performan
                 </section>
                 <section class="inner-section">
                     <h3>jQuery et la jungle du web</h3>
-                    <!-- Un peu de code jQuery là -->
-                    <pre><code>
+                    <pre style="width:24%;"><code>
 $(document).ready(function() {
     $('#myButton').click(function() {
         alert('Button clicked!');
@@ -95,9 +94,8 @@ Et... pafois ça passe, souvent, ça se passe pas toujours comme on veut..."
                     </aside>
                 </section>
                 <section class="inner-section">
-                    <h4>AngularJS, un framework révolutionnaire qui aura marqué une génération de développeurs</h4>
-                    <!-- du code avec un hook angularjs -->
-                    <pre><code>
+                    <h3>AngularJS, un framework révolutionnaire qui aura marqué une génération de développeurs</h3>
+                    <pre style="width:35.5%;"><code>
 angular.module('myApp', [])
     .controller('MyController', function($scope) {
         $scope.greeting = 'Hello, World!';
@@ -114,10 +112,10 @@ angular.module('myApp', [])
                     <h3>Le passage difficile d'AngularJS à Angular 2</h3>
                     <div class="cv">
                         <div class="item">
-                            <h4>Un reboot complet, plus brutal que le Crâne de Cristal pour plus de performance et de modularité</h4>
+                            <p><strong>Un reboot complet, plus brutal que le Crâne de Cristal pour plus de performance et de modularité</strong></p>
                             </br>
                             <p>Plus de $scope, désormais on utilise Typescript</p>
-                            <pre><code data-line-numbers="1-3|4|8-10">import { Component } from '@angular/core';
+                            <pre style="width:30.5%;"><code data-line-numbers="1-3|4|8-10">import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-root',
@@ -132,11 +130,39 @@ export class AppComponent {
                     </div>
                     <aside class="notes">
 "Mais au bout de quelques années, c’est aussi un peu... la galère. Des scopes partout, du code spaghetti, difficile à maintenir. Le rêve tourne au cauchemar." </br>
-"Et alors là, Google fait un truc radical : ils disent… ‘allez, on s'en fiche de tout ce qu'on a capitalisé, on recommence tout’."
+"Et alors là, en 2016, Google fait un truc radical : ils disent… ‘allez, on s'en fiche de tout ce qu'on a capitalisé, on recommence tout’."
 <i>(pause)</i> </br>
 "Angular 2, c’est pas une mise à jour. C’est un nouveau monde. Fini $scope, bonjour TypeScript. C’est plus rapide, plus propre, mais aussi… plus complexe."
 </br>
 "Un peu comme passer de Mario Kart à Dark Souls."
+                    </aside>
+                </section>
+                <section class="inner-section">
+                    <h3>Avec Angular 2, débarque zone.js, pour mieux contrôler ton DOM</h3>
+                    <div class="cv">
+                        <p>Simplifier le déclenchement des changements d'état</p>
+                        <p>Intercepter tous les événements asynchrones de l'application</p>
+                        <p><span>Résultat :</span> Les développeurs n'ont pas besoin de gérer manuellement quand l'UI se met à jour</p>
+                    </div>
+                    <aside class="notes">
+<p>C'est donc avec Angular 2 qu'on voit apparaître zone.js</p>
+<p>Zone.js ça permet de gérer sans sourciller le changement d'état, le fameux Change Detection</p>
+<p>Angular utilise Zone.js comme une sorte de "patch" du navigateur : il intercepte tous les événements async (clicks, timers, Promises, etc.).</p>
+<p>Chaque fois qu’un événement async survient, Angular relance automatiquement la détection de changements.</p>
+<p>Résultat : développeurs n’ont pas besoin de gérer manuellement quand l’UI doit se mettre à jour.</p>
+                    </aside>
+                </section>
+                <section class="inner-section">
+                    <h3>Ainsi que le bundler officiel d'Angular : Webpack</h3>
+                    <div class="cv">
+                        <p>Compiler, minifier, et regrouper les fichiers JS/TS, CSS, assets, etc.</p>
+                        <p>Gérer le code splitting, le lazy loading…</p>
+                        <p>Intégration ultra configurable, surtout via la CLI d'Angular</p>
+                    </div>
+                    <aside class="notes">
+"Et puis, il y a Webpack. Le bundler officiel d'Angular. C’est un peu le couteau suisse du développement web." </br>
+"Il compile, minifie, regroupe les fichiers JS/TS, CSS, assets, etc. Il gère le code splitting, le lazy loading… et surtout, il s’intègre parfaitement avec la CLI d’Angular." </br>
+"En gros, c’est comme si on avait un assistant personnel qui s’occupait de tout le bazar pour nous. On écrit notre code, et Webpack s’assure que tout est bien empaqueté et prêt à être déployé." </br>
                     </aside>
                 </section>
             </section>
@@ -146,7 +172,7 @@ export class AppComponent {
                     <h3>Angular 4 à 8 : L'âge d'or</h3>
                     <div class="cv">
                         <div class="item">
-                            <h4>Une stabilité maîtrisée qui entraîne des évolutions</h4>
+                            <p><strong>Une stabilité maîtrisée qui entraîne des évolutions</strong></p>
                             <p>Améliorations des performances, meilleure gestion des dépendances</p>
                         </div>
                     </div>
@@ -161,7 +187,7 @@ C’est l’époque où on commence à faire confiance au framework. On se dit :
                 </section>
                 <section class="inner-section">
                     <h3>Les modules avec la directive @NgModule</h3>
-                    <pre><code data-line-numbers="1,5-10">import { NgModule } from '@angular/core';
+                    <pre style="width:42%;"><code data-line-numbers="1,5-10">import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LazyLoadedComponent } from './lazy-loaded.component';
 
@@ -183,7 +209,7 @@ export class LazyLoadedModule { }
                     <h3>Le lazy loading</h3>
                     <div class="cv">
                         <div class="item">
-                            <pre><code data-line-numbers="3,5-10">// app-routing.module.ts
+                            <pre style="width:65.5%;"><code data-line-numbers="3,5-10">// app-routing.module.ts
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LazyLoadedModule } from './lazy-loaded/lazy-loaded.module';
@@ -201,7 +227,7 @@ export class AppRoutingModule { }
                             </code></pre>
                         </div>
                         <div class="item">
-                            <pre><code data-line-numbers="3,7">// app.module.ts
+                            <pre style="width:65.5%;"><code data-line-numbers="3,7">// app.module.ts
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
@@ -220,7 +246,7 @@ export class AppModule { }
                 </section>
                 <section class="inner-section">
                     <h3>Les Observables</h3>
-                    <pre><code data-line-numbers="2-3,15-24">import { Component } from '@angular/core';
+                    <pre style="width:47%;"><code data-line-numbers="2-3,15-24">import { Component } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 @Component({
@@ -256,21 +282,87 @@ export class ObservableExampleComponent {
                    </aside>
                 </section>
                 <section class="inner-section">
+                    <h3>RxJS : La colonne vertébrale réactive d'Angular</h3>
+                    <p><strong>Pourquoi c'est important ?</strong></p>
+                    <ul>
+                        <li>RxJS est utilisé dans Angular pour <strong>tout ce qui est asynchrone</strong> : HTTP, événements, formulaires…</li>
+                        <li>Permet de <strong>composer et transformer</strong> des flux de données dans le temps</li>
+                        <li><strong>Déclaratif, testable, puissant</strong> → idéal pour des applications complexes</li>
+                    </ul>
+                    <hr/>
+
+                    <h4>Exemple de comparaison</h4>
+                    <div class="ch">
+                        <div class="item">
+                            <h4>Sans RxJS (Promise)</h4>
+                            <pre><code class="language-ts">
+http.get('/api/user').then(user => {
+if (user.active) {
+    // ...
+}
+});
+                            </code></pre>
+                        </div>
+                        <div class="item">
+                        <h4>Avec RxJS</h4>
+                        <pre><code class="language-ts">
+this.http.get('/api/user').pipe(
+filter(user => user.active),
+tap(user => this.doSomething(user))
+).subscribe();
+                        </code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section class="inner-section">
+                    <h3>Les opérateurs RxJS les plus utiles</h3>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>🔧 Opérateur</th>
+                            <th>📋 Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr><td><i>map</i></td><td>Transformer une valeur</td></tr>
+                        <tr><td><i>filter</i></td><td>Filtrer certaines valeurs</td></tr>
+                        <tr><td><i>switchMap</i></td><td>Annule le flux précédent si un nouveau arrive</td></tr>
+                        <tr><td><i>debounceTime</i></td><td>Temporise avant d’émettre</td></tr>
+                        <tr><td><i>combineLatest</i></td><td>Combine plusieurs flux</td></tr>
+                        <tr><td><i>catchError</i></td><td>Gère les erreurs sans casser le flux</td></tr>
+                        <tr><td><i>tap</i></td><td>Effets de bord (logs, méthodes)</td></tr>
+                        </tbody>
+                    </table>
+
+                    <hr/>
+
+                    <h3>Exemple : Recherche utilisateur</h3>
+                    <pre style="width:31%;"><code class="language-ts">
+this.searchInput.valueChanges.pipe(
+  debounceTime(300),
+  filter(q => q.length > 2),
+  switchMap(q => this.http.get('/api?q=' + q))
+).subscribe(
+    results => this.show(results)
+);
+                    </code></pre>
+                </section>
+                <section class="inner-section">
                     <h3>Quelques autres grandes évolutions de 4 à 7:</h3>
-                    <p>Angular 4</p>
+                    <p><strong>Angular 4</strong></p>
                     <ul>
                         <li>Possibilité de créer des guards, des resolvers, des composants plus spécifiques</li>
                     </ul>
-                    <p>Angular 5</p>
+                    <p><strong>Angular 5</strong></p>
                     <ul>
                         <li>Introduction du support des PWA (Progressive Web App)</li>
                     </ul>
-                    <p>Angular 6</p>
+                    <p><strong>Angular 6</strong></p>
                     <ul>
                         <li>Gestion de l'ajout de dépendances npm</li>
                         <li>Possibilité de réaliser des tests unitaires</li>
                     </ul>
-                    <p>Angular 7</p>
+                    <p><strong>Angular 7</strong></p>
                     <ul>
                         <li>Mise à jour globale des dépendances (`ng update`)</li>
                     </ul>
@@ -326,6 +418,9 @@ Concrètement, Ivy rend le framework plus rapide, plus léger, plus flexible. Tu
                 </section>
                 <section class="inner-section">
                     <h3>Suivi des évolutions de TypeScript (3.7 -> 4.2)</h3>
+                    <aside class="notes">
+<p>En parallèle, de la 9 à la 12, Angular continue de suivre l'évolution de Typescript</p>
+                    </aside>
                 </section>
             </section>
             <!-- Angular 13 à 19 -->
@@ -339,7 +434,7 @@ Concrètement, Ivy rend le framework plus rapide, plus léger, plus flexible. Tu
                     </aside>
                 </section>
                 <section class="inner-section">
-                    <pre><code data-line-numbers="4-7|8-17|18-25|27">
+                    <pre style="width:33%;"><code data-line-numbers="4-7|8-17|18-25|27">
 my-app/
 ├── src/
 │   ├── app/
@@ -402,8 +497,8 @@ Point d'entrée de l'application, où le module principal est bootstrapé. </br>
                     </div>
                     <aside class="notes">
 "Avec la version 16, on sent l'écoute de la communauté, c'est le débarquement du principe des Signals. Une nouvelle manière de gérer la réactivité, inspirée du monde de la programmation réactive… mais plus lisible, plus intuitive. </br>
-Pour les quelques fans de React qui ont eu le courage de venir à cette conf, vous n'êtes pas perdu avec ces principes (en même temps, on vient de parler de meilleure réactivité). C’est un peu comme si Angular avait décidé de prendre un café avec React." </br>
-"Il y’a ayssi defer(). C’est un peu comme un 'setTimeout' pour tes appels API mais toujours pareil, dans un principe de meilleure gestion de la réactivité. 
+Pour les quelques fans de Solid qui ont eu le courage de venir à cette conf, vous n'êtes pas perdu avec ces principes (en même temps, on vient de parler de meilleure réactivité). C’est un peu comme si Angular avait décidé de prendre un café avec Solid." </br>
+"Il y’a aussi defer(). C’est un peu comme un 'setTimeout' pour tes appels API mais toujours pareil, dans un principe de meilleure gestion de la réactivité. 
 Tu peux dire à Angular : 'Hé, attends un peu avant de charger ça.' Et Angular te dit : 'Pas de souci, je vais attendre, tu m'préviens et je lance ton appel quand t'es ok.'" </br>
 "Vous allez me dire, 'Ben ils sont où les exemples ?!' Pas d'inquiétudes, je vous détaille tout ça dans qq minutes dans les bonnes pratiques"
                     </aside>
@@ -423,55 +518,42 @@ Tu peux dire à Angular : 'Hé, attends un peu avant de charger ça.' Et Angular
                 <section class="inner-section">
                     <div class="cv">
                         <div class="item">
-                            <h3>Structural Control Flow Syntax</h3>
-                            <p>Fini les directives <span class="var-highlight">*ngIf</span>, <span class="var-highlight">*ngFor</span>, <span class="var-highlight">*ngSwitch</span></p>
-                            <pre><code class="language-typescript" data-line-numbers="1-5|7-9|11-13">@if (user.isLoggedIn) {
-    &lt;p&gt;Bienvenue, {{ user.name }} !&lt;/p&gt;
-} @else {
-    &lt;p&gt;Veuillez vous connecter.&lt;/p&gt;
-}
+                            <h3>Dependency Injection</h3>
+                            <pre style="width:34.5%;"><code class="language-typescript" data-line-numbers="1,4-6,13,15,22">//monservice.service.ts
+import { Injectable } from '@angular/core';
 
-@for (let item of items; track item.id) {
-    &lt;li&gt;{{ item.name }}&lt;/li&gt;
-}
-
-@let currentDate = today() {
-    &lt;p&gt;Nous sommes le {{ currentDate }}&lt;/p&gt;
-}
-                            </code></pre>
-                        </div>
-                    </div>
-                    <aside class="notes">Structural Control Flow (Angular 14)</aside>
-                </section>
-                <section class="inner-section">
-                    <div class="cv">
-                        <div class="item">
-                            <h3>Standalone Components</h3>
-                            <pre><code class="language-typescript" data-line-numbers="5-10">import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-
-@Component({
-    selector: 'app-standalone',
-    template: '&lt;h1&gt;Standalone Component&lt;/h1&gt;'
-    standalone: true,
-    imports: [CommonModule, RouterModule]
+@Injectable({
+    providedIn: 'root'
 })
-export class StandaloneComponent {
-    constructor() {
-        console.log('Standalone Component Initialized');
+export class MyService {
+    getData() {
+        return 'Hello from MyService';
     }
 }
+
+// moncomposant.component.ts
+import { Component } from '@angular/core';
+import { MyService } from './monservice.service';
+
+@Component({
+    selector: 'app-dependency-injection',
+    template: '&lt;p&gt;{{ data }}&lt;/p&gt;'
+})
+export class DependencyInjectionComponent {
+    myService = inject(MyService);
+
+    data = this.myService.getData();
+}
                             </code></pre>
                         </div>
                     </div>
-                    <aside class="notes">Standalone Components (Angular 14)</aside>
                 </section>
+
                 <section class="inner-section">
                     <div class="cv">
                         <div class="item">
                             <h3>Typed Forms</h3>
-                            <pre><code class="language-typescript" data-line-numbers="4-8|14|17-21,26-27">import { Component } from '@angular/core';
+                            <pre style="width:46%;"><code class="language-typescript" data-line-numbers="4-8|14|17-21,26-27">import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 interface User {
@@ -509,41 +591,55 @@ export class UserFormComponent {
                 <section class="inner-section">
                     <div class="cv">
                         <div class="item">
-                            <h3>Dependency Injection</h3>
-                            <pre><code class="language-typescript" data-line-numbers="1,4-6,13,15,22">//monservice.service.ts
-import { Injectable } from '@angular/core';
-
-@Injectable({
-    providedIn: 'root'
-})
-export class MyService {
-    getData() {
-        return 'Hello from MyService';
-    }
-}
-
-// moncomposant.component.ts
-import { Component } from '@angular/core';
-import { MyService } from './monservice.service';
+                            <h3>Standalone Components</h3>
+                            <pre style="width:38.5%;"><code class="language-typescript" data-line-numbers="5-10">import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
-    selector: 'app-dependency-injection',
-    template: '&lt;p&gt;{{ data }}&lt;/p&gt;'
+    selector: 'app-standalone',
+    template: '&lt;h1&gt;Standalone Component&lt;/h1&gt;'
+    standalone: true,
+    imports: [CommonModule, RouterModule]
 })
-export class DependencyInjectionComponent {
-    @Inject(MyService) myService: MyService;
-
-    data = this.myService.getData();
+export class StandaloneComponent {
+    constructor() {
+        console.log('Standalone Component Initialized');
+    }
 }
                             </code></pre>
                         </div>
                     </div>
+                    <aside class="notes">Standalone Components (Angular 14)</aside>
+                </section>
+                <section class="inner-section">
+                    <div class="cv">
+                        <div class="item">
+                            <h3>Structural Control Flow Syntax</h3>
+                            <p>Fini les directives <span class="var-highlight">*ngIf</span>, <span class="var-highlight">*ngFor</span>, <span class="var-highlight">*ngSwitch</span></p>
+                            <pre style="width:30.5%;"><code class="language-typescript" data-line-numbers="1-5|7-9|11-13">@if (user.isLoggedIn) {
+    &lt;p&gt;Bienvenue, {{ user.name }} !&lt;/p&gt;
+} @else {
+    &lt;p&gt;Veuillez vous connecter.&lt;/p&gt;
+}
+
+@for (let item of items; track item.id) {
+    &lt;li&gt;{{ item.name }}&lt;/li&gt;
+}
+
+@let currentDate = today() {
+    &lt;p&gt;Nous sommes le {{ currentDate }}&lt;/p&gt;
+}
+                            </code></pre>
+                        </div>
+                    </div>
+                    <aside class="notes">Structural Control Flow (Angular 14)</aside>
                 </section>
                 <section class="inner-section">
                     <div class="cv">
                         <div class="item">
                             <h3>Signals</h3>
-                            <pre><code class="language-typescript" data-line-numbers="6-7,11-14">import { Component, signal } from '@angular/core';
+                            <pre style="width:39%;"><code class="language-typescript" data-line-numbers="6-7,11-14">import { Component, signal } from '@angular/core';
 
 @Component({
     selector: 'app-signals',
@@ -572,7 +668,8 @@ export class SignalsComponent {
                                     <pre><code class="language-typescript">// user.state.ts
 import { signal } from '@angular/core';
 
-export const userAuthSignal = signal({ isAuthenticated: false, user: null });
+export const userAuthSignal = 
+    signal({ isAuthenticated: false, user: null });
 
 export function login(user: any) {
     userAuthSignal.set({ isAuthenticated: true, user });
@@ -596,7 +693,11 @@ import { userAuthSignal, logout } from '@state/user.state';
             <button (click)="handleLogout()">Logout</button>
         } @else {
             <span>Please log in.</span>
-            <button (click)="handleLogin({ name: 'John Doe' })">Login</button>
+            <button 
+                (click)="handleLogin({ name: 'John Doe' })"
+            >
+                Login
+            </button>
         }
     </nav>
     `,
@@ -661,9 +762,11 @@ export class DataFetcherComponent {
     constructor(private dataService: DataService) {}
 
     loadData() {
-        defer(() => this.dataService.fetchData()).subscribe((result) => {
-            this.data = result;
-        });
+        defer(() => this.dataService.fetchData()
+            .subscribe((result) => {
+                this.data = result;
+            })
+        );
     }
 }
                                     </code></pre>
@@ -696,6 +799,8 @@ En résumé, defer() offre une meilleure gestion de l'asynchronisme, une meilleu
                     <p>Quel avenir pour le framework ?</p> 
                     <img src="./assets/let_it_go.gif" alt="Let it go" style="height:500px;width:auto" />
                     <aside class="notes">
+<p>Et pour ceux qui se le demandent Angular est toujours là, solide comme un rocher, prêt à dévaler de nouveaux tunnels.</p>
+<p>Alors, que vous soyez un développeur Angular chevronné ou un novice curieux et même si le chemin peut être semé d'embûches, chaque ligne de code que vous écrivez est une étape de plus dans cette aventure passionnante qu'est Angular.</p>
 <p>Angular a parcouru un long chemin depuis ses débuts, et il continue d'évoluer pour répondre aux besoins des développeurs modernes.</p>
 <p>Avec l'introduction de nouvelles fonctionnalités comme les Standalone Components, les Signals et le lazy loading, Angular devient de plus en plus flexible et performant et surtout plus réactif.</p>
 <p>Google ne laisse pas son projet en plan et il y a une écoute concrète et permanente de la communauté. Ce qui permet au framework de continuer à rester présent dans le monde du développement.</p>
@@ -714,6 +819,9 @@ En résumé, defer() offre une meilleure gestion de l'asynchronisme, une meilleu
                         <div class="item mes-infos">
                             <p class="mon-nom">Pierre FERVEL</p>
                             <p>Fullstack Développeur chez <span class="max">Max</span> <span class="digital">Digital</span> <span class="serv">Services</span></p>
+                            <div style="display:flex;justify-content:center;">
+                                <img src="./assets/logo_max.png" alt="Logo Max" style="height:150px;width:auto" />
+                            </div>
                             <p class="twitter">Twitter : <a href="https://twitter.com/pierre_fervel">@pierre_fervel</a></p>
                             <p>LinkedIn : <a href="https://www.linkedin.com/in/pierre-fervel/">pierrefervel</a></p>
                         </div>
@@ -722,8 +830,6 @@ En résumé, defer() offre une meilleure gestion de l'asynchronisme, une meilleu
                         "Et voilà, c'est la fin de notre voyage à travers l'histoire d'Angular. J'espère que vous avez apprécié cette aventure autant que moi."
                         </br>
                         <br />
-                        <p>Et pour ceux qui se le demandent Angular est toujours là, solide comme un rocher, prêt à dévaler de nouveaux tunnels.</p>
-                        <p>Alors, que vous soyez un développeur Angular chevronné ou un novice curieux et même si le chemin peut être semé d'embûches, chaque ligne de code que vous écrivez est une étape de plus dans cette aventure passionnante qu'est Angular.</p>
                         <p>Merci de votre attention !</p>
                         "Si vous avez des questions, n'hésitez pas à me les poser. Je suis là pour ça !"
                     </aside>
