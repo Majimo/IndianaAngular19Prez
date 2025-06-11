@@ -111,3 +111,18 @@ h1, h2 {
     color: rgb(240, 101, 41);
     font-weight: bold;
 }
+
+.compare {
+    top: -150px !important;
+}
+
+/* Classe qu'on ajoutera dynamiquement aux backgrounds à flouter */
+.reveal.blur-background .backgrounds {
+  backdrop-filter: blur(15px);
+  transition: backdrop-filter 1s ease;
+}
+
+/* Aucun flou par défaut (utile pour la première slide) */
+.reveal .backgrounds {
+  backdrop-filter: none;
+}
