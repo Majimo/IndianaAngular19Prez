@@ -113,7 +113,8 @@ h1, h2 {
 }
 
 .compare {
-    top: -150px !important;
+    top: -45px !important;
+    font-size: 0.75em !important;
 }
 
 /* Classe qu'on ajoutera dynamiquement aux backgrounds à flouter */

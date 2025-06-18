@@ -39,21 +39,34 @@
             <!-- Introduction -->
             <section>
                 <section class="inner-section">
-                    <h3>🏆 Angular, un framework front-end majeur depuis près de 10 ans</h3>
+                    <div class="ch">
+                        <div class="item">
+                            <img src="https://doc.maxds.fr/uploads/9d5a48ad-cf59-49c0-a638-c49940c83363.jpg" alt="Merci" style="height:700px;width:auto" />
+                        </div>
+                        <div class="item mes-infos">
+                            <p class="mon-nom">Pierre FERVEL</p>
+                            <p style="margin-bottom: 1.75em;">Développeur Fullstack <span class="digital">Angular </span>/ <span class="serv">Java</span></p>
+                            <div style="display:flex;justify-content:center;">
+                                <img src="./assets/logo_max.png" alt="Logo Max" style="height:150px;width:auto" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section class="inner-section">
+                    <h3 style="margin-bottom: 2em;">🏆 Angular, un framework front-end majeur depuis près de 10 ans</h3>
+                    <p style="margin-bottom: 1.25em;"><strong>🎯 Obectifs de cette présentation</strong></p>
+                    <ul>
+                        <li class="fragment">Les grandes étapes de l'évolution d'Angular</li>
+                        <li class="fragment">Les nouveautés clés et leur impact sur les applications modernes</li>
+                        <li class="fragment">Pleins de bonnes pratiques pour écrire du code Angular performant et maintenable</li>
+                    </ul>
                     <aside class="notes">
 "Angular, c’est plus qu’un simple framework. C’est une saga. 10 ans d’évolution, de paris techniques, de frustrations parfois… mais aussi de très belles idées." </br>
 <i>(regarde la salle)</i> </br>
 "Et si vous êtes ici, c’est peut-être parce que vous avez une app Angular en prod… que vous aimez ça… ou que vous êtes coincés avec."
-                    </aside>
-                </section>
-                <section class="inner-section">
-                    <h3>🎯 Obectifs de cette présentation</h3>
-                    <ul>
-                        <li>Les grandes étapes de l'évolution d'Angular</li>
-                        <li>Les nouveautés clés et leur impact sur les applications modernes</li>
-                        <li>Pleins de bonnes pratiques pour écrire du code Angular performant et maintenable</li>
-                    </ul>
-                    <aside class="notes">
+                    
 "Mais ne vous inquiétez pas, je suis là pour vous aider à sortir de cette jungle !"
 </br>
 "L’objectif de ce talk ? Vous raconter cette histoire, mais surtout : </br>
@@ -105,7 +118,10 @@ angular.module('myApp', [])
     });
                     </code></pre>
                     <aside class="notes">
-"On avance, on arrive en 2010. C'est à ce moment qu'arrive AngularJS. C’est magique. Du double binding, des directives, une architecture MVC… c’est le feu !"
+"On avance, on arrive en 2010. C'est à ce moment qu'arrive AngularJS. </br>
+Là, on a une personne, Misko Hevery, chez Google qui travaille sur une application interne (Google Feedback), la lourdeur du JS dans l'application le frustre. Il tente alors un pari fou: Réécrire l'application en qq jours => ANGULAR.JS </br>
+Il passe d'un projet de 17000 lignes de code à... 1500 lignes de code. </br>
+Au sein de Google, on adopte très vite la proposition, AngularJS, c’est magique. Du double binding, des directives, une architecture MVC… c’est le feu !"
                     </aside>
                 </section>
                 <section class="inner-section">
@@ -190,15 +206,15 @@ C’est l’époque où on commence à faire confiance au framework. On se dit :
                     <h3>📦 Les modules avec la directive @NgModule</h3>
                     <pre style="width:50%;font-size: 0.66em;"><code data-line-numbers="1,5-10">import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LazyLoadedComponent } from './lazy-loaded.component';
+import { CartComponent } from './cart.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [LazyLoadedComponent]
+  declarations: [CartComponent]
 })
-export class LazyLoadedModule { }
+export class CartModule { }
                     </code></pre>
                     <aside class="notes">
 <p>"Commençons par la directive @NgModule(), une révolution dans l'architecture. On importe des modules de manière plus ciblée, et en prime, ça permet également de délimiter les composants."</p>
@@ -210,14 +226,19 @@ export class LazyLoadedModule { }
                     <h3>💤 Le lazy loading</h3>
                     <div class="cv">
                         <div class="item">
-                            <pre style="width:65.5%;"><code data-line-numbers="3,5-10">// app-routing.module.ts
+                            <pre style="width:65.5%;"><code data-line-numbers="3,6-15">// app-routing.module.ts
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LazyLoadedModule } from './lazy-loaded/lazy-loaded.module';
+import { OrdersModule } from './orders/orders.module';
+import { CartModule } from './cart/cart.module';
 const routes: Routes = [
     {
-        path: 'lazy',
-        loadChildren: () => import('./lazy-loaded/lazy-loaded.module').then(m => m.LazyLoadedModule)
+        path: 'orders',
+        loadChildren: () => import('./orders/orders.module').then(m => m.OrdersModule)
+    }
+    {
+        path: 'cart',
+        loadChildren: () => import('./cart/cart.module').then(m => m.CartModule)
     }
 ];
 @NgModule({
@@ -228,7 +249,7 @@ export class AppRoutingModule { }
                             </code></pre>
                         </div>
                         <div class="item">
-                            <pre style="width:65.5%;"><code data-line-numbers="3,7">// app.module.ts
+                            <pre style="width:65.5%;"><code data-line-numbers="4,8">// app.module.ts
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
@@ -315,7 +336,7 @@ this.http.get('/api/user').pipe(
                         </div>
                     </div>
                 </section>
-                <section class="inner-section">
+                <section class="inner-section too-big">
                     <h3>🧰 Les opérateurs RxJS les plus utiles</h3>
                     <table>
                         <thead>
@@ -335,10 +356,10 @@ this.http.get('/api/user').pipe(
                         </tbody>
                     </table>
 
-                    <hr/>
+                    <!-- <hr/>
 
                     <h3>Exemple : Recherche utilisateur</h3>
-                    <pre style="width:50%;font-size: 0.9em;"><code class="language-ts">
+                    <pre style="width:50%;"><code class="language-ts" style="padding-left:10em;">
 this.searchInput.valueChanges.pipe(
   debounceTime(300),
   filter(q => q.length > 2),
@@ -346,7 +367,7 @@ this.searchInput.valueChanges.pipe(
 ).subscribe(
     results => this.show(results)
 );
-                    </code></pre>
+                    </code></pre> -->
                 </section>
                 <section class="inner-section">
                     <h3>⏩ Quelques autres grandes évolutions de 4 à 7:</h3>
@@ -426,8 +447,8 @@ Concrètement, Ivy rend le framework plus rapide, plus léger, plus flexible. Tu
                 <section class="inner-section">
                     <h3>🌳 Ca fonctionne comment le Tree-Shaking ?</h3>
                     <p style="text-align:center">Avant le build, toutes les lignes du code sont là... mais seules certaines sont utilisées</p>
-                    <pre style="width:50%;font-size:0.7em;">
-                        <code>
+                    <pre style="width:50%;">
+                        <code style="padding-left:12em;">
 // big-lib/ AVANT :
 ├── core/
 │   ├── utils.js          ✅ utilisé
@@ -445,12 +466,14 @@ Concrètement, Ivy rend le framework plus rapide, plus léger, plus flexible. Tu
 └── themes/light.js
                         </code>
                     </pre>
-                    <pre style="width:50%;font-size:0.7em;"><code class="language-ts">
+                    <pre style="width:50%;"><code class="language-ts" style="padding-left:9em;">
 // mon fichier AVANT compilation
 import { usefulFn } from 'big-lib/utils';
 import { unusedFn } from 'big-lib/helpers';
 
 usefulFn();
+
+
 
 // mon fichier final APRÈS tree-shaking (Ivy + Terser)
 import { usefulFn } from 'big-lib/utils';
@@ -480,12 +503,11 @@ usefulFn();
                     </aside>
                 </section>
                 <section class="inner-section">
-                    <pre style="width:33%;"><code data-line-numbers="4-7|8-17|18-25|27">
+                    <pre style="width:33%;"><code data-line-numbers="4-6|7-15|16-22|23|24">
 my-app/
 ├── src/
 │   ├── app/
 │   │   ├── app.component.ts
-│   │   ├── app.module.ts
 │   │   └── app-routing.module.ts
 │   ├── products/
 │   │   ├── pipes/
@@ -495,7 +517,6 @@ my-app/
 │   │   │   └── cart.component.ts
 │   │   ├── services/
 │   │   │   └── product.service.ts
-│   │   ├── products.module.ts
 │   │   └── products-routing.module.ts
 │   ├── orders/
 │   │   ├── components/
@@ -503,7 +524,6 @@ my-app/
 │   │   │   └── order-confirmation.component.ts
 │   │   ├── services/
 │   │   │   └── order.service.ts
-│   │   ├── orders.module.ts
 │   │   └── orders-routing.module.ts
 │   └── main.ts
 ├── webpack.config.js
@@ -514,16 +534,14 @@ my-app/
 "Aujourd’hui, on peut créer un composant Angular sans avoir à déclarer un module. C’est plus simple, plus clair, plus rapide. Bon, dans la pratique; comme on va le voir, ça permet surtout d'alléger l'architecture de l'application et de la rendre plus maintenable." </br>
 Prenons cet exemple d'une application Marketpalce </br>
 1 - Application principale (app/) : </br>
-Contient le composant racine, le module principal et le routage de l'application. </br>
-Utilise le "Module Federation Plugin" pour charger dynamiquement les modules fédérés. </br>
+Contient le composant racine, le composant principal et le routage de l'application. </br>
+Utilise le "Module Federation Plugin" pour charger dynamiquement les modules et composants fédérés. </br>
 2 - Module de Produits (products/) : </br>
 Contient les composants et services liés à la gestion des produits. </br>
 Les composants sont définis comme des Standalone Components. </br>
-Le module et le routage sont encapsulés dans ce dossier. </br>
 3 - Module de Commandes (orders/) : </br>
 Contient les composants et services liés à la gestion des commandes. </br>
 Les composants sont également définis comme des Standalone Components. </br>
-Le module et le routage sont encapsulés dans ce dossier. </br>
 4 - Configuration Webpack (webpack.config.js) : </br>
 Contient la configuration du "Module Federation Plugin" pour permettre le chargement dynamique des modules fédérés. </br>
 
@@ -543,14 +561,14 @@ Point d'entrée de l'application, où le module principal est bootstrapé. </br>
 
                         <!-- App Front -->
                         <div style="flex: 1; min-width: 250px; background: #272822; color: white; padding: 1em; border-radius: 8px;">
-                            <h3 style="text-align: center;">🛍️ App Front</h3>
+                            <h3 style="text-align: center;">&lt;app-user-profile&gt;</h3>
                             <pre style="font-size: 0.75em;box-shadow: none;">
                                 <code>
 import('userApp/UserModule')
   .then(m => m.UserModule);
                             </code></pre>
                             <p style="font-size: 1em; text-align: center;">
-                                ➕ Affiche la page de profil utilisateur
+                                ➕ Affiche le profil utilisateur
                             </p>
                         </div>
 
@@ -559,14 +577,14 @@ import('userApp/UserModule')
 
                         <!-- App Admin -->
                         <div style="flex: 1; min-width: 250px; background: #272822; color: white; padding: 1em; border-radius: 8px;">
-                        <h3 style="text-align: center;">🛠️ App Admin</h3>
+                        <h3 style="text-align: center;">&lt;app-user-admin&gt;</h3>
                         <pre style="font-size: 0.75em;box-shadow: none;">
                             <code>
 import('userApp/UserModule')
   .then(m => m.UserModule);
                             </code></pre>
                         <p style="font-size: 1em; text-align: center;">
-                            ➕ Gère les utilisateurs depuis le même module
+                            ➕ Gère l'utlisateur depuis le backoffice
                         </p>
                         </div>
 
@@ -576,7 +594,7 @@ import('userApp/UserModule')
                     <div style="margin-top: 1.5em; text-align: center;">
                         <h4>📦 userApp (Remote)</h4>
                         <p style="font-size: 0.8em;">
-                        <code>UserModule</code> est exposé une seule fois et utilisé par plusieurs apps<br>
+                        <code>UserModule</code> est exposé une seule fois et utilisé par plusieurs modules, librairies, applications, etc...<br>
                         sans duplication, sans recompilation, sans couplage fort.
                         </p>
                     </div>
@@ -601,12 +619,256 @@ Tu peux dire à Angular : 'Hé, attends un peu avant de charger ça.' Et Angular
 "Vous allez me dire, 'Ben ils sont où les exemples ?!' Pas d'inquiétudes, je vous détaille tout ça dans qq minutes dans les bonnes pratiques"
                     </aside>
                 </section>
-                <section class="inner-section compare">
-                    <h3 style="margin-bottom: 3rem;">⚖️ Angular 2 vs Angular 20 : 9 ans de transformation</h3>
-                    <div style="display: flex; gap: 2rem; margin-bottom: 2rem;">
+                <section class="inner-section">
+                    <h3>🚫 Bye bye zone.js ?</h3>
+                    <div style="display: flex; gap: 2rem;">
                         <div style="flex: 1;">
-                            <h3><u>Angular 2 (2016)</u></h3>
-                            <h4>🔧 Code classique</h4>
+                            <h4>❓ <u>C'était quoi zone.js ?</u></h4>
+                            <ul>
+                                <li>Librairie utilisée pour détecter <strong>automatiquement les changements d'état</strong></li>
+                                <li>Angular 2 s’en est servi pour faire fonctionner le <strong>change detection</strong></li>
+                                <li>Magique… mais <strong>complexe à debugger</strong> et <strong>coûteux en performance</strong></li>
+                            </ul>
+                        </div>
+                        <div style="flex: 1;">
+                            <h4>💡 <u>Pourquoi Angular s'en éloigne ?</u></h4>
+                            <ul>
+                                <li><strong>Signals</strong> (Angular 16+) rendent le <em>state tracking</em> explicite</li>
+                                <li><strong>Amélioration des perfs</strong> grâce à une détection fine des changements</li>
+                                <li>Moins de <i>framework magic</i> ➜ code plus prévisible</li>
+                                <li>zone.js est désormais <strong>optionnel</strong> (depuis Angular 16)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <aside class="notes">
+                        Angular a longtemps reposé sur zone.js pour gérer la détection des changements sans effort pour le développeur, mais cela avait un coût en complexité et performance. Avec l’introduction des signals, Angular évolue vers une gestion déclarative et performante du state.
+                    </aside>
+                </section>
+            </section>
+            <section>
+                <section class="inner-section">
+                    <h3>🧩 On résume ?</h3>
+                    <img src="./assets/tldr.gif" alt="Let's go!" style="height:550px;width:auto" />
+                    <aside class="notes">
+"Avant de passer aux bonnes pratiques, faisons un petit récapitulatif rapide de ce qu’on a vu." </br>
+"Si vous n'avez pas suivi jusque là, ou vous êtes endormis, pas de panique, on va se faire un petit résumé rapide." </br>
+                    </aside>
+                </section>
+                <section class="inner-section" style="position:relative;height:80%;top:80px;">
+                <style>
+                    .timeline-container {
+                    position: absolute;
+                    width: 100%;
+                    max-width: 1200px;
+                    margin: auto;
+                    padding: 2em 0;
+                    top: 47%;
+                    left: 20%;
+                    }
+
+                    .timeline-line {
+                    position: absolute;
+                    top: 50%;
+                    left: -5%;
+                    width: 100%;
+                    height: 4px;
+                    background: #c62828;
+                    z-index: 1;
+                    }
+
+                    .arrow-right:before {
+                        content: "";
+                        position: absolute;
+                        width: 0px;
+                        height: 0px;
+                        border: 12px solid transparent;
+                        top: -10px;
+                        right: -22px;
+                        border-left: 25px solid #c62828;
+                    }
+
+                    .timeline-event {
+                    position: relative;
+                    width: 150px;
+                    padding: 1em;
+                    background: #fff;
+                    border-radius: 8px;
+                    border: 1px solid #ccc;
+                    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+                    text-align: center;
+                    z-index: 2;
+                    }
+
+                    .timeline-event h4 {
+                    margin: 0;
+                    font-size: 1em;
+                    color: #c62828;
+                    }
+
+                    .timeline-event p {
+                    margin: 0.3em 0 0;
+                    font-size: 0.8em;
+                    color: #444;
+                    }
+
+                    .timeline-item {
+                    position: absolute;
+                    transform: translateX(-50%);
+                    }
+
+                    .timeline-top::before {
+                    content: "";
+                    position: absolute;
+                    bottom: -3%;
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 50%;
+                    background: #c62828;
+                    border: 2px solid white;
+                    box-shadow: 0 0 0 2px #c62828;
+                    z-index: 3;
+                    }
+
+                    .timeline-bottom::before {
+                    content: "";
+                    position: absolute;
+                    top: 0%;
+                    transform: translate(-50%, -50%);
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 50%;
+                    background: #c62828;
+                    border: 2px solid white;
+                    box-shadow: 0 0 0 2px #c62828;
+                    z-index: 3;
+                    }
+
+                    .timeline-top {
+                    bottom: calc(50% + 60px);
+                    }
+
+                    .timeline-bottom {
+                    top: calc(50% + 60px);
+                    }
+                </style>
+
+                <h3 style="text-align:center;">📊 Timeline d’Angular (2010–2025)</h3>
+                <div class="timeline-container">
+                    <div class="timeline-line arrow-right"></div>
+
+                    <div class="timeline-item timeline-top" style="left: 5%;">
+                    <div class="timeline-event">
+                        <h4>2010</h4>
+                        <p>AngularJS (v1)</p>
+                    </div>
+                    </div>
+
+                    <div class="timeline-item timeline-bottom" style="left: 15%;">
+                    <div class="timeline-event">
+                        <h4>2016</h4>
+                        <p>Angular 2 (réécriture TS)</p>
+                    </div>
+                    </div>
+
+                    <div class="timeline-item timeline-top" style="left: 25%;">
+                    <div class="timeline-event">
+                        <h4>2017</h4>
+                        <p>Angular 4 (@NgModule, LazyLoading)</p>
+                    </div>
+                    </div>
+
+                    <div class="timeline-item timeline-bottom" style="left: 35%;">
+                    <div class="timeline-event">
+                        <h4>2018</h4>
+                        <p>Angular 6/7 (rythme semestriel)</p>
+                    </div>
+                    </div>
+
+                    <div class="timeline-item timeline-top" style="left: 45%;">
+                    <div class="timeline-event">
+                        <h4>2020</h4>
+                        <p>Angular 9 (Ivy par défaut)</p>
+                    </div>
+                    </div>
+
+                    <div class="timeline-item timeline-bottom" style="left: 55%;">
+                    <div class="timeline-event">
+                        <h4>2022</h4>
+                        <p>Angular 13/14 (fin ViewEngine)</p>
+                    </div>
+                    </div>
+
+                    <div class="timeline-item timeline-top" style="left: 65%;">
+                    <div class="timeline-event">
+                        <h4>2023</h4>
+                        <p>Angular 15/16 (Standalone APIs)</p>
+                    </div>
+                    </div>
+
+                    <div class="timeline-item timeline-bottom" style="left: 75%;">
+                    <div class="timeline-event">
+                        <h4>2024</h4>
+                        <p>Angular 17/18 (Vite, Signals+)</p>
+                    </div>
+                    </div>
+
+                    <div class="timeline-item timeline-top" style="left: 85%;">
+                    <div class="timeline-event">
+                        <h4>2025</h4>
+                        <p>Angular 19/20 (linkedSignal)</p>
+                    </div>
+                    </div>
+                </div>
+                </section>
+                <section class="inner-section">
+                    <h3><span style="font-weight:bold;color:white;background-color:red;padding:0px 14px;">?</span> Anecdote impromptue</h3>
+                    <p><strong>Mais pourquoi Angular s'appelle Angular ?</strong></p>
+                    <div class="fragment">
+                        <code>&lt; &gt;</code><br/>
+                        <code>&lt;ng-template&gt; &lt;/ng-template&gt;</code>
+                    </div>
+                    <aside class="notes">
+Le nom Angular est un clin d’œil aux crochets angulaires du HTML, mais aussi au préfixe ng utilisé dans les balises personnalisées du framework — une façon subtile de marquer l’empreinte du framework dans le code.
+                    </aside>
+                </section>
+                <section class="inner-section compare">
+                    <h3 style="margin-bottom: 3rem;">⚖️ AngularJS vs Angular 20 : 9 ans de transformation</h3>
+                    <div style="display:flex;gap:2rem;margin-bottom:-8rem;">
+                        <div style="flex:1;">
+                            <h3><u>AngularJS (2010)</u></h3>
+                            <p>🔧 Tout dans le HTML</p>
+                            <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html ng-app="myApp"&gt;
+&lt;head&gt;
+    <title>AngularJS Counter</title>
+    <script src="https://cdnjs.cloudflare.com/.../angular.min.js"></script>
+&lt;/head&gt;
+&lt;body&gt;
+    <div ng-controller="AppController">
+        <button ng-click="increment()">Click</button>
+        {{ count }}
+    </div>
+
+    <script>
+        angular.module('myApp', []);
+        
+        angular.module('myApp').controller('AppController', 
+            function($scope) {
+                $scope.count = 0;
+                
+                $scope.increment = function() {
+                    $scope.count++;
+                };
+            });
+    </script>
+&lt;/body&gt;
+&lt;/html&gt;
+                            </code></pre>
+                        </div>
+                        <div style="flex: 1;">
+                            <h3><u>Angular 4 (2017)</u></h3>
+                            <p>🔧 Module, Composant</p>
                             <pre><code class="language-ts">
 @NgModule({
   declarations: [AppComponent],
@@ -632,11 +894,10 @@ export class AppComponent {
                         </div>
                         <div style="flex: 1;">
                             <h3><u>Angular 20 (2025)</u></h3>
-                            <h4>🔧 Standalone + Signals</h4>
+                            <p>🔧 Standalone + Signals</p>
                             <pre><code class="language-ts">
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [CommonModule],
   template: `
     <button (click)="inc()">Click</button>
@@ -650,9 +911,13 @@ export class AppComponent {
                             </code></pre>
                         </div>
                     </div>
-                    <div style="display: flex; gap: 2rem;">
+                    <div style="display:flex;gap:2rem;margin-left:5.5rem">
+                        <div style="flex:1;">
+                            <p></p>
+                    </div>
+                    <!-- <div style="display: flex; gap: 2rem;"> -->
                         <div style="flex: 1;">
-                            <h4>📁 Structure</h4>
+                            <p>📁 Structure</p>
                             <pre><code>
 src/
 ├── app/
@@ -670,7 +935,7 @@ src/
                             </code></pre>
                         </div>
                         <div style="flex: 1;">
-                            <h4>📁 Nouvelle structure simplifiée</h4>
+                            <p>📁 Nouvelle structure simplifiée</p>
                             <pre><code>
 src/
 ├── app/
@@ -687,7 +952,7 @@ src/
                         </div>
                     </div>
                     <aside class="notes">
-                        <p>Mais avant de passer aux bonnes pratiques, je voulais vous montrer rapidement comment on est passé<strong>Du framework structurant au framework moderne, réactif et ergonomique</strong></p>
+                        <!-- <p>Mais avant de passer aux bonnes pratiques, je voulais vous montrer rapidement comment on est passé<strong>Du framework structurant au framework moderne, réactif et ergonomique</strong></p> -->
                         <h4>⚠️ Points faibles Version 2</h4>
                         <ul>
                             <li>Boilerplate lourd (modules, declarations...)</li>
@@ -706,32 +971,6 @@ src/
 
                         <p><strong>Angular est passé d’un framework "robuste mais verbeux" à un framework "moderne, réactif et ergonomique"</strong></p>
                         <p>Le terme "boilerplate" (littéralement "code standardisé/recyclé") désigne le code répétitif, imposé par le framework, que tu dois écrire même quand tu n’en as pas besoin pour ton cas métier immédiat.</p>
-                    </aside>
-                </section>
-                <section class="inner-section">
-                    <h3>🚫 Bye bye zone.js</h3>
-                    <p><strong>Pourquoi Angular s'en détache ?</strong></p>
-                    <div style="display: flex; gap: 2rem;">
-                        <div style="flex: 1;">
-                            <h4>❓ <u>Rappel, c'était quoi zone.js ?</u></h4>
-                            <ul>
-                                <li>Librairie utilisée pour détecter <strong>automatiquement les changements d'état</strong></li>
-                                <li>Angular 2 s’en est servi pour faire fonctionner le <strong>change detection</strong></li>
-                                <li>Magique… mais <strong>complexe à debugger</strong> et <strong>coûteux en performance</strong></li>
-                            </ul>
-                        </div>
-                        <div style="flex: 1;">
-                            <h4>💡 <u>Pourquoi Angular s'en éloigne ?</u></h4>
-                            <ul>
-                                <li><strong>Signals</strong> (Angular 16+) rendent le <em>state tracking</em> explicite</li>
-                                <li><strong>Amélioration des perfs</strong> grâce à une détection fine des changements</li>
-                                <li>Moins de <i>framework magic</i> ➜ code plus prévisible</li>
-                                <li>zone.js est désormais <strong>optionnel</strong> (depuis Angular 16)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <aside class="notes">
-                        Angular a longtemps reposé sur zone.js pour gérer la détection des changements sans effort pour le développeur, mais cela avait un coût en complexité et performance. Avec l’introduction des signals, Angular évolue vers une gestion déclarative et performante du state.
                     </aside>
                 </section>
             </section>
@@ -869,6 +1108,7 @@ export class StandaloneComponent {
                     <div class="cv">
                         <div class="item">
                             <h3>Signals</h3>
+                            <p>Changement dans le binding <span class="var-highlight">@Input</span>, <span class="var-highlight">@Output</span>, <span class="var-highlight">@Viewchild</span></p>
                             <pre style="width:50%;font-size:0.71em;"><code class="language-typescript" data-line-numbers="6-7,11-14">import { Component, signal } from '@angular/core';
 
 @Component({
@@ -1028,6 +1268,143 @@ En résumé, defer() offre une meilleure gestion de l'asynchronisme, une meilleu
                     <h3>Conclusion</h3>
                     <p>Quel avenir pour le framework ?</p> 
                     <img src="./assets/let_it_go.gif" alt="Let it go" style="height:500px;width:auto" />
+                </section>
+                <section class="inner-section">
+                <style>
+                    .team-table {
+                    width: 90%;
+                    margin: auto;
+                    border-collapse: collapse;
+                    font-size: 0.95em;
+                    }
+
+                    .team-table th, .team-table td {
+                    border: 1px solid #ccc;
+                    padding: 0.8em 1em;
+                    text-align: left;
+                    }
+
+                    .team-table th {
+                    background-color: #f44336;
+                    color: white;
+                    }
+
+                    .team-table tr:nth-child(even) {
+                    background-color: #fdf0f0;
+                    }
+
+                    .team-table td:first-child {
+                    font-weight: bold;
+                    white-space: nowrap;
+                    }
+
+                    .team-table caption {
+                    font-size: 1.4em;
+                    margin-bottom: 0.6em;
+                    font-weight: bold;
+                    }
+
+                    .projects-table {
+                    width: 90%;
+                    margin: auto;
+                    border-collapse: collapse;
+                    font-size: 0.95em;
+                    }
+
+                    .projects-table th, .projects-table td {
+                    border: 1px solid #ccc;
+                    padding: 0.8em 1em;
+                    text-align: left;
+                    }
+
+                    .projects-table th {
+                    background-color: #3f51b5;
+                    color: white;
+                    }
+
+                    .projects-table tr:nth-child(even) {
+                    background-color: #eef0fb;
+                    }
+
+                    .projects-table td:first-child {
+                    font-weight: bold;
+                    white-space: nowrap;
+                    }
+
+                    .projects-table caption {
+                    font-size: 1.4em;
+                    margin-bottom: 0.6em;
+                    font-weight: bold;
+                    }
+                </style>
+
+                    <table class="team-table">
+                        <caption>👥 Évolution de l’équipe Angular chez Google</caption>
+                        <thead>
+                        <tr>
+                            <th>Période</th>
+                            <th>Taille approximative</th>
+                            <th>Contexte</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>2009–2010</td>
+                            <td>Quelques personnes</td>
+                            <td>Projet interne (Misko + 1–2 devs)</td>
+                        </tr>
+                        <tr>
+                            <td>2016–2020</td>
+                            <td>20–50 personnes</td>
+                            <td>Équipe core Angular, DevRel, product, QA</td>
+                        </tr>
+                        <tr>
+                            <td>2021–2023</td>
+                            <td>80–100 ingénieurs</td>
+                            <td>Architecture micro-frontends / modularisation massive</td>
+                        </tr>
+                        <tr>
+                            <td>2024–2025</td>
+                            <td>≈ 100 personnes</td>
+                            <td>Maintien + évolution : Signals, SSR, tooling, performance…</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <hr style="margin-block-start:1.5em;margin-block-end:1em;" />
+
+                    <table class="projects-table">
+                        <caption>📈 Projets Angular créés – Évolution par période</caption>
+                        <thead>
+                        <tr>
+                            <th>Période</th>
+                            <th>Volume de projets</th>
+                            <th>Contexte</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>2009–2010</td>
+                            <td>Quelques centaines</td>
+                            <td>Débuts expérimentaux avec AngularJS</td>
+                        </tr>
+                        <tr>
+                            <td>2016–2020</td>
+                            <td>~50 000–100 000 dépôts/an</td>
+                            <td>Croissance stable, Angular 2+, Ivy, adoption en entreprise</td>
+                        </tr>
+                        <tr>
+                            <td>2021–2023</td>
+                            <td>~2,9 M de sites, ~40k dépôts/an</td>
+                            <td>Adoption massive, micro-frontends, signaux</td>
+                        </tr>
+                        <tr>
+                            <td>2024–2025</td>
+                            <td>>400 000 sites live, 2,5 M downloads/semaine</td>
+                            <td>Écosystème mature, croissance par stabilité</td>
+                        </tr>
+                        </tbody>
+                    </table>
                     <aside class="notes">
 <p>Et pour ceux qui se le demandent Angular est toujours là, solide comme un rocher, prêt à dévaler de nouveaux tunnels.</p>
 <p>Alors, que vous soyez un développeur Angular chevronné ou un novice curieux et même si le chemin peut être semé d'embûches, chaque ligne de code que vous écrivez est une étape de plus dans cette aventure passionnante qu'est Angular.</p>
@@ -1048,11 +1425,10 @@ En résumé, defer() offre une meilleure gestion de l'asynchronisme, une meilleu
                         </div>
                         <div class="item mes-infos">
                             <p class="mon-nom">Pierre FERVEL</p>
-                            <p>Fullstack Développeur chez <span class="max">Max</span> <span class="digital">Digital</span> <span class="serv">Services</span></p>
+                            <p style="margin-bottom: 1.75em;">Développeur Fullstack <span class="digital">Angular </span>/ <span class="serv">Java</span></p>
                             <div style="display:flex;justify-content:center;">
                                 <img src="./assets/logo_max.png" alt="Logo Max" style="height:150px;width:auto" />
                             </div>
-                            <p class="twitter">Twitter : <a href="https://twitter.com/pierre_fervel">@pierre_fervel</a></p>
                             <p>LinkedIn : <a href="https://www.linkedin.com/in/pierre-fervel/">pierrefervel</a></p>
                         </div>
                     </div>
