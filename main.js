@@ -26,6 +26,12 @@ deck.on('slidechanged', function(event) {
 
   const currentSlide = event.currentSlide;
 
+  if (currentSlide.querySelector('#logos')) {
+    const ctx = document.getElementById('logos');
+
+    ctx.classList.add('logo-max');
+  }
+
   if (currentSlide.querySelector('#ivyBenchmarkChart') && !window.ivyChartRendered) {
     const ctx = document.getElementById('ivyBenchmarkChart').getContext('2d');
     

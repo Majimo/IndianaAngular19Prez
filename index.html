@@ -46,8 +46,8 @@
                         <div class="item mes-infos">
                             <p class="mon-nom">Pierre FERVEL</p>
                             <p style="margin-bottom: 1.75em;">Développeur Fullstack <span class="digital">Angular </span>/ <span class="serv">Java</span></p>
-                            <div style="display:flex;justify-content:center;">
-                                <img src="./assets/logo_max.png" alt="Logo Max" style="height:150px;width:auto" />
+                            <div style="display:flex;justify-content:center;" id="logos">
+                                <img src="./assets/logo_max.png" alt="Logo Max" style="height:180px;width:auto" />
                             </div>
                         </div>
                     </div>
@@ -99,6 +99,7 @@ $(document).ready(function() {
     });
 });
                     </code></pre>
+                    <img src="./assets/logos/jquery.png" alt="Logo jQuery" style="height:300px;width:auto;position:absolute;top:2em;left:2em;" />
                     <aside class="notes">
 "Flashback. On est en 2009. Le front, c’est la jungle. 
 Et là, arrive un super outil pour manipuler notre DOM : jQuery ! Un outil, qui tire sa puissance d'une faille de sécurité du DOM, et qui nous permet de faire des trucs de fou avec le JavaScript." </br>
@@ -117,6 +118,7 @@ angular.module('myApp', [])
         };
     });
                     </code></pre>
+                    <img src="./assets/logos/angularjs.png" alt="Logo AngularJS" style="height:110px;width:auto;position:absolute;top:4.2em;right:1em;rotate:-20deg" />
                     <aside class="notes">
 "On avance, on arrive en 2010. C'est à ce moment qu'arrive AngularJS. </br>
 Là, on a une personne, Misko Hevery, chez Google qui travaille sur une application interne (Google Feedback), la lourdeur du JS dans l'application le frustre. Il tente alors un pari fou: Réécrire l'application en qq jours => ANGULAR.JS </br>
@@ -155,7 +157,7 @@ export class AppComponent {
                     </aside>
                 </section>
                 <section class="inner-section">
-                    <h3>🔁 Avec Angular 2, débarque zone.js, pour mieux contrôler ton DOM</h3>
+                    <h3>🔁 Avec Angular 2, arrive zone.js, pour mieux contrôler ton DOM</h3>
                     <div class="cv">
                         <p>Simplifier le déclenchement des changements d'état</p>
                         <p>Intercepter tous les événements asynchrones de l'application</p>
@@ -176,6 +178,7 @@ export class AppComponent {
                         <p>Gérer le code splitting, le lazy loading…</p>
                         <p>Intégration ultra configurable, surtout via la CLI d'Angular</p>
                     </div>
+                    <img src="./assets/logos/webpack.png" alt="Logo WebPack" style="height:200px;width:auto;position:absolute;top:0.75em;left:1.25em;" />
                     <aside class="notes">
 "Et puis, il y a Webpack. Le bundler officiel d'Angular. C’est un peu le couteau suisse du développement web." </br>
 "Il compile, minifie, regroupe les fichiers JS/TS, CSS, assets, etc. Il gère le code splitting, le lazy loading… et surtout, il s’intègre parfaitement avec la CLI d’Angular." </br>
@@ -355,7 +358,7 @@ this.http.get('/api/user').pipe(
                         <tr><td><i>tap</i></td><td>Effets de bord (logs, méthodes)</td></tr>
                         </tbody>
                     </table>
-
+                    <img src="./assets/logos/rxjs.png" alt="Logo RxJS" style="height:200px;width:auto;position:absolute;top:0.75em;right:1.5em;" />
                     <!-- <hr/>
 
                     <h3>Exemple : Recherche utilisateur</h3>
@@ -386,7 +389,7 @@ this.searchInput.valueChanges.pipe(
                     </ul>
                     <p><strong>Angular 7</strong></p>
                     <ul>
-                        <li>Mise à jour globale des dépendances (`ng update`)</li>
+                        <li>Mise à jour globale et sécurisée des dépendances (`ng update`)</li>
                     </ul>
                     <aside class="notes">
 <p style="color: red">Une PWA (Progressive Web App) est un type d'application web qui combine les avantages des applications web traditionnelles et des applications mobiles natives.</p>
@@ -406,6 +409,7 @@ L'introduction du support des PWA dans Angular 5 a permis aux développeurs de c
                     <h3>🎨 Angular Material</h3>
                     <p>Officialisation d'Angular Material basé sur les versions d'Angular</p>
                     <img src="./assets/material_v5.png" alt="Angular Material" style="height:700px;width:auto" />
+                    <img src="./assets/logos/bootstrap.png" alt="Logo Bootstrap" style="height:250px;width:auto;position:absolute;bottom:3.5em;right:6em;rotate:-20deg;" />
                     <aside class="notes">
 "Et bien sûr, y’a Angular Material. Pour vulgariser, c'est un peu comme le petit frère de Bootstrap, mais pour Angular.
 C’est beau, c’est propre, et ça te fait gagner un temps fou." </br>
@@ -832,7 +836,7 @@ Le nom Angular est un clin d’œil aux crochets angulaires du HTML, mais aussi 
                     </aside>
                 </section>
                 <section class="inner-section compare">
-                    <h3 style="margin-bottom: 3rem;">⚖️ AngularJS vs Angular 20 : 9 ans de transformation</h3>
+                    <h3 style="margin-bottom: 3rem;">⚖️ AngularJS vs Angular 20 : 15 ans de transformation</h3>
                     <div style="display:flex;gap:2rem;margin-bottom:-8rem;">
                         <div style="flex:1;">
                             <h3><u>AngularJS (2010)</u></h3>
@@ -1105,11 +1109,22 @@ export class StandaloneComponent {
                     <aside class="notes">Structural Control Flow (Angular 14)</aside>
                 </section>
                 <section class="inner-section">
+                    <style>
+                        .columns {
+                            display: flex;
+                            gap: 2em;
+                            flex-wrap: wrap;
+                        }
+                        .column {
+                            flex: 1 1 45%;
+                            min-width: 300px;
+                        }
+                    </style>
                     <div class="cv">
                         <div class="item">
                             <h3>Signals</h3>
                             <p>Changement dans le binding <span class="var-highlight">@Input</span>, <span class="var-highlight">@Output</span>, <span class="var-highlight">@Viewchild</span></p>
-                            <pre style="width:50%;font-size:0.71em;"><code class="language-typescript" data-line-numbers="6-7,11-14">import { Component, signal } from '@angular/core';
+                            <pre style="width:50%;font-size:0.5em;"><code class="language-typescript" data-line-numbers="6-7,11-14">import { Component, signal } from '@angular/core';
 
 @Component({
     selector: 'app-signals',
@@ -1125,9 +1140,45 @@ export class SignalsComponent {
     }
 }
                             </code></pre>
+                            <hr />
+                            <div class="columns">
+                                <div class="column">
+                                    <h4>👴 Avant : Inputs & Outputs classiques</h4>
+                                    <pre><code class="language-typescript">import { Input, Output, EventEmitter } from '@angular/core';
+
+@Input() name: string = '';
+@Output() nameChanged = new EventEmitter&lt;string&gt;();
+
+changeName(newName: string) {
+    this.name = newName;
+    this.nameChanged.emit(newName);
+}</code></pre>
+                                </div>
+
+                                <div class="column">
+                                    <h4>🆕 Maintenant : avec Signals</h4>
+                                    <pre><code class="language-typescript">import { input, output, signal } from '@angular/core';
+
+name = input&lt;string&gt;();
+nameChanged = output&lt;string&gt;();
+
+changeName(newName: string) {
+    this.name.set(newName);
+    this.nameChanged.emit(newName);
+}</code></pre>
+                                </div>
+                            </div>    
                         </div>
                     </div>
-                    <aside class="notes">Signals (Angular 16)</aside>
+                    <aside class="notes">Signals (Angular 16)<br/>
+Les Signals permettent de créer des composants plus prévisibles et faciles à composer.<br/>
+Ils remplacent les décorateurs <span class="var-highlight">@Input</span> et <span class="var-highlight">@Output</span> par des fonctions de type <span class="var-highlight">input()</span> et <span class="var-highlight">output()</span>.<br/>
+input() et output() permettent de typer et déclarer proprement ce que le composant attend sans utiliser des décorateurs.<br />
+Ils sont plus explicites et permettent une meilleure composition des composants.<br/>
+Ils sont plus performants car ils ne déclenchent pas de détection de changement automatique,
+mais uniquement lorsque le signal change.<br/>
+Ils s'intègrent mieux avec Change Detection Optimisée (OnPush, SignalStore, etc.).
+                    </aside>
                 </section>
                 <section class="inner-section">
                     <div class="cv">

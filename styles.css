@@ -127,3 +127,28 @@ h1, h2 {
 .reveal .backgrounds {
   backdrop-filter: none;
 }
+
+@keyframes move_logo {
+    0%   {
+        visibility: hidden;
+        height: 46px;
+        bottom: 218px;
+        left: 534px;
+    }
+    25% {
+        height: 46px;
+        bottom: 218px;
+        left: 534px;
+    }
+    100% {
+        visibility: visible;
+        height: 200px;
+        bottom: 98px;
+        left: 1285px;
+    }
+}
+
+.logo-max {
+    position: absolute;
+    animation: move_logo 5s ease-in-out forwards;
+}
