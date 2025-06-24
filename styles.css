@@ -20,7 +20,7 @@
 }
 
 .reveal {
-    background: url("assets/background.png");
+    background: url("assets/background.png") !important;
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: -50px;
@@ -51,8 +51,12 @@ h1, h2 {
 }
 
 .inner-section {
-    background-color: rgba(255, 255, 255, 0.85);
     padding: 20px 0 !important;
+}
+
+.parchemin {
+    background: url('assets/grunge-vintage-old-paper-background.jpg') no-repeat center center;
+    background-size: cover;
 }
 
 .ch {

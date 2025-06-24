@@ -15,13 +15,31 @@ deck.initialize({
 });
 
 deck.on('slidechanged', function(event) {
-  const index = event.indexh;
+  const indexh = event.indexh;
+  const indexv = event.indexv;
   const reveal = document.querySelector('.reveal');
+  const slides = document.querySelector('.slides');
 
-  if (index === 0) {
+  if (indexh === 0) {
     reveal.classList.remove('blur-background');
   } else {
     reveal.classList.add('blur-background');
+  }
+
+  if (indexh === 0) {
+    slides.classList.remove('parchemin');
+  } else {
+    slides.classList.add('parchemin');
+  }
+
+  // 4 2
+  if (indexh === 4 && indexv === 2 || indexh === 5 && indexv === 2 || indexh === 9 && indexv === 1) {
+    slides.style.height = '1020px';
+  } else if (indexh === 7 && indexv === 3) {
+    slides.style.height = '1060px';
+  }
+   else {
+    slides.style.height = '954px';
   }
 
   const currentSlide = event.currentSlide;
@@ -77,15 +95,6 @@ deck.on('ready', () => {
   const originalOpen = window.open;
 
   window.open = function (...args) {
-    const index = event.indexh;
-    const reveal = document.querySelector('.reveal');
-
-    if (index === 0) {
-      reveal.classList.remove('blur-background');
-    } else {
-      reveal.classList.add('blur-background');
-    }
-
     const newWindow = originalOpen.apply(window, args);
 
     const interval = setInterval(() => {
@@ -100,4 +109,7 @@ deck.on('ready', () => {
 
     return newWindow;
   };
+
+  const slides = document.querySelector('.slides');
+  slides.classList.remove('parchemin');
 });

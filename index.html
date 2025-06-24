@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/node_modules/reveal.js/dist/reveal.css" />
     <link rel="stylesheet" href="/node_modules/reveal.js/dist/theme/black.css" />
-    <link rel="stylesheet" href="/node_modules/reveal.js/plugin/highlight/monokai.css" />
+    <link rel="stylesheet" href="/node_modules/highlight.js/styles/github.css" />
     <link rel="stylesheet" href="styles.css"></link>
     <title>Indiana Jones et le Temple Maudit d’Angular</title>
 </head>
 
 <body>
     <div class="reveal">
-        <div class="slides">
+        <div class="slides parchemin">
             <!-- Title Slide -->
             <section class="no-blur">
                 <div class="cv titre">
@@ -56,7 +56,7 @@
             <section>
                 <section class="inner-section">
                     <h3 style="margin-bottom: 2em;">🏆 Angular, un framework front-end majeur depuis près de 10 ans</h3>
-                    <p style="margin-bottom: 1.25em;"><strong>🎯 Obectifs de cette présentation</strong></p>
+                    <p style="margin-bottom: 1.25em;"><strong>🎯 Objectifs de cette présentation</strong></p>
                     <ul>
                         <li class="fragment">Les grandes étapes de l'évolution d'Angular</li>
                         <li class="fragment">Les nouveautés clés et leur impact sur les applications modernes</li>
@@ -92,13 +92,11 @@ Et bien sûr, apprendre à écrire du code Angular qui soit à la fois performan
                 </section>
                 <section class="inner-section">
                     <h3>🧩 jQuery et la jungle du web</h3>
-                    <pre style="width:50%;font-size: 1.1em;"><code>
-$(document).ready(function() {
+                    <pre style="width:51%;font-size: 1.1em;"><code>$(document).ready(function() {
     $('#myButton').click(function() {
         alert('Button clicked!');
     });
-});
-                    </code></pre>
+});</code></pre>
                     <img src="./assets/logos/jquery.png" alt="Logo jQuery" style="height:300px;width:auto;position:absolute;top:2em;left:2em;" />
                     <aside class="notes">
 "Flashback. On est en 2009. Le front, c’est la jungle. 
@@ -109,15 +107,13 @@ Et... pafois ça passe, souvent, ça se passe pas toujours comme on veut..."
                 </section>
                 <section class="inner-section">
                     <h3>🧪 AngularJS, un framework révolutionnaire qui aura marqué une génération de développeurs</h3>
-                    <pre style="width:50%;font-size: 0.77em;"><code>
-angular.module('myApp', [])
+                    <pre style="width:51%;font-size: 0.77em;"><code>angular.module('myApp', [])
     .controller('MyController', function($scope) {
         $scope.greeting = 'Hello, World!';
         $scope.updateGreeting = function(newGreeting) {
             $scope.greeting = newGreeting;
         };
-    });
-                    </code></pre>
+    });</code></pre>
                     <img src="./assets/logos/angularjs.png" alt="Logo AngularJS" style="height:110px;width:auto;position:absolute;top:4.2em;right:1em;rotate:-20deg" />
                     <aside class="notes">
 "On avance, on arrive en 2010. C'est à ce moment qu'arrive AngularJS. </br>
@@ -178,7 +174,7 @@ export class AppComponent {
                         <p>Gérer le code splitting, le lazy loading…</p>
                         <p>Intégration ultra configurable, surtout via la CLI d'Angular</p>
                     </div>
-                    <img src="./assets/logos/webpack.png" alt="Logo WebPack" style="height:200px;width:auto;position:absolute;top:0.75em;left:1.25em;" />
+                    <img src="./assets/logos/webpack.png" alt="Logo WebPack" style="height:275px;width:auto;position:absolute;top:0.75em;left:2em;" />
                     <aside class="notes">
 "Et puis, il y a Webpack. Le bundler officiel d'Angular. C’est un peu le couteau suisse du développement web." </br>
 "Il compile, minifie, regroupe les fichiers JS/TS, CSS, assets, etc. Il gère le code splitting, le lazy loading… et surtout, il s’intègre parfaitement avec la CLI d’Angular." </br>
@@ -271,7 +267,7 @@ export class AppModule { }
                 </section>
                 <section class="inner-section">
                     <h3>📈 Les Observables</h3>
-                    <pre style="width:50%;font-size:0.58em;"><code data-line-numbers="2-3,15-24">import { Component } from '@angular/core';
+                    <pre style="width:51%;font-size:0.58em;"><code data-line-numbers="2-3,15-24">import { Component } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 @Component({
@@ -373,10 +369,24 @@ this.searchInput.valueChanges.pipe(
                     </code></pre> -->
                 </section>
                 <section class="inner-section">
+                    <h3>🎨 Angular Material</h3>
+                    <p>Angular Material basé sur les versions d'Angular</p>
+                    <img src="./assets/material_v5.png" alt="Angular Material" style="height:700px;width:auto" />
+                    <img src="./assets/logos/bootstrap.png" alt="Logo Bootstrap" style="height:250px;width:auto;position:absolute;bottom:3.5em;right:6em;rotate:-20deg;" />
+                    <aside class="notes">
+"Et bien sûr, y’a Angular Material. Pour vulgariser, c'est un peu comme le petit frère de Bootstrap, mais pour Angular.
+C’est beau, c’est propre, et ça te fait gagner un temps fou." </br>
+"Mais attention, c’est pas juste du CSS. C’est une vraie bibliothèque de composants qui respecte les principes du Material Design." </br>
+"Bon, donc pour ceux qui l'auraient toujours pas: Material Design + De l'Angular... <i>Fuuuuusssssiiioooonnnnn !</i> Angular Material !"
+</br>
+Alors oui, en réalité, je vous voir venir les initiés, je vous ai un peu menti. Il existait déjà une version de Material en développement dans la version 2, mais la version 4 a marqué une étape importante dans son évolution et son adoption par la communauté Angular. C'est pour ça qu'on parle souvent de la version 4 comme étant le début de l'ère d'Angular Material.
+                    </aside>
+                </section>
+                <section class="inner-section">
                     <h3>⏩ Quelques autres grandes évolutions de 4 à 7:</h3>
                     <p><strong>Angular 4</strong></p>
                     <ul>
-                        <li>Possibilité de créer des guards, des resolvers, des composants plus spécifiques</li>
+                        <li>Amélioration des guards, des resolvers, des composants plus spécifiques</li>
                     </ul>
                     <p><strong>Angular 5</strong></p>
                     <ul>
@@ -403,20 +413,6 @@ Ajout à l'écran d'accueil : L'utilisateur peut ajouter une PWA à l'écran d'a
 Mise à jour automatique : Une PWA se met à jour automatiquement, sans nécessiter d'intervention de l'utilisateur. </br>
 Sécurité : Une PWA est servie en HTTPS, ce qui assure la sécurité des données. </br>
 L'introduction du support des PWA dans Angular 5 a permis aux développeurs de créer facilement des applications web progressives, en bénéficiant de toutes ces fonctionnalités. -->                        
-                    </aside>
-                </section>
-                <section class="inner-section">
-                    <h3>🎨 Angular Material</h3>
-                    <p>Officialisation d'Angular Material basé sur les versions d'Angular</p>
-                    <img src="./assets/material_v5.png" alt="Angular Material" style="height:700px;width:auto" />
-                    <img src="./assets/logos/bootstrap.png" alt="Logo Bootstrap" style="height:250px;width:auto;position:absolute;bottom:3.5em;right:6em;rotate:-20deg;" />
-                    <aside class="notes">
-"Et bien sûr, y’a Angular Material. Pour vulgariser, c'est un peu comme le petit frère de Bootstrap, mais pour Angular.
-C’est beau, c’est propre, et ça te fait gagner un temps fou." </br>
-"Mais attention, c’est pas juste du CSS. C’est une vraie bibliothèque de composants qui respecte les principes du Material Design." </br>
-"Bon, donc pour ceux qui l'auraient toujours pas: Material Design + De l'Angular... <i>Fuuuuusssssiiioooonnnnn !</i> Angular Material !"
-</br>
-Alors oui, en réalité, je vous voir venir les initiés, je vous ai un peu menti. Il existait déjà une version de Material en développement dans la version 2, mais la version 4 a marqué une étape importante dans son évolution et son adoption par la communauté Angular. C'est pour ça qu'on parle souvent de la version 4 comme étant le début de l'ère d'Angular Material.
                     </aside>
                 </section>
             </section>
@@ -507,7 +503,7 @@ usefulFn();
                     </aside>
                 </section>
                 <section class="inner-section">
-                    <pre style="width:33%;"><code data-line-numbers="4-6|7-15|16-22|23|24">
+                    <pre style="width:34%;"><code data-line-numbers="4-6|7-15|16-22|23|24">
 my-app/
 ├── src/
 │   ├── app/
@@ -556,7 +552,7 @@ Point d'entrée de l'application, où le module principal est bootstrapé. </br>
                     </aside>
                 </section>
                 <section class="inner-section">
-                    <h3>👥 Module Federation d'un peu plus près : partager un UserModule</h3>
+                    <h3>👥 Module Federation d'un peu plus près : partager un UserComponent</h3>
                     <p style="text-align: center;">
                         Deux apps, un seul module utilisateur... et aucun duplicata ! 🚀
                     </p>
@@ -564,12 +560,12 @@ Point d'entrée de l'application, où le module principal est bootstrapé. </br>
                     <div style="display: flex; gap: 30px; justify-content: center; align-items: center; flex-wrap: wrap;">
 
                         <!-- App Front -->
-                        <div style="flex: 1; min-width: 250px; background: #272822; color: white; padding: 1em; border-radius: 8px;">
+                        <div style="flex: 1; min-width: 250px; background: white; color: #272822; padding: 1em; border-radius: 8px;">
                             <h3 style="text-align: center;">&lt;app-user-profile&gt;</h3>
                             <pre style="font-size: 0.75em;box-shadow: none;">
                                 <code>
-import('userApp/UserModule')
-  .then(m => m.UserModule);
+import('userApp/UserComponent')
+  .then(m => m.UserComponent);
                             </code></pre>
                             <p style="font-size: 1em; text-align: center;">
                                 ➕ Affiche le profil utilisateur
@@ -580,12 +576,12 @@ import('userApp/UserModule')
                         <div style="font-size: 2em; align-self: center;">⬅️ ➡️</div>
 
                         <!-- App Admin -->
-                        <div style="flex: 1; min-width: 250px; background: #272822; color: white; padding: 1em; border-radius: 8px;">
+                        <div style="flex: 1; min-width: 250px; background: white; color: #272822; padding: 1em; border-radius: 8px;">
                         <h3 style="text-align: center;">&lt;app-user-admin&gt;</h3>
                         <pre style="font-size: 0.75em;box-shadow: none;">
                             <code>
-import('userApp/UserModule')
-  .then(m => m.UserModule);
+import('userApp/UserComponent')
+  .then(m => m.UserComponent);
                             </code></pre>
                         <p style="font-size: 1em; text-align: center;">
                             ➕ Gère l'utlisateur depuis le backoffice
@@ -607,7 +603,10 @@ import('userApp/UserModule')
                         🧠 Résultat : maintenance centralisée, mise à jour instantanée, micro-frontend modulaire.
                     </p>
                 </section>
-                <section class="inner-section">
+
+                <!-- Fusionner ça avec la section suivante -->
+
+                <!-- <section class="inner-section">
                     <div class="item">
                         <ul>
                             <li>Amélioration de la gestion des formulaires (TypedForms) v13</li>
@@ -616,13 +615,12 @@ import('userApp/UserModule')
                         </ul>
                     </div>
                     <aside class="notes">
-"Avec la version 16, on sent l'écoute de la communauté, c'est le débarquement du principe des Signals. Une nouvelle manière de gérer la réactivité, inspirée du monde de la programmation réactive… mais plus lisible, plus intuitive. </br>
-Pour les quelques fans de Solid qui ont eu le courage de venir à cette conf, vous n'êtes pas perdu avec ces principes (en même temps, on vient de parler de meilleure réactivité). C’est un peu comme si Angular avait décidé de prendre un café avec Solid." </br>
+
 "Il y’a aussi defer(). C’est un peu comme un 'setTimeout' pour tes appels API mais toujours pareil, dans un principe de meilleure gestion de la réactivité. 
 Tu peux dire à Angular : 'Hé, attends un peu avant de charger ça.' Et Angular te dit : 'Pas de souci, je vais attendre, tu m'préviens et je lance ton appel quand t'es ok.'" </br>
 "Vous allez me dire, 'Ben ils sont où les exemples ?!' Pas d'inquiétudes, je vous détaille tout ça dans qq minutes dans les bonnes pratiques"
                     </aside>
-                </section>
+                </section> -->
                 <section class="inner-section">
                     <h3>🚫 Bye bye zone.js ?</h3>
                     <div style="display: flex; gap: 2rem;">
@@ -646,6 +644,8 @@ Tu peux dire à Angular : 'Hé, attends un peu avant de charger ça.' Et Angular
                     </div>
                     <aside class="notes">
                         Angular a longtemps reposé sur zone.js pour gérer la détection des changements sans effort pour le développeur, mais cela avait un coût en complexité et performance. Avec l’introduction des signals, Angular évolue vers une gestion déclarative et performante du state.
+                        "Avec la version 16, on sent l'écoute de la communauté, c'est le débarquement du principe des Signals. Une nouvelle manière de gérer la réactivité, inspirée du monde de la programmation réactive… mais plus lisible, plus intuitive. </br>
+                        Pour les quelques fans de Solid qui ont eu le courage de venir à cette conf, vous n'êtes pas perdu avec ces principes (en même temps, on vient de parler de meilleure réactivité). C’est un peu comme si Angular avait décidé de prendre un café avec Solid." </br>
                     </aside>
                 </section>
             </section>
@@ -756,6 +756,9 @@ Tu peux dire à Angular : 'Hé, attends un peu avant de charger ça.' Et Angular
                     }
                 </style>
 
+                <!-- Mettre en valeur les versions majeures () -->
+                <!-- Chiffrer le temps et le gain en productivité ? -->
+
                 <h3 style="text-align:center;">📊 Timeline d’Angular (2010–2025)</h3>
                 <div class="timeline-container">
                     <div class="timeline-line arrow-right"></div>
@@ -835,7 +838,7 @@ Tu peux dire à Angular : 'Hé, attends un peu avant de charger ça.' Et Angular
 Le nom Angular est un clin d’œil aux crochets angulaires du HTML, mais aussi au préfixe ng utilisé dans les balises personnalisées du framework — une façon subtile de marquer l’empreinte du framework dans le code.
                     </aside>
                 </section>
-                <section class="inner-section compare">
+                <section class="inner-section" style="font-size:0.75em !important;">
                     <h3 style="margin-bottom: 3rem;">⚖️ AngularJS vs Angular 20 : 15 ans de transformation</h3>
                     <div style="display:flex;gap:2rem;margin-bottom:-8rem;">
                         <div style="flex:1;">
@@ -854,7 +857,7 @@ Le nom Angular est un clin d’œil aux crochets angulaires du HTML, mais aussi 
         {{ count }}
     </div>
 
-    <script>
+    &lt;script&gt;
         angular.module('myApp', []);
         
         angular.module('myApp').controller('AppController', 
@@ -865,7 +868,7 @@ Le nom Angular est un clin d’œil aux crochets angulaires du HTML, mais aussi 
                     $scope.count++;
                 };
             });
-    </script>
+    &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
                             </code></pre>
@@ -1389,6 +1392,8 @@ En résumé, defer() offre une meilleure gestion de l'asynchronisme, une meilleu
                     }
                 </style>
 
+                <!-- Rajouter les versions en parallèle -->
+
                     <table class="team-table">
                         <caption>👥 Évolution de l’équipe Angular chez Google</caption>
                         <thead>
@@ -1411,7 +1416,7 @@ En résumé, defer() offre une meilleure gestion de l'asynchronisme, une meilleu
                         </tr>
                         <tr>
                             <td>2021–2023</td>
-                            <td>80–100 ingénieurs</td>
+                            <td>80–100 personnes</td>
                             <td>Architecture micro-frontends / modularisation massive</td>
                         </tr>
                         <tr>
@@ -1441,17 +1446,17 @@ En résumé, defer() offre une meilleure gestion de l'asynchronisme, une meilleu
                         </tr>
                         <tr>
                             <td>2016–2020</td>
-                            <td>~50 000–100 000 dépôts/an</td>
+                            <td>~50 000–300 000 dépôts/an</td>
                             <td>Croissance stable, Angular 2+, Ivy, adoption en entreprise</td>
                         </tr>
                         <tr>
                             <td>2021–2023</td>
-                            <td>~2,9 M de sites, ~40k dépôts/an</td>
+                            <td>~2,9 M de sites, ~400k nouveaux dépôts/an</td>
                             <td>Adoption massive, micro-frontends, signaux</td>
                         </tr>
                         <tr>
                             <td>2024–2025</td>
-                            <td>>400 000 sites live, 2,5 M downloads/semaine</td>
+                            <td>700 000 nouveaux dépôts/an, 2,5 M downloads/semaine</td>
                             <td>Écosystème mature, croissance par stabilité</td>
                         </tr>
                         </tbody>
@@ -1483,6 +1488,7 @@ En résumé, defer() offre une meilleure gestion de l'asynchronisme, une meilleu
                             <p>LinkedIn : <a href="https://www.linkedin.com/in/pierre-fervel/">pierrefervel</a></p>
                         </div>
                     </div>
+                    <img src="./assets/openfeedback.png" alt="QRCode Openfeedback" style="height:250px;width:auto;position:absolute;top:13.25em;left:24em;" />
                     <aside class="notes">
                         "Et voilà, c'est la fin de notre voyage à travers l'histoire d'Angular. J'espère que vous avez apprécié cette aventure autant que moi."
                         </br>
