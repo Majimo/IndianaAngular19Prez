@@ -78,7 +78,6 @@ Et bien sûr, apprendre à écrire du code Angular qui soit à la fois performan
                 </section>
             </section>
 
-            <!-- Angular Evolution -->
             <!-- Les débuts d'Angular -->
             <section>
                 <section class="inner-section">
@@ -92,12 +91,14 @@ Et bien sûr, apprendre à écrire du code Angular qui soit à la fois performan
                 </section>
                 <section class="inner-section">
                     <h3>🧩 jQuery et la jungle du web</h3>
-                    <pre style="width:51%;font-size: 1.1em;"><code>$(document).ready(function() {
+                    <div style="display:flex;justify-content:space-evenly;align-items:center;">
+                        <img src="./assets/logos/jquery.png" alt="Logo jQuery" style="height:300px;width:auto;" />
+                        <pre style="width:51%;font-size: 1.1em;margin:0;"><code>$(document).ready(function() {
     $('#myButton').click(function() {
         alert('Button clicked!');
     });
 });</code></pre>
-                    <img src="./assets/logos/jquery.png" alt="Logo jQuery" style="height:300px;width:auto;position:absolute;top:2em;left:2em;" />
+                    </div>
                     <aside class="notes">
 "Flashback. On est en 2009. Le front, c’est la jungle. 
 Et là, arrive un super outil pour manipuler notre DOM : jQuery ! Un outil, qui tire sa puissance d'une faille de sécurité du DOM, et qui nous permet de faire des trucs de fou avec le JavaScript." </br>
@@ -114,7 +115,8 @@ Et... pafois ça passe, souvent, ça se passe pas toujours comme on veut..."
             $scope.greeting = newGreeting;
         };
     });</code></pre>
-                    <img src="./assets/logos/angularjs.png" alt="Logo AngularJS" style="height:110px;width:auto;position:absolute;top:4.2em;right:1em;rotate:-20deg" />
+                    <img src="./assets/misko.png" alt="Misko Hevery" style="height:300px;width:auto;position:absolute;bottom:-9.5em;left:24em" />
+                    <img src="./assets/logos/angularjs.png" alt="Logo AngularJS" style="height:110px;width:auto;position:absolute;bottom:-7em;right:26em;rotate:-20deg" />
                     <aside class="notes">
 "On avance, on arrive en 2010. C'est à ce moment qu'arrive AngularJS. </br>
 Là, on a une personne, Misko Hevery, chez Google qui travaille sur une application interne (Google Feedback), la lourdeur du JS dans l'application le frustre. Il tente alors un pari fou: Réécrire l'application en qq jours => ANGULAR.JS </br>
@@ -355,18 +357,6 @@ this.http.get('/api/user').pipe(
                         </tbody>
                     </table>
                     <img src="./assets/logos/rxjs.png" alt="Logo RxJS" style="height:200px;width:auto;position:absolute;top:0.75em;right:1.5em;" />
-                    <!-- <hr/>
-
-                    <h3>Exemple : Recherche utilisateur</h3>
-                    <pre style="width:50%;"><code class="language-ts" style="padding-left:10em;">
-this.searchInput.valueChanges.pipe(
-  debounceTime(300),
-  filter(q => q.length > 2),
-  switchMap(q => this.http.get('/api?q=' + q))
-).subscribe(
-    results => this.show(results)
-);
-                    </code></pre> -->
                 </section>
                 <section class="inner-section">
                     <h3>🎨 Angular Material</h3>
@@ -503,7 +493,27 @@ usefulFn();
                     </aside>
                 </section>
                 <section class="inner-section">
-                    <pre style="width:34%;"><code data-line-numbers="4-6|7-15|16-22|23|24">
+                    <style>
+                        .hljs-ln-numbers {
+                            display: none !important;
+                        }
+                    </style>
+                    <div style="display:flex;align-items:center;">
+                        <pre style="width:45%;height:20%;"><code class="language-ts">@Component({
+    selector: 'app-cart',
+    template: '
+        <h2>Your cart and the products you ordered</h2>
+        <ul>
+            <li *ngFor="let product of products | cartProduct">
+                {{ product.name }} - {{ product.price | currency }}
+            </li>
+        </ul>
+    '
+    standalone: true,
+    imports: [CommonModule, CartProductPipe, ProductComponent],
+    providers: [ProductService]
+})</code></pre>
+                        <pre style="width:40%;"><code data-line-numbers="4-6|7-15|16-22|23|24" class="language-html">
 my-app/
 ├── src/
 │   ├── app/
@@ -528,7 +538,8 @@ my-app/
 │   └── main.ts
 ├── webpack.config.js
 └── package.json
-                    </code></pre>
+                        </code></pre>
+                    </div>
                     <aside class="notes">
 "Fini les NgModules ? Presque." </br>
 "Aujourd’hui, on peut créer un composant Angular sans avoir à déclarer un module. C’est plus simple, plus clair, plus rapide. Bon, dans la pratique; comme on va le voir, ça permet surtout d'alléger l'architecture de l'application et de la rendre plus maintenable." </br>
@@ -558,8 +569,7 @@ Point d'entrée de l'application, où le module principal est bootstrapé. </br>
                     </p>
 
                     <div style="display: flex; gap: 30px; justify-content: center; align-items: center; flex-wrap: wrap;">
-
-                        <!-- App Front -->
+                        
                         <div style="flex: 1; min-width: 250px; background: white; color: #272822; padding: 1em; border-radius: 8px;">
                             <h3 style="text-align: center;">&lt;app-user-profile&gt;</h3>
                             <pre style="font-size: 0.75em;box-shadow: none;">
@@ -571,11 +581,9 @@ import('userApp/UserComponent')
                                 ➕ Affiche le profil utilisateur
                             </p>
                         </div>
-
-                        <!-- Flèche -->
+                        
                         <div style="font-size: 2em; align-self: center;">⬅️ ➡️</div>
-
-                        <!-- App Admin -->
+                        
                         <div style="flex: 1; min-width: 250px; background: white; color: #272822; padding: 1em; border-radius: 8px;">
                         <h3 style="text-align: center;">&lt;app-user-admin&gt;</h3>
                         <pre style="font-size: 0.75em;box-shadow: none;">
@@ -589,12 +597,11 @@ import('userApp/UserComponent')
                         </div>
 
                     </div>
-
-                    <!-- Remote App -->
+                    
                     <div style="margin-top: 1.5em; text-align: center;">
                         <h4>📦 userApp (Remote)</h4>
                         <p style="font-size: 0.8em;">
-                        <code>UserModule</code> est exposé une seule fois et utilisé par plusieurs modules, librairies, applications, etc...<br>
+                        <code>UserComponent</code> est exposé une seule fois et utilisé par plusieurs modules, librairies, applications, etc...<br>
                         sans duplication, sans recompilation, sans couplage fort.
                         </p>
                     </div>
@@ -604,9 +611,9 @@ import('userApp/UserComponent')
                     </p>
                 </section>
 
-                <!-- Fusionner ça avec la section suivante -->
-
-                <!-- <section class="inner-section">
+                <!-- Fusionner ça avec la section suivante
+                 
+                <section class="inner-section">
                     <div class="item">
                         <ul>
                             <li>Amélioration de la gestion des formulaires (TypedForms) v13</li>
@@ -661,23 +668,23 @@ Tu peux dire à Angular : 'Hé, attends un peu avant de charger ça.' Et Angular
                 <section class="inner-section" style="position:relative;height:80%;top:80px;">
                 <style>
                     .timeline-container {
-                    position: absolute;
-                    width: 100%;
-                    max-width: 1200px;
-                    margin: auto;
-                    padding: 2em 0;
-                    top: 47%;
-                    left: 20%;
+                        position: absolute;
+                        width: 100%;
+                        max-width: 1200px;
+                        margin: auto;
+                        padding: 2em 0;
+                        top: 47%;
+                        left: 20%;
                     }
 
                     .timeline-line {
-                    position: absolute;
-                    top: 50%;
-                    left: -5%;
-                    width: 100%;
-                    height: 4px;
-                    background: #c62828;
-                    z-index: 1;
+                        position: absolute;
+                        top: 50%;
+                        left: -5%;
+                        width: 100%;
+                        height: 4px;
+                        background: #c62828;
+                        z-index: 1;
                     }
 
                     .arrow-right:before {
@@ -692,71 +699,74 @@ Tu peux dire à Angular : 'Hé, attends un peu avant de charger ça.' Et Angular
                     }
 
                     .timeline-event {
-                    position: relative;
-                    width: 150px;
-                    padding: 1em;
-                    background: #fff;
-                    border-radius: 8px;
-                    border: 1px solid #ccc;
-                    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-                    text-align: center;
-                    z-index: 2;
+                        position: relative;
+                        width: 150px;
+                        padding: 1em;
+                        background: #fff;
+                        border-radius: 8px;
+                        border: 1px solid #ccc;
+                        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+                        text-align: center;
+                        z-index: 2;
+                    }
+
+                    .major-timeline-event {
+                        background: #c7938e;
                     }
 
                     .timeline-event h4 {
-                    margin: 0;
-                    font-size: 1em;
-                    color: #c62828;
+                        margin: 0;
+                        font-size: 1em;
+                        color: #c62828;
                     }
 
                     .timeline-event p {
-                    margin: 0.3em 0 0;
-                    font-size: 0.8em;
-                    color: #444;
+                        margin: 0.3em 0 0;
+                        font-size: 0.8em;
+                        color: #444;
                     }
 
                     .timeline-item {
-                    position: absolute;
-                    transform: translateX(-50%);
+                        position: absolute;
+                        transform: translateX(-50%);
                     }
 
                     .timeline-top::before {
-                    content: "";
-                    position: absolute;
-                    bottom: -3%;
-                    width: 16px;
-                    height: 16px;
-                    border-radius: 50%;
-                    background: #c62828;
-                    border: 2px solid white;
-                    box-shadow: 0 0 0 2px #c62828;
-                    z-index: 3;
+                        content: "";
+                        position: absolute;
+                        bottom: -3%;
+                        width: 16px;
+                        height: 16px;
+                        border-radius: 50%;
+                        background: #c62828;
+                        border: 2px solid white;
+                        box-shadow: 0 0 0 2px #c62828;
+                        z-index: 3;
                     }
 
                     .timeline-bottom::before {
-                    content: "";
-                    position: absolute;
-                    top: 0%;
-                    transform: translate(-50%, -50%);
-                    width: 16px;
-                    height: 16px;
-                    border-radius: 50%;
-                    background: #c62828;
-                    border: 2px solid white;
-                    box-shadow: 0 0 0 2px #c62828;
-                    z-index: 3;
+                        content: "";
+                        position: absolute;
+                        top: 0%;
+                        transform: translate(-50%, -50%);
+                        width: 16px;
+                        height: 16px;
+                        border-radius: 50%;
+                        background: #c62828;
+                        border: 2px solid white;
+                        box-shadow: 0 0 0 2px #c62828;
+                        z-index: 3;
                     }
 
                     .timeline-top {
-                    bottom: calc(50% + 60px);
+                        bottom: calc(50% + 60px);
                     }
 
                     .timeline-bottom {
-                    top: calc(50% + 60px);
+                        top: calc(50% + 60px);
                     }
                 </style>
-
-                <!-- Mettre en valeur les versions majeures () -->
+                
                 <!-- Chiffrer le temps et le gain en productivité ? -->
 
                 <h3 style="text-align:center;">📊 Timeline d’Angular (2010–2025)</h3>
@@ -771,14 +781,14 @@ Tu peux dire à Angular : 'Hé, attends un peu avant de charger ça.' Et Angular
                     </div>
 
                     <div class="timeline-item timeline-bottom" style="left: 15%;">
-                    <div class="timeline-event">
+                    <div class="timeline-event major-timeline-event">
                         <h4>2016</h4>
                         <p>Angular 2 (réécriture TS)</p>
                     </div>
                     </div>
 
                     <div class="timeline-item timeline-top" style="left: 25%;">
-                    <div class="timeline-event">
+                    <div class="timeline-event major-timeline-event">
                         <h4>2017</h4>
                         <p>Angular 4 (@NgModule, LazyLoading)</p>
                     </div>
@@ -792,7 +802,7 @@ Tu peux dire à Angular : 'Hé, attends un peu avant de charger ça.' Et Angular
                     </div>
 
                     <div class="timeline-item timeline-top" style="left: 45%;">
-                    <div class="timeline-event">
+                    <div class="timeline-event major-timeline-event">
                         <h4>2020</h4>
                         <p>Angular 9 (Ivy par défaut)</p>
                     </div>
@@ -813,7 +823,7 @@ Tu peux dire à Angular : 'Hé, attends un peu avant de charger ça.' Et Angular
                     </div>
 
                     <div class="timeline-item timeline-bottom" style="left: 75%;">
-                    <div class="timeline-event">
+                    <div class="timeline-event major-timeline-event">
                         <h4>2024</h4>
                         <p>Angular 17/18 (Vite, Signals+)</p>
                     </div>
@@ -922,7 +932,6 @@ export class AppComponent {
                         <div style="flex:1;">
                             <p></p>
                     </div>
-                    <!-- <div style="display: flex; gap: 2rem;"> -->
                         <div style="flex: 1;">
                             <p>📁 Structure</p>
                             <pre><code>
@@ -959,7 +968,6 @@ src/
                         </div>
                     </div>
                     <aside class="notes">
-                        <!-- <p>Mais avant de passer aux bonnes pratiques, je voulais vous montrer rapidement comment on est passé<strong>Du framework structurant au framework moderne, réactif et ergonomique</strong></p> -->
                         <h4>⚠️ Points faibles Version 2</h4>
                         <ul>
                             <li>Boilerplate lourd (modules, declarations...)</li>
@@ -1357,108 +1365,48 @@ En résumé, defer() offre une meilleure gestion de l'asynchronisme, une meilleu
                     margin-bottom: 0.6em;
                     font-weight: bold;
                     }
-
-                    .projects-table {
-                    width: 90%;
-                    margin: auto;
-                    border-collapse: collapse;
-                    font-size: 0.95em;
-                    }
-
-                    .projects-table th, .projects-table td {
-                    border: 1px solid #ccc;
-                    padding: 0.8em 1em;
-                    text-align: left;
-                    }
-
-                    .projects-table th {
-                    background-color: #3f51b5;
-                    color: white;
-                    }
-
-                    .projects-table tr:nth-child(even) {
-                    background-color: #eef0fb;
-                    }
-
-                    .projects-table td:first-child {
-                    font-weight: bold;
-                    white-space: nowrap;
-                    }
-
-                    .projects-table caption {
-                    font-size: 1.4em;
-                    margin-bottom: 0.6em;
-                    font-weight: bold;
-                    }
                 </style>
 
-                <!-- Rajouter les versions en parallèle -->
-
                     <table class="team-table">
-                        <caption>👥 Évolution de l’équipe Angular chez Google</caption>
+                        <caption>🔀 Évolution d’Angular : Équipe Google vs Adoption par les développeurs</caption>
                         <thead>
-                        <tr>
-                            <th>Période</th>
-                            <th>Taille approximative</th>
-                            <th>Contexte</th>
-                        </tr>
+                            <tr>
+                                <th>Période</th>
+                                <th>Versions</th>
+                                <th>👥 Taille de l’équipe (Google)</th>
+                                <th>📈 Volume de projets</th>
+                                <th>🌍 Contexte</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>2009–2010</td>
-                            <td>Quelques personnes</td>
-                            <td>Projet interne (Misko + 1–2 devs)</td>
-                        </tr>
-                        <tr>
-                            <td>2016–2020</td>
-                            <td>20–50 personnes</td>
-                            <td>Équipe core Angular, DevRel, product, QA</td>
-                        </tr>
-                        <tr>
-                            <td>2021–2023</td>
-                            <td>80–100 personnes</td>
-                            <td>Architecture micro-frontends / modularisation massive</td>
-                        </tr>
-                        <tr>
-                            <td>2024–2025</td>
-                            <td>≈ 100 personnes</td>
-                            <td>Maintien + évolution : Signals, SSR, tooling, performance…</td>
-                        </tr>
-                        </tbody>
-                    </table>
-
-                    <hr style="margin-block-start:1.5em;margin-block-end:1em;" />
-
-                    <table class="projects-table">
-                        <caption>📈 Projets Angular créés – Évolution par période</caption>
-                        <thead>
-                        <tr>
-                            <th>Période</th>
-                            <th>Volume de projets</th>
-                            <th>Contexte</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>2009–2010</td>
-                            <td>Quelques centaines</td>
-                            <td>Débuts expérimentaux avec AngularJS</td>
-                        </tr>
-                        <tr>
-                            <td>2016–2020</td>
-                            <td>~50 000–300 000 dépôts/an</td>
-                            <td>Croissance stable, Angular 2+, Ivy, adoption en entreprise</td>
-                        </tr>
-                        <tr>
-                            <td>2021–2023</td>
-                            <td>~2,9 M de sites, ~400k nouveaux dépôts/an</td>
-                            <td>Adoption massive, micro-frontends, signaux</td>
-                        </tr>
-                        <tr>
-                            <td>2024–2025</td>
-                            <td>700 000 nouveaux dépôts/an, 2,5 M downloads/semaine</td>
-                            <td>Écosystème mature, croissance par stabilité</td>
-                        </tr>
+                            <tr>
+                                <td>2009–2015</td>
+                                <td>AngularJS</td>
+                                <td>Projet interne (Misko + 1–2 devs)</td>
+                                <td>Quelques centaines par an</td>
+                                <td>Débuts expérimentaux avec AngularJS</td>
+                            </tr>
+                            <tr>
+                                <td>2016–2020</td>
+                                <td>2 à 9</td>
+                                <td>20–50 personnes</td>
+                                <td>~50 000 à 300 000 dépôts/an</td>
+                                <td>Croissance stable, Angular 2+, Ivy, adoption en entreprise</td>
+                            </tr>
+                            <tr>
+                                <td>2021–2023</td>
+                                <td>10 à 16</td>
+                                <td>80–100 personnes</td>
+                                <td>400 000 dépôts/an</br>~2,9 M sites maintenus</td>
+                                <td>Adoption massive, Architecture micro-frontends, signaux</td>
+                            </tr>
+                            <tr>
+                                <td>2024–2025</td>
+                                <td>2024–2025</td>
+                                <td>≈ 100 personnes</td>
+                                <td>700 000 dépôts/an</br>~2,5 M downloads ng/semaine</td>
+                                <td>Écosystème mature, croissance par stabilité, SSR, tooling, performance…</td>
+                            </tr>
                         </tbody>
                     </table>
                     <aside class="notes">
@@ -1498,8 +1446,8 @@ En résumé, defer() offre une meilleure gestion de l'asynchronisme, une meilleu
                     </aside>
                 </section>
             </section>
-        </div><!-- slides -->
-    </div><!-- reveal -->
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
