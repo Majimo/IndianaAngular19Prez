@@ -32,7 +32,6 @@
 <i>(Pause dramatique, regarder les réactions)</i> </br>
 "Ok… j’espère que vous avez quitter ces projets depuis." </br>
 "Aujourd’hui, on va retracer l’histoire d’Angular. Un framework qui a connu des hauts, des bas, des refontes, des révolutions... et qui est toujours là, solide comme un rocher qui déboule dans un tunnel — ou comme une dépendance dans ton package.json."
-<p>Alors, enfilons notre chapeau d'archéologue du code, et partons à la découverte des trésors cachés d'Angular !</p>
                 </aside>
             </section>
             
@@ -41,26 +40,33 @@
                 <section class="inner-section">
                     <div class="ch">
                         <div class="item">
-                            <img src="https://doc.maxds.fr/uploads/9d5a48ad-cf59-49c0-a638-c49940c83363.jpg" alt="Merci" style="height:700px;width:auto" />
+                            <img src="./assets/moi.jpg" alt="Merci" style="height:700px;width:auto" />
                         </div>
                         <div class="item mes-infos">
                             <p class="mon-nom">Pierre FERVEL</p>
-                            <p style="margin-bottom: 1.75em;">Développeur Fullstack <span class="digital">Angular </span>/ <span class="serv">Java</span></p>
+                            <p>Développeur Fullstack <span class="digital">Angular </span>/ <span class="serv">Java</span></p>
+                            <p style="margin-bottom: 1.75em;">Fan passionné de Zemeckis, Spielberg,  </br>Lucas  ===  Un pur produit des 80s</p>
                             <div style="display:flex;justify-content:center;" id="logos">
                                 <img src="./assets/logo_max.png" alt="Logo Max" style="height:180px;width:auto" />
                             </div>
                         </div>
                     </div>
+                    <img class="fragment" src="./assets/pierre_fedora-removebg-preview.png" alt="Fedora removed" style="height:688px;width:auto;position:absolute;top:0.7em;left:6.95em;" />
+                    <aside class="notes">
+                        Ben toi quoi
+
+<p>Alors, enfilons notre chapeau d'archéologue du code, et partons à la découverte des trésors cachés d'Angular !</p>
+                    </aside>
                 </section>
             </section>
             <section>
                 <section class="inner-section">
                     <h3 style="margin-bottom: 2em;">🏆 Angular, un framework front-end majeur depuis près de 10 ans</h3>
                     <p style="margin-bottom: 1.25em;"><strong>🎯 Objectifs de cette présentation</strong></p>
-                    <ul>
-                        <li class="fragment">Les grandes étapes de l'évolution d'Angular</li>
-                        <li class="fragment">Les nouveautés clés et leur impact sur les applications modernes</li>
-                        <li class="fragment">Pleins de bonnes pratiques pour écrire du code Angular performant et maintenable</li>
+                    <ul class="emoji-list">
+                        <li class="fragment" data-icon="📈">Les grandes étapes de l'évolution d'Angular</li>
+                        <li class="fragment" data-icon="🔍">Comprendres les impacts de ces évolutions sur les applications Angular</li>
+                        <li class="fragment" data-icon="💡">Pleins de bonnes pratiques pour écrire du code Angular performant et maintenable</li>
                     </ul>
                     <aside class="notes">
 "Angular, c’est plus qu’un simple framework. C’est une saga. 10 ans d’évolution, de paris techniques, de frustrations parfois… mais aussi de très belles idées." </br>
@@ -83,6 +89,7 @@ Et bien sûr, apprendre à écrire du code Angular qui soit à la fois performan
                 <section class="inner-section">
                     <h3>🌱 Les débuts des frameworks front-end</h3>
                     <img src="./assets/apes_2001.gif" alt="2001 l'odyssée de l'espace" style="height:550px;width:auto" />
+                    <div class="date-range" data-text="2009 - 2016">2009 - 2016</div>
                     <aside class="notes">
 "On va commencer par le début du début. Vous savez, à la bonne vieille époque où on faisait du JavaScript pur, sans framework, sans bibliothèque, juste avec des alertes et des console.log." </br>
 "Hein ? On continue à faire ça ?! Oui, ben comme quoi, on a gardé des choses de cette époque..." </br>
@@ -108,6 +115,7 @@ Et... pafois ça passe, souvent, ça se passe pas toujours comme on veut..."
                 </section>
                 <section class="inner-section">
                     <h3>🧪 AngularJS, un framework révolutionnaire qui aura marqué une génération de développeurs</h3>
+                    <p>Misko Hevery</p>
                     <pre style="width:51%;font-size: 0.77em;"><code>angular.module('myApp', [])
     .controller('MyController', function($scope) {
         $scope.greeting = 'Hello, World!';
@@ -128,11 +136,12 @@ Au sein de Google, on adopte très vite la proposition, AngularJS, c’est magiq
                     <h3>🔁 Le passage difficile d'AngularJS à Angular 2</h3>
                     <div class="cv">
                         <div class="item">
-                            <p><strong>Un reboot complet, plus brutal que le Crâne de Cristal pour plus de performance et de modularité</strong></p>
+                            <p><strong>Un reboot complet, plus brutal que le Crâne de Cristal pour plus de performance et de modularité</strong> (Igor Minar)</p>
                             </br>
                             <p>Exit le $scope</p>
                             <p>Exit le JS, désormais on utilise Typescript</p>
-                            <pre style="width:50%;font-size: 0.9em;"><code data-line-numbers="1-3|4|8-10">import { Component } from '@angular/core';
+                            <!-- <pre style="width:50%;font-size: 0.9em;"><code data-line-numbers="1-3|4|8-10">import { Component } from '@angular/core'; -->
+                            <pre style="width:50%;font-size: 0.9em;"><code>import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-root',
@@ -145,13 +154,14 @@ export class AppComponent {
                             </code></pre>
                         </div>
                     </div>
+                    <img src="./assets/igor_minar.webp" alt="Igor Minar" style="height:300px;width:auto;position:absolute;bottom:-0.5em;right:2em" />
                     <aside class="notes">
 "Mais au bout de quelques années, c’est aussi un peu... la galère. Des scopes partout, du code spaghetti, difficile à maintenir. Le rêve tourne au cauchemar." </br>
 "Et alors là, en 2016, Google fait un truc radical : ils disent… ‘allez, on s'en fiche de tout ce qu'on a capitalisé, on recommence tout’."
 <i>(pause)</i> </br>
 "Angular 2, c’est pas une mise à jour. C’est un nouveau monde. Fini $scope, bonjour TypeScript. C’est plus rapide, plus propre, mais aussi… plus complexe."
 </br>
-"Un peu comme passer de Mario Kart à Dark Souls."
+Au commande de cette refonte qui bouleverse les équipes Google, comme le Crâne de Cristal a bouleversé nos vies, Igor Minar, un des principaux architectes d'Angular. </br>
                     </aside>
                 </section>
                 <section class="inner-section">
@@ -164,20 +174,26 @@ export class AppComponent {
                     <aside class="notes">
 <p>C'est donc avec Angular 2 qu'on voit apparaître zone.js</p>
 <p>Zone.js ça permet de gérer sans sourciller le changement d'état, le fameux Change Detection</p>
-<p>Angular utilise Zone.js comme une sorte de "patch" du navigateur : il intercepte tous les événements async (clicks, timers, Promises, etc.).</p>
+<p>Angular utilise Zone.js comme une sorte de "patch" du navigateur : il intercepte tous les événements async (clicks, timers, etc.).</p>
 <p>Chaque fois qu’un événement async survient, Angular relance automatiquement la détection de changements.</p>
 <p>Résultat : développeurs n’ont pas besoin de gérer manuellement quand l’UI doit se mettre à jour.</p>
+<p><i>Plus puissant que $digest() d'AngularJS car là, seul le composant concerné est recompilé dans le DOM</i></p>
                     </aside>
                 </section>
                 <section class="inner-section">
-                    <h3>📦 Ainsi que le bundler officiel d'Angular : Webpack</h3>
+                    <h3>📦 Et l'adoption officielle du bundler d'Angular : Webpack</h3>
                     <div class="cv">
                         <p>Compiler, minifier, et regrouper les fichiers JS/TS, CSS, assets, etc.</p>
                         <p>Gérer le code splitting, le lazy loading…</p>
                         <p>Intégration ultra configurable, surtout via la CLI d'Angular</p>
                     </div>
                     <img src="./assets/logos/webpack.png" alt="Logo WebPack" style="height:275px;width:auto;position:absolute;top:0.75em;left:2em;" />
+                    <p>Tobias Koppers</p>
+                    <img src="./assets/tobias_koppers.jpg" alt="Tobias Koppers" style="height:300px;width:auto;position:absolute;bottom:-0.5em;right:2em" />
                     <aside class="notes">
+Tobias Koppers, le créateur de Webpack, a réussi à créer un outil qui est devenu le standard de facto pour le bundling des applications web. </br>
+Petite précision au passage, Koppers est aussi le créateur de Browserify, un autre bundler qui a été très populaire avant l'arrivée de Webpack.</br>
+Ainsi que le créateur de Turbopack, le successeur de Webpack, qui est en cours de développement et qui promet d'être encore plus rapide et efficace.</br> (En RUST, wink wink Alex) </br>
 "Et puis, il y a Webpack. Le bundler officiel d'Angular. C’est un peu le couteau suisse du développement web." </br>
 "Il compile, minifie, regroupe les fichiers JS/TS, CSS, assets, etc. Il gère le code splitting, le lazy loading… et surtout, il s’intègre parfaitement avec la CLI d’Angular." </br>
 "En gros, c’est comme si on avait un assistant personnel qui s’occupait de tout le bazar pour nous. On écrit notre code, et Webpack s’assure que tout est bien empaqueté et prêt à être déployé." </br>
@@ -195,6 +211,7 @@ export class AppComponent {
                         </div>
                     </div>
                     <img src="./assets/picsou_gold.gif" alt="Picsou dans sa piscine de pièces d'or" style="height:500px;width:auto" />
+                    <div class="date-range" data-text="2017 - 2018">2017 - 2018</div>
                     <aside class="notes">
 "Après ce reboot un peu violent, Angular trouve enfin son rythme." </br>
 "De 2017 à 2019, entre les versions 4 et 8, on a de la stabilité, des évolutions maîtrisées. On améliore le CLI, on simplifie la gestion des dépendances, on booste les perfs. </br>
@@ -356,7 +373,7 @@ this.http.get('/api/user').pipe(
                         <tr><td><i>tap</i></td><td>Effets de bord (logs, méthodes)</td></tr>
                         </tbody>
                     </table>
-                    <img src="./assets/logos/rxjs.png" alt="Logo RxJS" style="height:200px;width:auto;position:absolute;top:0.75em;right:1.5em;" />
+                    <img src="./assets/logos/rxjs.png" alt="Logo RxJS" style="height:200px;width:auto;position:absolute;top:-3.5em;right:3.5em;" />
                 </section>
                 <section class="inner-section">
                     <h3>🎨 Angular Material</h3>
@@ -384,7 +401,6 @@ Alors oui, en réalité, je vous voir venir les initiés, je vous ai un peu ment
                     </ul>
                     <p><strong>Angular 6</strong></p>
                     <ul>
-                        <li>Gestion de l'ajout de dépendances npm</li>
                         <li>Possibilité de réaliser des tests unitaires</li>
                     </ul>
                     <p><strong>Angular 7</strong></p>
@@ -411,6 +427,7 @@ L'introduction du support des PWA dans Angular 5 a permis aux développeurs de c
                 <section class="inner-section">
                     <h3>🚀 Angular 9 à 12 : L'ère Ivy</h3>
                     <img src="./assets/poison_ivy.gif" alt="Poison Ivy" style="height:550px;width:auto" />
+                    <div class="date-range" data-text="2020 - 2021">2020 - 2021</div>
                     <aside class="notes">
                         "2020 - 2021 : C'est à partir de là qu'on se dit : 'OK, on a un framework qui commence à sacrément ressembler à qqchose.'"
                     </aside>
@@ -487,6 +504,7 @@ usefulFn();
                 <section class="inner-section">
                     <h3>🧱 Angular 13 à 19 : Retour vers le futur des frameworks front-end</h3>
                     <img src="./assets/brown_future.gif" alt="Emmet Brown" style="height:600px;width:auto">
+                    <div class="date-range" data-text="2022 - 2025">2022 - 2025</div>
                     <aside class="notes">
 "Dans cette dernière partie, on va voir comment Angular s'est modernisé pour répondre aux nouveaux enjeux du développement front-end : plus de flexibilité, une architecture modulaire, et des performances accrues. On va parler des Standalone Components, des modules fédérés et des nouvelles directives qui rendent Angular plus simple et plus puissant que jamais."
 "Angular continue d'évoluer. On entre dans une nouvelle ère, l'ère moderne." </br>
@@ -650,9 +668,11 @@ Tu peux dire à Angular : 'Hé, attends un peu avant de charger ça.' Et Angular
                         </div>
                     </div>
                     <aside class="notes">
-                        Angular a longtemps reposé sur zone.js pour gérer la détection des changements sans effort pour le développeur, mais cela avait un coût en complexité et performance. Avec l’introduction des signals, Angular évolue vers une gestion déclarative et performante du state.
+                        Angular a longtemps reposé sur zone.js pour gérer la détection des changements sans effort pour le développeur, mais cela avait un coût en complexité et performance. Avec l’introduction des signals, Angular évolue vers une gestion déclarative et performante du state.</br>
                         "Avec la version 16, on sent l'écoute de la communauté, c'est le débarquement du principe des Signals. Une nouvelle manière de gérer la réactivité, inspirée du monde de la programmation réactive… mais plus lisible, plus intuitive. </br>
                         Pour les quelques fans de Solid qui ont eu le courage de venir à cette conf, vous n'êtes pas perdu avec ces principes (en même temps, on vient de parler de meilleure réactivité). C’est un peu comme si Angular avait décidé de prendre un café avec Solid." </br>
+                        En Angular, le state tracking désigne le fait que le framework sait automatiquement quels Signaux sont lus dans une fonction ou un composant. Cela permet de suivre les dépendances et de réagir uniquement quand c’est nécessaire.</br>
+                        wink wink la conf d'Esteban de mercredi ;)
                     </aside>
                 </section>
             </section>
@@ -766,8 +786,6 @@ Tu peux dire à Angular : 'Hé, attends un peu avant de charger ça.' Et Angular
                         top: calc(50% + 60px);
                     }
                 </style>
-                
-                <!-- Chiffrer le temps et le gain en productivité ? -->
 
                 <h3 style="text-align:center;">📊 Timeline d’Angular (2010–2025)</h3>
                 <div class="timeline-container">
@@ -968,24 +986,12 @@ src/
                         </div>
                     </div>
                     <aside class="notes">
-                        <h4>⚠️ Points faibles Version 2</h4>
-                        <ul>
-                            <li>Boilerplate lourd (modules, declarations...)</li>
-                            <li>Pas de réactivité fine-grainée</li>
-                            <li>Structure rigide</li>
-                            <li>La configuration se fait dans app.module et main.ts</li>
-                        </ul>
+➡️ Un projet AngularJS prenait souvent 2× plus de temps à maintenir qu’à développer.
+➡️ Jusqu’à 30–40 % de productivité en plus avec Angular 4 par rapport à AngularJS, surtout en équipe.
+➡️ +20–30 % de productivité par rapport à Angular 7 (et donc 2× à 3× plus rapide, donc productif, qu’un projet AngularJS en prod).
 
-                        <h4>✅ Points forts Version 20</h4>
-                        <ul>
-                            <li>Composants autonomes (plus de modules nécessaires)</li>
-                            <li>Signal = réactivité fine-grainée, sans zone.js</li>
-                            <li>Structure plus plate, scalable, testable</li>
-                            <li>Configuration simplifiée, plus intuitive, juste dans main.ts</li>
-                        </ul>
-
-                        <p><strong>Angular est passé d’un framework "robuste mais verbeux" à un framework "moderne, réactif et ergonomique"</strong></p>
-                        <p>Le terme "boilerplate" (littéralement "code standardisé/recyclé") désigne le code répétitif, imposé par le framework, que tu dois écrire même quand tu n’en as pas besoin pour ton cas métier immédiat.</p>
+<p><strong>Angular est passé d’un framework "robuste mais verbeux" à un framework "moderne, réactif et ergonomique"</strong></p>
+<p>Le terme "boilerplate" (littéralement "code standardisé/recyclé") désigne le code répétitif, imposé par le framework, que tu dois écrire même quand tu n’en as pas besoin pour ton cas métier immédiat.</p>
                     </aside>
                 </section>
             </section>
@@ -1031,6 +1037,11 @@ export class DependencyInjectionComponent {
                             </code></pre>
                         </div>
                     </div>
+                    <aside class="notes">
+Une des granfdes forces d'Angular</br>
+Contrairement à React, Vue ou Svelte où tu dois bricoler avec des contexts, des props, des hooks, Angular te fournit un système typé et puissant qui permet d'injecter des services directement dans tes composants. </br>
+Il est même testable très facilement grâce à MockBuilder.</br>
+                    </aside>
                 </section>
 
                 <section class="inner-section">
@@ -1188,7 +1199,8 @@ input() et output() permettent de typer et déclarer proprement ce que le compos
 Ils sont plus explicites et permettent une meilleure composition des composants.<br/>
 Ils sont plus performants car ils ne déclenchent pas de détection de changement automatique,
 mais uniquement lorsque le signal change.<br/>
-Ils s'intègrent mieux avec Change Detection Optimisée (OnPush, SignalStore, etc.).
+Ils s'intègrent mieux avec Change Detection Optimisée (OnPush, SignalStore, etc.).</br>
+Une alternative forte à l'utilisation de rxjs (courbe d'apprentissage plus simple et plus intuitive et pas de désouscription à gérer).
                     </aside>
                 </section>
                 <section class="inner-section">
@@ -1308,9 +1320,10 @@ export class DataFetcherComponent {
                     </div>
                     <aside class="notes">
 defer() (Angular 16)
-L'avantage de defer() est qu'il permet de retarder l'exécution d'une opération jusqu'à ce qu'elle soit réellement nécessaire. Cela peut être utile pour optimiser les performances de votre application Angular, en évitant d'exécuter des opérations inutiles.
-Il est important de noter que defer() ne remplace pas setTimeout(), mais il offre une alternative plus puissante et flexible pour gérer l'asynchronisme dans Angular.
-La principale différence réside dans la façon dont ils gèrent l'exécution asynchrone. </br>
+defer() dans Angular permet de retarder l’affichage ou le chargement d’un bloc de code jusqu’à ce qu’il soit vraiment nécessaire (par exemple, quand un composant entre dans la vue). 
+Contrairement à setTimeout, qui déclenche une exécution après un délai arbitraire, defer() est déclaratif, contrôlé par Angular et optimisé pour la performance. 
+Il <strong>évite les calculs inutiles et allège le DOM initial</strong>. Résultat : un rendu plus rapide, et un chargement plus intelligent. </br>
+</br>
 - Différence de comportement:
 setTimeout() planifie l'exécution d'une fonction après un délai spécifié, mais cette fonction est exécutée dans le contexte de l'événement principal (le thread principal).
 defer() crée une nouvelle Observable qui sera exécutée de manière différée, c'est-à-dire que l'exécution sera retardée jusqu'à ce que la Observable soit souscrite. </br>
@@ -1425,7 +1438,7 @@ En résumé, defer() offre une meilleure gestion de l'asynchronisme, une meilleu
                 <section class="inner-section">
                     <div class="ch">
                         <div class="item">
-                            <img src="https://doc.maxds.fr/uploads/9d5a48ad-cf59-49c0-a638-c49940c83363.jpg" alt="Merci" style="height:700px;width:auto" />
+                            <img src="./assets/moi.jpg" alt="Merci" style="height:700px;width:auto" />
                         </div>
                         <div class="item mes-infos">
                             <p class="mon-nom">Pierre FERVEL</p>
@@ -1433,10 +1446,12 @@ En résumé, defer() offre une meilleure gestion de l'asynchronisme, une meilleu
                             <div style="display:flex;justify-content:center;">
                                 <img src="./assets/logo_max.png" alt="Logo Max" style="height:150px;width:auto" />
                             </div>
-                            <p>LinkedIn : <a href="https://www.linkedin.com/in/pierre-fervel/">pierrefervel</a></p>
+                            <!-- <p>LinkedIn : <a href="https://www.linkedin.com/in/pierre-fervel/">pierrefervel</a></p>
+                            <p>Github : <a href="https://github.com/Majimo">Majimo</a></p> -->
                         </div>
                     </div>
-                    <img src="./assets/openfeedback.png" alt="QRCode Openfeedback" style="height:250px;width:auto;position:absolute;top:13.25em;left:24em;" />
+                    <img src="./assets/openfeedback.png" alt="QRCode Openfeedback" style="height:250px;width:auto;position:absolute;top:14em;right:18.25em;" />
+                    <img src="./assets/qrcode_links.png" alt="QRCode Links" style="height:285px;width:auto;position:absolute;top:13.5em;right:1em;" />
                     <aside class="notes">
                         "Et voilà, c'est la fin de notre voyage à travers l'histoire d'Angular. J'espère que vous avez apprécié cette aventure autant que moi."
                         </br>

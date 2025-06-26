@@ -21,9 +21,9 @@
 
 .reveal {
     background: url("assets/background.png") !important;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-y: -50px;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position-y: -15px !important;
 }
 
 h1, h2 {
@@ -147,7 +147,7 @@ h1, h2 {
     100% {
         visibility: visible;
         height: 200px;
-        bottom: 98px;
+        bottom: 58px;
         left: 1285px;
     }
 }
@@ -155,4 +155,41 @@ h1, h2 {
 .logo-max {
     position: absolute;
     animation: move_logo 5s ease-in-out forwards;
+}
+
+.date-range {
+  position: relative;
+  font-family: 'Fedora', sans-serif;
+  font-size: 6rem;
+  background: -webkit-linear-gradient(orange, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* text-shadow: 5px 5px black; */
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.date-range::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  color: black;
+  text-shadow: 6.5px 6.5px black;
+}
+
+.emoji-list {
+  list-style: none !important;
+}
+
+.emoji-list li {
+    margin-bottom: 1rem;
+}
+
+.emoji-list li::before {
+  content: attr(data-icon);
+  display: inline-block;
+  width: 2em;
+  margin-left: -1.5em;
+  margin-right: 0.5em;
 }
