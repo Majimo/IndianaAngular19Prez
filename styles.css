@@ -1,4 +1,5 @@
-@font-face { font-family: Indiana; src: url('assets/fonts/indiana_jonas/Indiana-Jonas-48ip.otf'); }
+@font-face { font-family: Monoton; src: url('assets/fonts/Monoton/Monoton-Regular.ttf'); }
+@font-face { font-family: Fascinate; src: url('assets/fonts/Fascinate/Fascinate-Regular.ttf'); }
 @font-face { font-family: FedoraShadow; src: url('assets/fonts/sf_fedora/SF\ Fedora\ Shadow.ttf'); }
 @font-face { font-family: Fedora; src: url('assets/fonts/sf_fedora/SF\ Fedora.ttf'); }
 @font-face { font-family: FedoraTiles; src: url('assets/fonts/sf_fedora/SF\ Fedora\ Titles.ttf'); }
@@ -11,8 +12,8 @@
     --r-heading4-size: 1.1em;
     --r-main-font-size: 36px;
     --r-heading-text-transform: none;
-    --r-heading-color: #ef1757;
-    --r-main-color: #000;
+    --r-heading-color: #0B3D91;
+    --r-main-color: #222;
 }
 
 #speaker-controls {
@@ -20,19 +21,19 @@
 }
 
 .reveal {
-    background: url("assets/background.png") !important;
+    background: url("assets/background_disco.png") !important;
     background-repeat: no-repeat !important;
-    background-size: cover !important;
-    background-position-y: -15px !important;
+    background-size: 68% !important;
+    /* background-position-y: -15px !important; */
 }
 
 h1, h2 {
-    font-family: Fedora, sans-serif !important;
+    font-family: Monoton, sans-serif !important;
     color: #fff !important;
 }
 
 .p-titre {
-    font-family: FedoraTiles, sans-serif !important;
+    font-family: Fascinate, sans-serif !important;
 }
 
 .reveal pre code {
@@ -44,9 +45,9 @@ h1, h2 {
     background: none !important;
     align-items: flex-end;
     position: absolute;
-    top: -10em;
-    right: 0;
-    width: 25em;
+    top: 0;
+    right: -1.5em;
+    width: 18em;
     color: #fff !important;
 }
 
@@ -55,7 +56,7 @@ h1, h2 {
 }
 
 .parchemin {
-    background: url('assets/grunge-vintage-old-paper-background.jpg') no-repeat center center;
+    background: url('assets/disco_slide_background.png') no-repeat center center;
     background-size: cover;
 }
 
@@ -91,7 +92,7 @@ h1, h2 {
 }
 
 .mon-nom {
-    font-family: Fedora, sans-serif;
+    font-family: Fascinate, sans-serif;
     font-size: 2.5em;
     color: #ef1757;
     margin-bottom: 0.5em;
@@ -159,7 +160,7 @@ h1, h2 {
 
 .date-range {
   position: relative;
-  font-family: 'Fedora', sans-serif;
+  font-family: 'Monoton', sans-serif;
   font-size: 6rem;
   background: -webkit-linear-gradient(orange, white);
   -webkit-background-clip: text;
