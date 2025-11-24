@@ -336,7 +336,7 @@ export class ObservableExampleComponent {
                         <div class="item">
                             <h4>Sans RxJS (Promise)</h4>
                             <pre><code class="language-ts">
-await http.get('/api/user').then(user => {
+http.get('/api/user').then(user => {
     if (user.active) {
         this.doSomething(user)
     }
@@ -628,24 +628,6 @@ import('userApp/UserComponent')
                         🧠 Résultat : maintenance centralisée, mise à jour instantanée, micro-frontend modulaire.
                     </p>
                 </section>
-
-                <!-- Fusionner ça avec la section suivante
-                 
-                <section class="inner-section">
-                    <div class="item">
-                        <ul>
-                            <li>Amélioration de la gestion des formulaires (TypedForms) v13</li>
-                            <li>Signals v16</li>
-                            <li>defer() v16</li>
-                        </ul>
-                    </div>
-                    <aside class="notes">
-
-"Il y’a aussi defer(). C’est un peu comme un 'setTimeout' pour tes appels API mais toujours pareil, dans un principe de meilleure gestion de la réactivité. 
-Tu peux dire à Angular : 'Hé, attends un peu avant de charger ça.' Et Angular te dit : 'Pas de souci, je vais attendre, tu m'préviens et je lance ton appel quand t'es ok.'" </br>
-"Vous allez me dire, 'Ben ils sont où les exemples ?!' Pas d'inquiétudes, je vous détaille tout ça dans qq minutes dans les bonnes pratiques"
-                    </aside>
-                </section> -->
                 <section class="inner-section">
                     <h3>🚫 Bye bye zone.js ?</h3>
                     <div style="display: flex; gap: 2rem;">
@@ -843,14 +825,14 @@ Tu peux dire à Angular : 'Hé, attends un peu avant de charger ça.' Et Angular
                     <div class="timeline-item timeline-bottom" style="left: 75%;">
                     <div class="timeline-event major-timeline-event">
                         <h4>2024</h4>
-                        <p>Angular 17/18 (Vite, Signals+)</p>
+                        <p>Angular 17/18 (Vite, Signals)</p>
                     </div>
                     </div>
 
                     <div class="timeline-item timeline-top" style="left: 85%;">
                     <div class="timeline-event">
                         <h4>2025</h4>
-                        <p>Angular 19/20 (linkedSignal)</p>
+                        <p>Angular 19/20 (Standalone OK, Signals OK)</p>
                     </div>
                     </div>
                 </div>
@@ -1038,7 +1020,7 @@ export class DependencyInjectionComponent {
                         </div>
                     </div>
                     <aside class="notes">
-Une des granfdes forces d'Angular</br>
+Une des grandes forces d'Angular</br>
 Contrairement à React, Vue ou Svelte où tu dois bricoler avec des contexts, des props, des hooks, Angular te fournit un système typé et puissant qui permet d'injecter des services directement dans tes composants. </br>
 Il est même testable très facilement grâce à MockBuilder.</br>
                     </aside>
@@ -1094,7 +1076,7 @@ import { RouterModule } from '@angular/router';
 @Component({
     selector: 'app-standalone',
     template: '&lt;h1&gt;Standalone Component&lt;/h1&gt;'
-    standalone: true,
+    standalone: true,   // Désormais par défaut
     imports: [CommonModule, RouterModule]
 })
 export class StandaloneComponent {
@@ -1112,7 +1094,7 @@ export class StandaloneComponent {
                         <div class="item">
                             <h3>Structural Control Flow Syntax</h3>
                             <p>Fini les directives <span class="var-highlight">*ngIf</span>, <span class="var-highlight">*ngFor</span>, <span class="var-highlight">*ngSwitch</span></p>
-                            <pre style="width:50%;font-size:0.85em;"><code class="language-typescript" data-line-numbers="1-5|7-9|11-13">@if (user.isLoggedIn) {
+                            <pre style="width:50%;font-size:0.85em;"><code class="language-typescript" data-line-numbers="1-5|7-12|13-15">@if (user.isLoggedIn) {
     &lt;p&gt;Bienvenue, {{ user.name }} !&lt;/p&gt;
 } @else {
     &lt;p&gt;Veuillez vous connecter.&lt;/p&gt;
@@ -1121,10 +1103,12 @@ export class StandaloneComponent {
 @for (let item of items; track item.id) {
     &lt;li&gt;{{ item.name }}&lt;/li&gt;
 }
-
-@let currentDate = today() {
-    &lt;p&gt;Nous sommes le {{ currentDate }}&lt;/p&gt;
+@empty {
+    &lt;p&gt;Aucun élément trouvé.&lt;/p&gt;
 }
+
+@let currentDate = today();
+&lt;p&gt;Nous sommes le {{ currentDate }}&lt;/p&gt;
                             </code></pre>
                         </div>
                     </div>
@@ -1146,13 +1130,13 @@ export class StandaloneComponent {
                         <div class="item">
                             <h3>Signals</h3>
                             <p>Changement dans le binding <span class="var-highlight">@Input</span>, <span class="var-highlight">@Output</span>, <span class="var-highlight">@Viewchild</span></p>
-                            <pre style="width:50%;font-size:0.5em;"><code class="language-typescript" data-line-numbers="6-7,11-14">import { Component, signal } from '@angular/core';
+                            <pre style="width:50%;font-size:0.5em;"><code class="language-typescript" data-line-numbers="6-7,11-15">import { Component, signal } from '@angular/core';
 
 @Component({
     selector: 'app-signals',
     template: `
-        &lt;p&gt;Count: {{ count() }}&lt;/p&gt;
-        &lt;button (click)="increment()"&gt;Increment&lt;/button&gt;
+        &lt;p&gt;Nombre: {{ count() }} @if(isOdd) {IMPAIR}&lt;/p&gt;
+        &lt;button (click)="increment()"&gt;Incrémenter&lt;/button&gt;
     `
 })
 export class SignalsComponent {
@@ -1160,6 +1144,7 @@ export class SignalsComponent {
     increment() {
         this.count.update(value => value + 1);
     }
+    isOdd = computed(() => this.count() % 2);
 }
                             </code></pre>
                             <hr />
@@ -1179,13 +1164,14 @@ changeName(newName: string) {
 
                                 <div class="column">
                                     <h4>🆕 Maintenant : avec Signals</h4>
-                                    <pre><code class="language-typescript">import { input, output, signal } from '@angular/core';
+                                    <pre><code class="language-typescript">import { input, output } from '@angular/core';
 
-name = input&lt;string&gt;();
+name = input.required&lt;string&gt;();
+updatedName = model&lt;string&gt;();
 nameChanged = output&lt;string&gt;();
 
 changeName(newName: string) {
-    this.name.set(newName);
+    this.updatedName.set(newName);
     this.nameChanged.emit(newName);
 }</code></pre>
                                 </div>
@@ -1203,76 +1189,16 @@ Ils s'intègrent mieux avec Change Detection Optimisée (OnPush, SignalStore, et
 Une alternative forte à l'utilisation de rxjs (courbe d'apprentissage plus simple et plus intuitive et pas de désouscription à gérer).
                     </aside>
                 </section>
+                
                 <section class="inner-section">
                     <div class="cv">
                         <div class="item">
-                            <h3>Shared Linked Signals</h3>
+                            <h3>@defer</h3>
                             <div class="ch">
-                                <div class="item">
-                                    <pre><code class="language-typescript">// user.state.ts
-import { signal } from '@angular/core';
-
-export const userAuthSignal = 
-    signal({ isAuthenticated: false, user: null });
-
-export function login(user: any) {
-    userAuthSignal.set({ isAuthenticated: true, user });
-}
-
-export function logout() {
-    userAuthSignal.set({ isAuthenticated: false, user: null });
-}
-                                    </code></pre>
-                                </div>
-                                <div class="item">
-                                    <pre><code class="language-typescript" data-line-numbers="2,13,19,22,26">// app.component.ts
-import { userAuthSignal, logout } from '@state/user.state';
-
-@Component({
-    selector: 'app-linked-signals',
-    template: `
-    <nav>
-        @if (userAuthSignal().isAuthenticated) {
-            <span>Welcome, {{ userAuthSignal().user.name }}!</span>
-            <button (click)="handleLogout()">Logout</button>
-        } @else {
-            <span>Please log in.</span>
-            <button 
-                (click)="handleLogin({ name: 'John Doe' })"
-            >
-                Login
-            </button>
-        }
-    </nav>
-    `,
-})
-export class LinkedSignalsComponent {
-    userAuthSignal = userAuthSignal;
-
-    handleLogout() {
-        logout();
-    }
-
-    handleLogin(user: any) {
-        login(user);
-    }
-}
-                                    </code></pre>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <aside class="notes">Signals with linkedSignal (l'effet est répercuté directement depuis le signal Angular v20)</aside>
-                </section>
-                <section class="inner-section">
-                    <div class="cv">
-                        <div class="item">
-                            <h3>defer()</h3>
-                            <div class="ch">
-                                <div class="item">
-                                    <pre><code class="language-typescript" data-line-numbers="10-12">// data.service.ts
+                                <div class="cv" style="padding-left: 7%;">
+                                    <div class="item">
+                                        <pre style="width: 110%;"><code class="language-typescript" data-line-numbers="1-15">// data.service.ts
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
 @Injectable({
@@ -1282,60 +1208,74 @@ export class DataService {
     fetchData() {
         return of('Données récupérées !').pipe(delay(2000));
     }
-}       
-                                    </code></pre>
+}</code></pre>
                                 </div>
                                 <div class="item">
-                                    <pre><code class="language-typescript" data-line-numbers="3,9-12,21-23">// data-fetcher.component.ts
+                                    <pre style="width: 110%;"><code class="language-typescript" data-line-numbers="1-15">// data.component.html
+<button (click)="loadData()">Charger les données</button>
+@defer (when: shouldLoadData) {
+    <p>Données : {{ data }}</p>
+} @placeholder {
+    <p>Prêt à charger...</p>
+} @loading {
+    <p>Chargement en cours...</p>
+} @error {
+    <p>Erreur lors du chargement</p>
+}</code></pre>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <pre style="width: 75%;"><code class="language-typescript" data-line-numbers="1-25">// data-fetcher.component.ts
 import { Component } from '@angular/core';
-import { defer } from 'rxjs';
+import { CommonModule } from '@angular/common';
 import { DataService } from './data.service';
 
 @Component({
     selector: 'app-data-fetcher',
-    template: `
-    <button (click)="loadData()">Charger les données</button>
-    @if (data) {
-        <p>Données : {{ data }}</p>
-    }
-    `,
+    imports: [CommonModule],
+    templateUrl: './data-fetcher.component.html',
 })
 export class DataFetcherComponent {
-    data: string | null = null;
+    shouldLoadData = false;
 
     constructor(private dataService: DataService) {}
 
     loadData() {
-        defer(() => this.dataService.fetchData()
-            .subscribe((result) => {
-                this.data = result;
-            })
+        this.shouldLoadData = true;
+        this.dataService.fetchData().subscribe(
+            result => this.data = result
         );
     }
-}
-                                    </code></pre>
+}</code></pre>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <aside class="notes">
-defer() (Angular 16)
-defer() dans Angular permet de retarder l’affichage ou le chargement d’un bloc de code jusqu’à ce qu’il soit vraiment nécessaire (par exemple, quand un composant entre dans la vue). 
-Contrairement à setTimeout, qui déclenche une exécution après un délai arbitraire, defer() est déclaratif, contrôlé par Angular et optimisé pour la performance. 
-Il <strong>évite les calculs inutiles et allège le DOM initial</strong>. Résultat : un rendu plus rapide, et un chargement plus intelligent. </br>
-</br>
-- Différence de comportement:
-setTimeout() planifie l'exécution d'une fonction après un délai spécifié, mais cette fonction est exécutée dans le contexte de l'événement principal (le thread principal).
-defer() crée une nouvelle Observable qui sera exécutée de manière différée, c'est-à-dire que l'exécution sera retardée jusqu'à ce que la Observable soit souscrite. </br>
-- Différence de gestion des erreurs:
-Avec setTimeout(), les erreurs éventuelles sont propagées dans le flux d'exécution principal, ce qui peut entraîner des problèmes dans votre application.
-Avec defer(), les erreurs sont gérées dans le contexte de l'Observable, ce qui permet une meilleure gestion des erreurs et une séparation des préoccupations. </br>
-- Différence de composition:
-setTimeout() est une fonction native de JavaScript, tandis que defer() fait partie de la bibliothèque RxJS, ce qui permet une meilleure intégration avec les opérateurs RxJS et une meilleure composabilité. </br>
-En résumé, defer() offre une meilleure gestion de l'asynchronisme, une meilleure gestion des erreurs et une meilleure intégration avec les concepts réactifs d'Angular, par rapport à l'utilisation de setTimeout() seul.
+                        <strong>&amp;#64;defer</strong> (Angular 17+)
+                        &amp;#64;defer est une directive de template structurelle qui permet de charger un bloc de template de manière lazy et contrôlée, sans l'ajouter au DOM initial.
+                        </br></br>
+                        <strong>Cas d'usage principal :</strong>
+                        - Retarder le chargement d'un composant lourd jusqu'à ce qu'il soit vraiment nécessaire
+                        - Améliorer le LCP (Largest Contentful Paint) et les Core Web Vitals
+                        - Réduire le bundle initial et le temps de rendu
+                        </br></br>
+                        <strong>Syntaxe :</strong>
+                        &amp;#64;defer (when: condition) { ... } : charge quand la condition passe à true
+                        &amp;#64;placeholder : contenu affiché avant le chargement (optionnel)
+                        &amp;#64;loading : contenu pendant le chargement (optionnel)
+                        &amp;#64;error : contenu en cas d'erreur (optionnel)
+                        </br></br>
+                        <strong>Avantages par rapport à *ngIf :</strong>
+                        - &amp;#64;defer = lazy-loading vrai du template (pas dans le bundle)
+                        - *ngIf = juste masqué du DOM (toujours dans le bundle)
+                        - &amp;#64;defer améliore les perfs initiales, *ngIf améliore la fluidité après coup
+                        </br></br>
+                        Résultat : un rendu initial plus rapide et une meilleure expérience utilisateur, particulièrement sur les connexions lentes ou appareils mobiles.
                     </aside>
                 </section>
             </section>
+
 
             <!-- Conclusion -->
             <section>
@@ -1446,8 +1386,6 @@ En résumé, defer() offre une meilleure gestion de l'asynchronisme, une meilleu
                             <div style="display:flex;justify-content:center;">
                                 <img src="./assets/logo_max.png" alt="Logo Max" style="height:150px;width:auto" />
                             </div>
-                            <!-- <p>LinkedIn : <a href="https://www.linkedin.com/in/pierre-fervel/">pierrefervel</a></p>
-                            <p>Github : <a href="https://github.com/Majimo">Majimo</a></p> -->
                         </div>
                     </div>
                     <img src="./assets/openfeedback.png" alt="QRCode Openfeedback" style="height:250px;width:auto;position:absolute;top:14em;right:18.25em;" />
